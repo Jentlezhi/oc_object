@@ -65,7 +65,7 @@ int main(int argc, const char * argv[]) {
     return 0;
 }
 
-BOOL IsBigEndian(){
+BOOL IsBigEndian(void){
     
     int a = 0x1234;
     char b =  *(char *)&a;  //通过将int强制类型转换成char单字节，通过判断起始存储位置。即等于 取b等于a的低地址部分
