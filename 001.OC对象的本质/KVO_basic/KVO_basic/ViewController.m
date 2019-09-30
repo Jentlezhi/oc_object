@@ -43,7 +43,8 @@
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     
 //    [self learnKVOObserve]
-    [self learnKVOMethods];
+//    [self learnKVOMethods];
+    [self callKVOHandly];
     
 }
 
@@ -112,6 +113,19 @@
     NSString *value = [contextDict valueForKey:@"value"];
     NSLog(@"value:%@",value);
     NSLog(@"监听到%@的%@改变：%@,context=%@",object,keyPath,change,context);
+}
+
+- (void)callKVOHandly {
+    
+    Person *p = Person.new;
+    p.age = 1;
+    NSKeyValueObservingOptions options = NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld;
+    ///p->isa (Class) $1 = Person
+    [p addObserver:self forKeyPath:@"age" options:options context:(__bridge void * _Nullable)(@{@"value":@"100"})];
+    ///手动触发kvo
+    [p willChangeValueForKey:@"age"];
+    [p didChangeValueForKey:@"age"];
+    
 }
 
 

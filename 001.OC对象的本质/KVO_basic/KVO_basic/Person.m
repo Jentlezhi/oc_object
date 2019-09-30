@@ -10,11 +10,23 @@
 
 @implementation Person
 
-//- (void)setAge:(NSInteger)age {
-//    
-//    _age = age;
-//    NSLog(@"Person Set方法%ld",(long)age);
-//    
-//}
+- (void)setAge:(NSInteger)age {
+    
+    _age = age;
+    NSLog(@"Person Set方法%ld",(long)age);
+    
+}
+
+- (void)willChangeValueForKey:(NSString *)key {
+    NSLog(@"%@", NSStringFromSelector(_cmd));
+    [super willChangeValueForKey:key];
+}
+
+- (void)didChangeValueForKey:(NSString *)key {
+    NSLog(@"%@", NSStringFromSelector(_cmd));
+    ///内部又会调用监听器的observeValueForKeyPath:ofObject:change:context:监听方法
+    ///注释掉[super didChangeValueForKey:key];方法将不会被监听到
+    [super didChangeValueForKey:key];
+}
 
 @end
