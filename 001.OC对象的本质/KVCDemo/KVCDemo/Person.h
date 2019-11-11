@@ -12,12 +12,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Person : NSObject
 
-{
-    @public
-    NSInteger _age;
-}
+//{
+//    @public
+//    NSInteger _age;
+//}
 
-//@property(assign, nonatomic) NSInteger age;
+@property(assign, nonatomic) NSInteger age;
 
 
 @end
