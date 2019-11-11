@@ -22,10 +22,11 @@
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     
     Person *p = Person.new;
-    p->_age = 10;
-    //kvc获取值:
-    NSLog(@"_age = %@",[p valueForKey:@"_age"]);
-    
+//    p->_age = 10;
+    //kvc获取成员变量（实例变量）:
+//    NSLog(@"_age = %@",[p valueForKey:@"_age"]);
+    //kvc获取属性：
+    NSLog(@"self.age = %@",[p valueForKey:@"age"]);
     
 }
 
@@ -37,10 +38,10 @@
     //    [p setValue:@(20) forKey:@"age"];
 }
 
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
-    
-    
-}
+//- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
+//    
+//    
+//}
 
 
 

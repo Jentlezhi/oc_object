@@ -10,14 +10,24 @@
 
 @implementation Person
 
-- (NSInteger)getAge {
-    
-    return 10;
+//- (NSInteger)getAge {
+//
+//    return 100;
+//}
+
+//- (NSInteger)age {
+//
+//    return 101;
+//}
+
+- (NSInteger)isAge {
+
+    return 102;
 }
 
-- (NSInteger) isAge {
+- (NSInteger)_age {
     
-    return 11;
+    return 103;
 }
 
 - (void)willChangeValueForKey:(NSString *)key {
