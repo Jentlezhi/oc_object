@@ -20,15 +20,15 @@
 //    return 101;
 //}
 
-- (NSInteger)isAge {
-
-    return 102;
-}
-
-- (NSInteger)_age {
-    
-    return 103;
-}
+//- (NSInteger)isAge {
+//
+//    return 102;
+//}
+//
+//- (NSInteger)_age {
+//    
+//    return 103;
+//}
 
 - (void)willChangeValueForKey:(NSString *)key {
     [super willChangeValueForKey:key];
