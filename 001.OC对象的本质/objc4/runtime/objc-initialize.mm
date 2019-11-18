@@ -360,7 +360,12 @@ void _class_initialize(Class cls)
     // Make sure super is done initializing BEFORE beginning to initialize cls.
     // See note about deadlock above.
     supercls = cls->superclass;
+    ///父类没有被初始化的时候会先初始化父类
     if (supercls  &&  !supercls->isInitialized()) {
+        /*
+          _class_initialize方法会对class的父类进行递归调用，
+          由此可以确保父类优先于子类初始化。
+         */
         _class_initialize(supercls);
     }
     
@@ -386,7 +391,11 @@ void _class_initialize(Class cls)
             _objc_inform("INITIALIZE: calling +[%s initialize]",
                          cls->nameForLogging());
         }
-
+        /*
+          这里指明了+initialize的调用方式是objc_msgSend,
+          它和普通方法一样是由Runtime通过发消息的形式，
+          调用走的都是发送消息的流程。
+         */
         ((void(*)(Class, SEL))objc_msgSend)(cls, SEL_initialize);
 
         if (PrintInitializing) {
