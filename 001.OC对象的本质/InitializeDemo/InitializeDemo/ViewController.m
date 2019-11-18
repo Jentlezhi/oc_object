@@ -11,6 +11,8 @@
 #import "SubTestClass.h"
 #import "GrandTestClass.h"
 #import "TestClass+Y.h"
+#import <objc/message.h>
+#import <objc/runtime.h>
 
 @interface ViewController ()
 
@@ -21,11 +23,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    TestClass *class1 = [[TestClass alloc] init];
-    TestClass *class2 = [[TestClass alloc] init];
-    SubTestClass *subClass1 = [[SubTestClass alloc] init];
-    GrandTestClass *grandTestClass1 = [[GrandTestClass alloc] init];
-    GrandTestClass *grandTestClass2 = [[GrandTestClass alloc] init];
+    [TestClass alloc];
+    ///消息发送机制：等价于
+    ///((void(*)(id,SEL))objc_msgSend)([TestClass class], @selector(alloc));
+    
+//    TestClass *class2 = [[TestClass alloc] init];
+//    SubTestClass *subClass1 = [[SubTestClass alloc] init];
+//    GrandTestClass *grandTestClass1 = [[GrandTestClass alloc] init];
+//    GrandTestClass *grandTestClass2 = [[GrandTestClass alloc] init];
 }
 
 
