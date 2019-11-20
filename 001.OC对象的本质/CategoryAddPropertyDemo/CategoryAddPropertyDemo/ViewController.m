@@ -16,11 +16,31 @@
 
 @end
 
+//extern const void *StuNameKey;
+
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setAssociated];
+    
+//    NSLog(@"StuNameKey:%p",StuNameKey);
+//    StuNameKey = @"123";
+//    NSLog(@"StuNameKey:%p",StuNameKey);
+}
 
+- (void)setAssociated {
+    
+    Student *s = Student.new;
+    s.name = @"Jack";
+    s.gender = @"男";
+    
+    Student *s1 = Student.new;
+    s1.name = @"Rose";
+    s1.gender = @"女";
+    
+    //s.name=男 s.gender=男 s1.name=女
+    NSLog(@"s.name=%@ s.gender=%@ s1.name=%@ s1.gender=%@",s.name,s.gender, s1.name,s1.gender);
 }
 
 - (void)setValueWithDict {

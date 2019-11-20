@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// name
 @property(copy, nonatomic) NSString *name;
+/// gender
+@property(copy, nonatomic) NSString *gender;
 
 @end
 
