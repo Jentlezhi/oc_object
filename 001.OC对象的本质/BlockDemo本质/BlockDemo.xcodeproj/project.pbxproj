@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8CF6BBD823857089002D1786 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CF6BBD723857089002D1786 /* main.m */; };
+		8CF6BBF6238666DB002D1786 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CF6BBF5238666DB002D1786 /* Person.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,7 +26,15 @@
 /* Begin PBXFileReference section */
 		8CF6BBD423857089002D1786 /* BlockDemo */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BlockDemo; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CF6BBD723857089002D1786 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		8CF6BBE2238577B7002D1786 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		8CF6BBE62385F4CA002D1786 /* main_0.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main_0.cpp; sourceTree = "<group>"; };
+		8CF6BBE82385F627002D1786 /* main_1.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main_1.cpp; sourceTree = "<group>"; };
+		8CF6BBEC2385F915002D1786 /* main_2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main_2.cpp; sourceTree = "<group>"; };
+		8CF6BBEE2385F9B7002D1786 /* main_3.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main_3.cpp; sourceTree = "<group>"; };
+		8CF6BBF023861F61002D1786 /* main_4.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main_4.cpp; sourceTree = "<group>"; };
+		8CF6BBF223862CA8002D1786 /* main_5.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main_5.cpp; sourceTree = "<group>"; };
+		8CF6BBF4238666DB002D1786 /* Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		8CF6BBF5238666DB002D1786 /* Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		8CF6BBFB23866B5D002D1786 /* Person.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Person.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,8 +67,16 @@
 		8CF6BBD623857089002D1786 /* BlockDemo */ = {
 			isa = PBXGroup;
 			children = (
-				8CF6BBE2238577B7002D1786 /* main.cpp */,
+				8CF6BBF223862CA8002D1786 /* main_5.cpp */,
+				8CF6BBF023861F61002D1786 /* main_4.cpp */,
+				8CF6BBEE2385F9B7002D1786 /* main_3.cpp */,
+				8CF6BBEC2385F915002D1786 /* main_2.cpp */,
+				8CF6BBE82385F627002D1786 /* main_1.cpp */,
+				8CF6BBE62385F4CA002D1786 /* main_0.cpp */,
 				8CF6BBD723857089002D1786 /* main.m */,
+				8CF6BBFB23866B5D002D1786 /* Person.cpp */,
+				8CF6BBF4238666DB002D1786 /* Person.h */,
+				8CF6BBF5238666DB002D1786 /* Person.m */,
 			);
 			path = BlockDemo;
 			sourceTree = "<group>";
@@ -121,6 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CF6BBF6238666DB002D1786 /* Person.m in Sources */,
 				8CF6BBD823857089002D1786 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
