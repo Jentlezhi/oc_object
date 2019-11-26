@@ -78,7 +78,8 @@ union isa_t
     // uintptr_t extraBytes : 1;  // allocated with extra bytes
 
 # if __arm64__
-///ISA_MASK 二进制：0b 0000 0000 0000 0000 0000 0000 0000 1111(F) 1111(F) 1111(F) 1111(F) 1111(F) 1111(F) 1111(F) 1111（F） 1000（8）
+///ISA_MASK 二进制：0b 0000 0000 0000 0000 0000 0000 0000 1111 1111 1111 1111 1111 1111 1111 1111 1000  [33位1]
+///ISA_MASK 二进制：0b [0000 0000 0000 0000 000] [0] [0] [0] [00 0000] [1111 1111 1111 1111 1111 1111 1111 1111 1] [0] [0] [0]
 #   define ISA_MASK        0x0000000ffffffff8ULL
 #   define ISA_MAGIC_MASK  0x000003f000000001ULL
 #   define ISA_MAGIC_VALUE 0x000001a000000001ULL
@@ -86,6 +87,8 @@ union isa_t
         uintptr_t indexed           : 1;
         uintptr_t has_assoc         : 1;
         uintptr_t has_cxx_dtor      : 1;
+        ///存储着Class、Meta-Class对象的内存地址信息
+        ///isa与ISA_MASK按位与取出对象的内存地址
         uintptr_t shiftcls          : 33; // MACH_VM_MAX_ADDRESS 0x1000000000
         uintptr_t magic             : 6;
         uintptr_t weakly_referenced : 1;
