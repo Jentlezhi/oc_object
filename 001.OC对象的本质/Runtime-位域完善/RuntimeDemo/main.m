@@ -15,7 +15,7 @@ void mateClass(void);
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-
+    
     }
     return 0;
 }
@@ -39,3 +39,5 @@ void mateClass(){
     NSLog(@"[p object_getClass] = %p",object_getClass([Person class]));
     NSLog(@"[p MetaClass] = %p",objc_getMetaClass("Person"));
 }
+
+
