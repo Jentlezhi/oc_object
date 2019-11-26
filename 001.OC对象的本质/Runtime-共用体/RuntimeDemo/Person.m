@@ -19,11 +19,21 @@
 #define RichMask (1<<1)
 #define HandsomeMask (1<<2)
 
+///位域
+
 #import "Person.h"
 
 @interface Person ()
 {
-    char _tallRichHandsome;
+    union {
+        char bits;
+        ///增加可读性：
+        struct{
+            char tall : 1;
+            char rich : 1;
+            char handsome : 1;
+        };
+    }_tallRichHandsome;
 }
 
 @end
@@ -34,8 +44,8 @@
 {
     self = [super init];
     if (self) {
-        ///二进制（char占一个字节,可以用sizeof(char)计算）
-        _tallRichHandsome = 0b00000000;
+        ///二进制
+//        _tallRichHandsome = 0b00000000;
     }
     return self;
 }
@@ -48,29 +58,30 @@
         ///把首位置为1,其他位不变
         //   00000001
         // | 00000001
-        _tallRichHandsome |= TallMask;
+        _tallRichHandsome.bits |= TallMask;
     }else{
         ///把首位置为0
       //   00000001
       // & 11111110
-        _tallRichHandsome &= ~TallMask;
+        _tallRichHandsome.bits &= ~TallMask;
     }
 }
 
 - (void)setRich:(BOOL)rich {
     
     if(rich){
-        _tallRichHandsome |= RichMask;
+        _tallRichHandsome.bits |= RichMask;
     }else{
-        _tallRichHandsome &= ~RichMask;
+        _tallRichHandsome.bits &= ~RichMask;
     }
 }
 
 - (void)setHandsome:(BOOL)handsome {
+    
     if(handsome){
-        _tallRichHandsome |= HandsomeMask;
+        _tallRichHandsome.bits |= HandsomeMask;
     }else{
-        _tallRichHandsome &= ~HandsomeMask;
+        _tallRichHandsome.bits &= ~HandsomeMask;
     }
 }
 
@@ -79,18 +90,17 @@
 #pragma mark - Getter
 
 - (BOOL)isTall {
-    
-    return !!(_tallRichHandsome & TallMask);
+    ///双感叹号!!作用就是非0值转成1，而0值还是0.双感叹号!!是为了把"非0值"转换成1，而0值还是0。
+    return !!(_tallRichHandsome.bits & TallMask);
 }
 
 - (BOOL)isRich {
-    
-    return !!(_tallRichHandsome & RichMask);
+    return !!(_tallRichHandsome.bits & RichMask);
 }
 
 - (BOOL)isHandsome {
-    
-    return !!(_tallRichHandsome & HandsomeMask);
+  
+    return !!(_tallRichHandsome.bits & HandsomeMask);
 }
 
 @end

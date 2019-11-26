@@ -11,11 +11,9 @@
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        NSLog(@"char占%lubit",sizeof(char));
-        NSLog(@"int占%lubits",sizeof(int));
         Person *p = [[Person alloc] init];
         p.tall = YES;
-        p.rich = YES;
+        p.rich = NO;
         p.handsome = YES;
         NSLog(@"isTall:%d",p.isTall);
         NSLog(@"isRich:%d",p.isRich);
