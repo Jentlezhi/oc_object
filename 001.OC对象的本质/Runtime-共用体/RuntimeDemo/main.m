@@ -27,7 +27,9 @@ union var{
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-
+        
+//        typedef unsigned long           uintptr_t;
+        NSLog(@"uintptr_t占%lubits",sizeof(uintptr_t));
     }
     return 0;
 }
