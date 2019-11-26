@@ -34,7 +34,7 @@
 {
     self = [super init];
     if (self) {
-        ///二进制
+        ///二进制（char占一个字节,可以用sizeof(char)计算）
         _tallRichHandsome = 0b00000000;
     }
     return self;
