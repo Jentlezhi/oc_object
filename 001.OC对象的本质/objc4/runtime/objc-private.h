@@ -55,7 +55,7 @@ namespace {
     struct SideTable;
 };
 
-
+///联合体（共用体）
 union isa_t 
 {
     isa_t() { }
