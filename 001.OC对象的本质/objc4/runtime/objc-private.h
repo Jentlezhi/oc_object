@@ -78,6 +78,7 @@ union isa_t
     // uintptr_t extraBytes : 1;  // allocated with extra bytes
 
 # if __arm64__
+///ISA_MASK 二进制：0b 0000 0000 0000 0000 0000 0000 0000 1111(F) 1111(F) 1111(F) 1111(F) 1111(F) 1111(F) 1111(F) 1111（F） 1000（8）
 #   define ISA_MASK        0x0000000ffffffff8ULL
 #   define ISA_MAGIC_MASK  0x000003f000000001ULL
 #   define ISA_MAGIC_VALUE 0x000001a000000001ULL
