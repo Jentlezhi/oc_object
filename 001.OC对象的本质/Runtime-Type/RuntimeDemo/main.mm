@@ -20,7 +20,6 @@ int main(int argc, const char * argv[]) {
         mj_objc_class *cls = (__bridge mj_objc_class *)[Person class];
         //窥探底层结构
         class_rw_t *data = cls->data();
-        NSLog(@"%@",data);
     }
     return 0;
 }
