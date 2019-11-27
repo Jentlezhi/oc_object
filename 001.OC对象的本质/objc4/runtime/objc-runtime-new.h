@@ -36,7 +36,9 @@ struct swift_class_t;
 
 struct bucket_t {
 private:
+    //SEL作为key
     cache_key_t _key;
+    //函数的内存地址
     IMP _imp;
 
 public:
@@ -50,8 +52,11 @@ public:
 
 
 struct cache_t {
+    //散列表
     struct bucket_t *_buckets;
+    //散列表的长度-1
     mask_t _mask;
+    //已经缓存的方法数量
     mask_t _occupied;
 
 public:
