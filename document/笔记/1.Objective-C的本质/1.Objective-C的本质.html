@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="exporter-version" content="Evernote Mac 9.2.1 (458835)"/><meta name="author" content="juntaozhi@163.com"/><meta name="created" content="2019-08-20 05:38:44 +0000"/><meta name="source" content="desktop.mac"/><meta name="updated" content="2019-11-22 08:31:08 +0000"/><meta name="content-class" content="yinxiang.markdown"/><title>1.Objective-C的本质</title></head><body><div style="font-size: 14px; margin: 0; padding: 0; width: 100%;"><h4 style="line-height: 160%; box-sizing: content-box; font-size: 20px; color: #333;">1.将Objective-C代码转换为C\C++代码</h4>
+<pre style="line-height: 160%; box-sizing: content-box; border: 0; border-radius: 0; margin: 2px 0 8px; background-color: #f5f7f8;"><code style="display: block; overflow-x: auto; background: #1e1e1e; line-height: 160%; box-sizing: content-box; border: 0; border-radius: 0; letter-spacing: -.3px; padding: 18px; color: #f4f4f4; white-space: pre-wrap;">clang -rewrite-objc file_name.m -o file_name.cpp
+
+</code></pre>
+<h4 style="line-height: 160%; box-sizing: content-box; font-size: 20px; color: #333;">2.指定设备/架构/SDK版本将Objective-C代码转换为C\C++代码</h4>
+<pre style="line-height: 160%; box-sizing: content-box; border: 0; border-radius: 0; margin: 2px 0 8px; background-color: #f5f7f8;"><code style="display: block; overflow-x: auto; background: #1e1e1e; line-height: 160%; box-sizing: content-box; border: 0; border-radius: 0; letter-spacing: -.3px; padding: 18px; color: #f4f4f4; white-space: pre-wrap;">xcrun -sdk iphoneos/iphonesimulator10.3 clang -arch arm64 -rewrite-objc file_name.m -o file_name.cpp
+
+</code></pre>
+<h4 style="line-height: 160%; box-sizing: content-box; font-size: 20px; color: #333;">3.支持ARC、指定运行时系统版本</h4>
+<pre style="line-height: 160%; box-sizing: content-box; border: 0; border-radius: 0; margin: 2px 0 8px; background-color: #f5f7f8;"><code style="display: block; overflow-x: auto; background: #1e1e1e; line-height: 160%; box-sizing: content-box; border: 0; border-radius: 0; letter-spacing: -.3px; padding: 18px; color: #f4f4f4; white-space: pre-wrap;">xcrun -sdk iphoneos/iphonesimulator10.3 clang -arch arm64 -rewrite-objc -fobjc-arc -fobjc-runtime=ios-8.0.0  file_name.m -o file_name.cpp
+
+</code></pre>
+<h4 style="line-height: 160%; box-sizing: content-box; font-size: 20px; color: #333;">4.NSObject的内存本质</h4>
+<pre style="line-height: 160%; box-sizing: content-box; border: 0; border-radius: 0; margin: 2px 0 8px; background-color: #f5f7f8;"><code style="display: block; overflow-x: auto; background: #1e1e1e; line-height: 160%; box-sizing: content-box; border: 0; border-radius: 0; letter-spacing: -.3px; padding: 18px; color: #f4f4f4; white-space: pre-wrap;">oc代码
+@interface NSObject {
+    Class isa;
+}
+@end
+
+</code></pre>
+<pre style="line-height: 160%; box-sizing: content-box; border: 0; border-radius: 0; margin: 2px 0 8px; background-color: #f5f7f8;"><code style="display: block; overflow-x: auto; background: #1e1e1e; line-height: 160%; box-sizing: content-box; border: 0; border-radius: 0; letter-spacing: -.3px; padding: 18px; color: #f4f4f4; white-space: pre-wrap;">c++代码
+struct NSObject_IMPL {
+    Class isa;
+};
+
+</code></pre>
+<h4 style="line-height: 160%; box-sizing: content-box; font-size: 20px; color: #333;">5.自定义类的内存</h4>
+<pre style="line-height: 160%; box-sizing: content-box; border: 0; border-radius: 0; margin: 2px 0 8px; background-color: #f5f7f8;"><code style="display: block; overflow-x: auto; background: #1e1e1e; line-height: 160%; box-sizing: content-box; border: 0; border-radius: 0; letter-spacing: -.3px; padding: 18px; color: #f4f4f4; white-space: pre-wrap;">struct Student_IMPL {
+    Class isa;
+    int _no;
+    int _age;
+};
+
+</code></pre>
+<pre style="line-height: 160%; box-sizing: content-box; border: 0; border-radius: 0; margin: 2px 0 8px; background-color: #f5f7f8;"><code style="display: block; overflow-x: auto; background: #1e1e1e; line-height: 160%; box-sizing: content-box; border: 0; border-radius: 0; letter-spacing: -.3px; padding: 18px; color: #f4f4f4; white-space: pre-wrap;">验证：
+        Student *stu = [[Student alloc] init];
+        stu-&gt;_no = 4;
+        stu-&gt;_age = 5;
+        
+        struct Student_IMPL *stuImpl = (__bridge struct Student_IMPL *)(stu);
+        NSLog(@"[sutImpl]:_no=%d,_age=%d",stuImpl-&gt;_no,stuImpl-&gt;_age);
+        
+// output:[sutImpl]:_no=4,_age=5
+
+</code></pre>
+<h4 style="line-height: 160%; box-sizing: content-box; font-size: 20px; color: #333;">6.获取对象占用空间的api</h4>
+<pre style="line-height: 160%; box-sizing: content-box; border: 0; border-radius: 0; margin: 2px 0 8px; background-color: #f5f7f8;"><code style="display: block; overflow-x: auto; background: #1e1e1e; line-height: 160%; box-sizing: content-box; border: 0; border-radius: 0; letter-spacing: -.3px; padding: 18px; color: #f4f4f4; white-space: pre-wrap;">size_t size = class_getInstanceSize([Student class]);
+NSLog(@"%zu",size);//16
+</code></pre>
+<h4 style="line-height: 160%; box-sizing: content-box; font-size: 20px; color: #333;">7.窥探内存结构</h4>
+<p style="line-height: 160%; box-sizing: content-box; margin: 10px 0; color: #333;"><img src="1.Objective-C%E7%9A%84%E6%9C%AC%E8%B4%A8.resources/%E7%AA%A5%E6%8E%A2%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84.gif" height="818" width="1416"/><br/>
+<img src="1.Objective-C%E7%9A%84%E6%9C%AC%E8%B4%A8.resources/%E5%86%85%E5%AD%98%E5%9C%B0%E5%9D%80_1.png" height="1754" width="2800"/></p>
+<pre style="line-height: 160%; box-sizing: content-box; border: 0; border-radius: 0; margin: 2px 0 8px; background-color: #f5f7f8;"><code style="display: block; overflow-x: auto; background: #1e1e1e; line-height: 160%; box-sizing: content-box; border: 0; border-radius: 0; letter-spacing: -.3px; padding: 18px; color: #f4f4f4; white-space: pre-wrap;">小端模式：低地址存放高位
+ox 00 00 00 04  == 4 
+ox 00 00 00 05  == 5
+
+</code></pre>
+<h4 style="line-height: 160%; box-sizing: content-box; font-size: 20px; color: #333;">8.判断机器的字节序</h4>
+<pre style="line-height: 160%; box-sizing: content-box; border: 0; border-radius: 0; margin: 2px 0 8px; background-color: #f5f7f8;"><code style="display: block; overflow-x: auto; background: #1e1e1e; line-height: 160%; box-sizing: content-box; border: 0; border-radius: 0; letter-spacing: -.3px; padding: 18px; color: #f4f4f4; white-space: pre-wrap;">BOOL IsBigEndian(){
+    
+    int a = 0x1234;
+    char b =  *(char *)&amp;a;  //通过将int强制类型转换成char单字节，通过判断起始存储位置。即等于 取b等于a的低地址部分
+    if( b == 0x12)
+    {
+        return TRUE;
+    }
+    return FALSE;
+}
+
+</code></pre>
+<h4 style="line-height: 160%; box-sizing: content-box; font-size: 20px; color: #333;">9.常用LLDB指令</h4>
+<ul style="line-height: 160%; box-sizing: content-box; display: block; list-style-type: disc; padding-left: 30px; margin: 6px 0 10px; color: #333;">
+<li style="line-height: 160%; box-sizing: content-box; position: relative;">
+<p style="line-height: 160%; box-sizing: content-box; color: #333; margin: 0;">print/p 打印</p>
+</li>
+<li style="line-height: 160%; box-sizing: content-box; position: relative;">
+<p style="line-height: 160%; box-sizing: content-box; color: #333; margin: 0;">po 打印对象</p>
+</li>
+<li style="line-height: 160%; box-sizing: content-box; position: relative;">
+<p style="line-height: 160%; box-sizing: content-box; color: #333; margin: 0;">memory read/数量格式字节数 内存地址</p>
+<p style="line-height: 160%; box-sizing: content-box; color: #333; margin: 0;">格式：x是16进制，f是浮点，d是10进制</p>
+</li>
+<li style="line-height: 160%; box-sizing: content-box; position: relative;">
+<p style="line-height: 160%; box-sizing: content-box; color: #333; margin: 0;">x/数量格式字节数 内存地址<br/>
+字节大小： b:byte 1字节，h:half word 2字节<br/>
+w:word 4字节，g:giant word 8字节</p>
+</li>
+<li style="line-height: 160%; box-sizing: content-box; position: relative;">
+<p style="line-height: 160%; box-sizing: content-box; color: #333; margin: 0;">列子： x/4xw 0x102006870</p>
+</li>
+</ul>
+<h4 style="line-height: 160%; box-sizing: content-box; font-size: 20px; color: #333;">10.面试题</h4>
+<ul style="line-height: 160%; box-sizing: content-box; display: block; list-style-type: disc; padding-left: 30px; margin: 6px 0 10px; color: #333;">
+<li style="line-height: 160%; box-sizing: content-box; position: relative;">一个NSObject对象占用多少内存？<br/>
+一个指针变量所占用的大小（64bit,8个字节。32bit,4个字节）</li>
+</ul>
+</div><center style="display:none !important;visibility:collapse !important;height:0 !important;white-space:nowrap;width:100%;overflow:hidden">%23%23%23%23%201.%E5%B0%86Objective-C%E4%BB%A3%E7%A0%81%E8%BD%AC%E6%8D%A2%E4%B8%BAC%5CC%2B%2B%E4%BB%A3%E7%A0%81%0A%0A%60%60%60%0Aclang%20-rewrite-objc%20file_name.m%20-o%20file_name.cpp%0A%0A%60%60%60%0A%23%23%23%23%202.%E6%8C%87%E5%AE%9A%E8%AE%BE%E5%A4%87%2F%E6%9E%B6%E6%9E%84%2FSDK%E7%89%88%E6%9C%AC%E5%B0%86Objective-C%E4%BB%A3%E7%A0%81%E8%BD%AC%E6%8D%A2%E4%B8%BAC%5CC%2B%2B%E4%BB%A3%E7%A0%81%0A%0A%60%60%60%0Axcrun%20-sdk%20iphoneos%2Fiphonesimulator10.3%20clang%20-arch%20arm64%20-rewrite-objc%20file_name.m%20-o%20file_name.cpp%0A%0A%60%60%60%0A%0A%23%23%23%23%203.%E6%94%AF%E6%8C%81ARC%E3%80%81%E6%8C%87%E5%AE%9A%E8%BF%90%E8%A1%8C%E6%97%B6%E7%B3%BB%E7%BB%9F%E7%89%88%E6%9C%AC%0A%60%60%60%0Axcrun%20-sdk%20iphoneos%2Fiphonesimulator10.3%20clang%20-arch%20arm64%20-rewrite-objc%20-fobjc-arc%20-fobjc-runtime%3Dios-8.0.0%20%20file_name.m%20-o%20file_name.cpp%0A%0A%60%60%60%0A%0A%23%23%23%23%204.NSObject%E7%9A%84%E5%86%85%E5%AD%98%E6%9C%AC%E8%B4%A8%0A%0A%60%60%60%0Aoc%E4%BB%A3%E7%A0%81%0A%40interface%20NSObject%20%7B%0A%20%20%20%20Class%20isa%3B%0A%7D%0A%40end%0A%0A%60%60%60%0A%0A%0A%60%60%60%0Ac%2B%2B%E4%BB%A3%E7%A0%81%0Astruct%20NSObject_IMPL%20%7B%0A%20%20%20%20Class%20isa%3B%0A%7D%3B%0A%0A%60%60%60%0A%0A%23%23%23%23%205.%E8%87%AA%E5%AE%9A%E4%B9%89%E7%B1%BB%E7%9A%84%E5%86%85%E5%AD%98%0A%0A%60%60%60%0Astruct%20Student_IMPL%20%7B%0A%20%20%20%20Class%20isa%3B%0A%20%20%20%20int%20_no%3B%0A%20%20%20%20int%20_age%3B%0A%7D%3B%0A%0A%60%60%60%0A%0A%60%60%60%0A%E9%AA%8C%E8%AF%81%EF%BC%9A%0A%20%20%20%20%20%20%20%20Student%20*stu%20%3D%20%5B%5BStudent%20alloc%5D%20init%5D%3B%0A%20%20%20%20%20%20%20%20stu-%3E_no%20%3D%204%3B%0A%20%20%20%20%20%20%20%20stu-%3E_age%20%3D%205%3B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20struct%20Student_IMPL%20*stuImpl%20%3D%20(__bridge%20struct%20Student_IMPL%20*)(stu)%3B%0A%20%20%20%20%20%20%20%20NSLog(%40%22%5BsutImpl%5D%3A_no%3D%25d%2C_age%3D%25d%22%2CstuImpl-%3E_no%2CstuImpl-%3E_age)%3B%0A%20%20%20%20%20%20%20%20%0A%2F%2F%20output%3A%5BsutImpl%5D%3A_no%3D4%2C_age%3D5%0A%0A%60%60%60%0A%0A%0A%23%23%23%23%206.%E8%8E%B7%E5%8F%96%E5%AF%B9%E8%B1%A1%E5%8D%A0%E7%94%A8%E7%A9%BA%E9%97%B4%E7%9A%84api%0A%0A%60%60%60%0Asize_t%20size%20%3D%20class_getInstanceSize(%5BStudent%20class%5D)%3B%0ANSLog(%40%22%25zu%22%2Csize)%3B%2F%2F16%0A%60%60%60%0A%0A%23%23%23%23%207.%E7%AA%A5%E6%8E%A2%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84%0A%0A!%5Bd01df37369d445531d522afc0cf497f7.gif%5D(evernotecid%3A%2F%2FCFE27DEA-507B-4F51-A112-35468FF833F4%2Fappyinxiangcom%2F21790515%2FENResource%2Fp2662)%0A!%5Ba66230c06ccec944fb4fb7c1e144183e.png%5D(evernotecid%3A%2F%2FCFE27DEA-507B-4F51-A112-35468FF833F4%2Fappyinxiangcom%2F21790515%2FENResource%2Fp2693)%0A%0A%0A%0A%60%60%60%0A%E5%B0%8F%E7%AB%AF%E6%A8%A1%E5%BC%8F%EF%BC%9A%E4%BD%8E%E5%9C%B0%E5%9D%80%E5%AD%98%E6%94%BE%E9%AB%98%E4%BD%8D%0Aox%2000%2000%2000%2004%20%20%3D%3D%204%20%0Aox%2000%2000%2000%2005%20%20%3D%3D%205%0A%0A%60%60%60%0A%0A%23%23%23%23%208.%E5%88%A4%E6%96%AD%E6%9C%BA%E5%99%A8%E7%9A%84%E5%AD%97%E8%8A%82%E5%BA%8F%0A%0A%60%60%60%0ABOOL%20IsBigEndian()%7B%0A%20%20%20%20%0A%20%20%20%20int%20a%20%3D%200x1234%3B%0A%20%20%20%20char%20b%20%3D%20%20*(char%20*)%26a%3B%20%20%2F%2F%E9%80%9A%E8%BF%87%E5%B0%86int%E5%BC%BA%E5%88%B6%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E6%88%90char%E5%8D%95%E5%AD%97%E8%8A%82%EF%BC%8C%E9%80%9A%E8%BF%87%E5%88%A4%E6%96%AD%E8%B5%B7%E5%A7%8B%E5%AD%98%E5%82%A8%E4%BD%8D%E7%BD%AE%E3%80%82%E5%8D%B3%E7%AD%89%E4%BA%8E%20%E5%8F%96b%E7%AD%89%E4%BA%8Ea%E7%9A%84%E4%BD%8E%E5%9C%B0%E5%9D%80%E9%83%A8%E5%88%86%0A%20%20%20%20if(%20b%20%3D%3D%200x12)%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20return%20TRUE%3B%0A%20%20%20%20%7D%0A%20%20%20%20return%20FALSE%3B%0A%7D%0A%0A%60%60%60%0A%0A%23%23%23%23%209.%E5%B8%B8%E7%94%A8LLDB%E6%8C%87%E4%BB%A4%0A%0A*%20print%2Fp%20%E6%89%93%E5%8D%B0%0A%0A*%20po%20%E6%89%93%E5%8D%B0%E5%AF%B9%E8%B1%A1%0A%0A*%20memory%20read%2F%E6%95%B0%E9%87%8F%E6%A0%BC%E5%BC%8F%E5%AD%97%E8%8A%82%E6%95%B0%20%E5%86%85%E5%AD%98%E5%9C%B0%E5%9D%80%0A%0A%20%20%E6%A0%BC%E5%BC%8F%EF%BC%9Ax%E6%98%AF16%E8%BF%9B%E5%88%B6%EF%BC%8Cf%E6%98%AF%E6%B5%AE%E7%82%B9%EF%BC%8Cd%E6%98%AF10%E8%BF%9B%E5%88%B6%0A%0A*%20x%2F%E6%95%B0%E9%87%8F%E6%A0%BC%E5%BC%8F%E5%AD%97%E8%8A%82%E6%95%B0%20%E5%86%85%E5%AD%98%E5%9C%B0%E5%9D%80%0A%20%20%E5%AD%97%E8%8A%82%E5%A4%A7%E5%B0%8F%EF%BC%9A%20b%3Abyte%201%E5%AD%97%E8%8A%82%EF%BC%8Ch%3Ahalf%20word%202%E5%AD%97%E8%8A%82%0A%20%20%20%20%20%20%20%20%20w%3Aword%204%E5%AD%97%E8%8A%82%EF%BC%8Cg%3Agiant%20word%208%E5%AD%97%E8%8A%82%0A*%20%E5%88%97%E5%AD%90%EF%BC%9A%20x%2F4xw%200x102006870%0A%0A%0A%23%23%23%23%2010.%E9%9D%A2%E8%AF%95%E9%A2%98%0A%0A*%20%E4%B8%80%E4%B8%AANSObject%E5%AF%B9%E8%B1%A1%E5%8D%A0%E7%94%A8%E5%A4%9A%E5%B0%91%E5%86%85%E5%AD%98%EF%BC%9F%0A%20%20%E4%B8%80%E4%B8%AA%E6%8C%87%E9%92%88%E5%8F%98%E9%87%8F%E6%89%80%E5%8D%A0%E7%94%A8%E7%9A%84%E5%A4%A7%E5%B0%8F%EF%BC%8864bit%2C8%E4%B8%AA%E5%AD%97%E8%8A%82%E3%80%8232bit%2C4%E4%B8%AA%E5%AD%97%E8%8A%82%EF%BC%89</center></body></html>
