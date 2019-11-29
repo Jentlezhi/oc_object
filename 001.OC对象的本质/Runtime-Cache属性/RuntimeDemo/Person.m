@@ -25,9 +25,9 @@
 
 @implementation Person
 
-- (void)test {
+- (void)personTest {
     
-    NSLog(@"test");
+    NSLog(@"%s",__func__);
 }
 
 @end

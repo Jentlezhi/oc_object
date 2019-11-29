@@ -20,7 +20,7 @@
 #if __LP64__
 typedef uint32_t mask_t;
 #else
-typedef uint16_t mask_t;
+typedef* uint16_t mask_t;
 #endif
 typedef uintptr_t cache_key_t;
 
