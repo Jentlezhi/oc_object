@@ -54,6 +54,7 @@ struct cache_t {
     mask_t _mask;
     mask_t _occupied;
     
+    ///根据selector返回方法的实现
     IMP imp(SEL selector)
     {
         mask_t begin = _mask & (long long)selector;
