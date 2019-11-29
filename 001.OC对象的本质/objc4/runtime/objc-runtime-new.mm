@@ -4714,6 +4714,7 @@ IMP lookUpImpOrForward(Class cls, SEL sel, id inst,
     // Try superclass caches and method lists.
 
     curClass = cls;
+    ///去父类中查找，一层一层查找。
     while ((curClass = curClass->superclass)) {
         // Superclass cache.
         imp = cache_getImp(curClass, sel);
