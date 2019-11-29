@@ -37769,6 +37769,9 @@ int main(int argc, const char * argv[]) {
 
 void funCall(void) {
     Person *p = ((Person *(*)(id, SEL))(void *)objc_msgSend)((id)((Person *(*)(id, SEL))(void *)objc_msgSend)((id)objc_getClass("Person"), sel_registerName("alloc")), sel_registerName("init"));
-    ((void (*)(id, SEL))(void *)objc_msgSend)((id)p, sel_registerName("personTest"));
+    ///方法调用
+    //((void (*)(id, SEL))(void *)objc_msgSend)((id)p, sel_registerName("personTest"));
+    objc_msgSend((p, sel_registerName("personTest"));
+                 
 }
 static struct IMAGE_INFO { unsigned version; unsigned flag; } _OBJC_IMAGE_INFO = { 0, 2 };
