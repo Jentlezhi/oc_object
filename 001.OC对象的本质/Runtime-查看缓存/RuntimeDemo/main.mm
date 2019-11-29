@@ -12,19 +12,17 @@
 #import "MJClassInfo.h"
 
 
-void(cacheMember)(void);
-
-void(cacheMember)(void);
+void cacheMember(void);
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         
-        
+        cacheMember();
     }
     return 0;
 }
 
-void(cacheMember)() {
+void cacheMember() {
     
     Student *stu = [[Student alloc] init];
     mj_objc_class *studentClass = (__bridge mj_objc_class *)[Student class];
