@@ -16,9 +16,9 @@ void(encode)(void);
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        Person *p = [[Person alloc] init];
-        [p personTest];
-        mj_objc_class *personClass = (__bridge mj_objc_class *)[Person class];
+//        Person *p = [[Person alloc] init];
+//        [p personTest];
+//        mj_objc_class *personClass = (__bridge mj_objc_class *)[Person class];
         Student *s = [[Student alloc] init];
         mj_objc_class *stuClass = (__bridge mj_objc_class *)[Student class];
         [s studentTest];
