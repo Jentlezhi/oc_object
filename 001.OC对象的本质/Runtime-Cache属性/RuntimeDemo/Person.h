@@ -11,12 +11,9 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface Person : NSObject
-//v20@0:8c16
-@property(assign, nonatomic, getter=isTall) BOOL tall;
-@property(assign, nonatomic, getter=isRich) BOOL rich;
-@property(assign, nonatomic, getter=isHandsome) BOOL handsome;
 
-- (void)test;
+
+- (void)personTest;
 
 @end
 
