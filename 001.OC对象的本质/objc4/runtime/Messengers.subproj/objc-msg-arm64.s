@@ -134,7 +134,7 @@ _gdb_objc_messenger_breakpoints:
  * STATIC_ENTRY functionName
  * END_ENTRY functionName
  ********************************************************************/
-
+///ENTRY是个宏
 .macro ENTRY /* name */
 	.text
 	.align 5
