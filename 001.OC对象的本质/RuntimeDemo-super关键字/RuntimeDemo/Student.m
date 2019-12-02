@@ -40,8 +40,6 @@ struct objc_super {
     /*
      ((void (*)(__rw_objc_super *, SEL))(void *)objc_msgSendSuper)((__rw_objc_super){(id)self, (id)class_getSuperclass(objc_getClass("Student"))}, sel_registerName("run"));
      */
-    
-    
     NSLog(@"%s", __func__);
 }
 
