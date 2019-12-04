@@ -26,6 +26,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8C1553332391080C004936D3 /* main_initialize.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main_initialize.cpp; sourceTree = "<group>"; };
 		8C47204A2390850E00980052 /* Student.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
 		8C47204B2390850E00980052 /* Student.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
 		8C9E80ED238BD9D600A97CE7 /* RuntimeDemo */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RuntimeDemo; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,6 +73,7 @@
 				8C9E80F7238BDA1400A97CE7 /* Person.h */,
 				8C9E80F8238BDA1400A97CE7 /* Person.m */,
 				8CEC8748239102750079D3DC /* main.cpp */,
+				8C1553332391080C004936D3 /* main_initialize.cpp */,
 				8CEC87462391025D0079D3DC /* main.mm */,
 				8C47204A2390850E00980052 /* Student.h */,
 				8C47204B2390850E00980052 /* Student.m */,

@@ -25,6 +25,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8C15533423974705004936D3 /* Person.ll */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.asm.llvm; path = Person.ll; sourceTree = "<group>"; };
 		8CE50D522396B784003C1A0A /* RuntimeDemo-LLVM */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "RuntimeDemo-LLVM"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CE50D552396B784003C1A0A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8CE50D5C2396B79C003C1A0A /* Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
@@ -70,6 +71,7 @@
 				8CE50D5C2396B79C003C1A0A /* Person.h */,
 				8CE50D5D2396B79C003C1A0A /* Person.m */,
 				8CE50D6223972447003C1A0A /* Person_Assemble.h */,
+				8C15533423974705004936D3 /* Person.ll */,
 			);
 			path = "RuntimeDemo-LLVM";
 			sourceTree = "<group>";
