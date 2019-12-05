@@ -31,7 +31,6 @@ int main(int argc, const char * argv[]) {
         NSLog(@"------------------------------");
         GoodStudent *gStu = [GoodStudent cxt_objectWithJson:json];
         NSLog(@"name:%@ weight:%d age:%d no:%ld rank:%d",gStu.name, gStu.weight,gStu.age,(long)gStu.no,gStu.rank);
-        NSLog(@"name:%@ weight:%d age:%d no:%ld",s.name, s.weight,s.age,s.no);
     }
     return 0;
 }
