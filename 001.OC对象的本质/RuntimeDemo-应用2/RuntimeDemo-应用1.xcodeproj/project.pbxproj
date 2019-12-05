@@ -8,11 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		8C15534223974A0F004936D3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C15534123974A0F004936D3 /* main.m */; };
-		8C15534A23974A77004936D3 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C15534923974A77004936D3 /* Person.m */; };
-		8C15534D23974A95004936D3 /* Car.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C15534C23974A95004936D3 /* Car.m */; };
 		8C155391239794B4004936D3 /* NSObject+Json.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C155390239794B4004936D3 /* NSObject+Json.m */; };
-		8C15539423979A31004936D3 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C15539323979A31004936D3 /* Student.m */; };
 		8C449F6B23987B3200A59AD7 /* GoodStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C449F6A23987B3200A59AD7 /* GoodStudent.m */; };
+		8CACC67F239908C800B3464E /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CACC675239908C700B3464E /* Person.m */; };
+		8CACC680239908C800B3464E /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CACC67A239908C800B3464E /* Student.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -30,16 +29,14 @@
 /* Begin PBXFileReference section */
 		8C15533E23974A0F004936D3 /* RuntimeDemo-应用1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "RuntimeDemo-应用1"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C15534123974A0F004936D3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		8C15534823974A77004936D3 /* Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
-		8C15534923974A77004936D3 /* Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
-		8C15534B23974A95004936D3 /* Car.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Car.h; sourceTree = "<group>"; };
-		8C15534C23974A95004936D3 /* Car.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Car.m; sourceTree = "<group>"; };
 		8C15538F239794B4004936D3 /* NSObject+Json.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+Json.h"; sourceTree = "<group>"; };
 		8C155390239794B4004936D3 /* NSObject+Json.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Json.m"; sourceTree = "<group>"; };
-		8C15539223979A31004936D3 /* Student.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
-		8C15539323979A31004936D3 /* Student.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
 		8C449F6923987B3200A59AD7 /* GoodStudent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GoodStudent.h; sourceTree = "<group>"; };
 		8C449F6A23987B3200A59AD7 /* GoodStudent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GoodStudent.m; sourceTree = "<group>"; };
+		8CACC675239908C700B3464E /* Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		8CACC676239908C700B3464E /* Student.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
+		8CACC679239908C800B3464E /* Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		8CACC67A239908C800B3464E /* Student.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,15 +69,13 @@
 		8C15534023974A0F004936D3 /* RuntimeDemo-应用1 */ = {
 			isa = PBXGroup;
 			children = (
+				8CACC679239908C800B3464E /* Person.h */,
+				8CACC675239908C700B3464E /* Person.m */,
+				8CACC676239908C700B3464E /* Student.h */,
+				8CACC67A239908C800B3464E /* Student.m */,
 				8C15534123974A0F004936D3 /* main.m */,
-				8C15534823974A77004936D3 /* Person.h */,
-				8C15534923974A77004936D3 /* Person.m */,
-				8C15534B23974A95004936D3 /* Car.h */,
-				8C15534C23974A95004936D3 /* Car.m */,
 				8C15538F239794B4004936D3 /* NSObject+Json.h */,
 				8C155390239794B4004936D3 /* NSObject+Json.m */,
-				8C15539223979A31004936D3 /* Student.h */,
-				8C15539323979A31004936D3 /* Student.m */,
 				8C449F6923987B3200A59AD7 /* GoodStudent.h */,
 				8C449F6A23987B3200A59AD7 /* GoodStudent.m */,
 			);
@@ -144,12 +139,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C15534D23974A95004936D3 /* Car.m in Sources */,
-				8C15534A23974A77004936D3 /* Person.m in Sources */,
-				8C15539423979A31004936D3 /* Student.m in Sources */,
 				8C15534223974A0F004936D3 /* main.m in Sources */,
 				8C449F6B23987B3200A59AD7 /* GoodStudent.m in Sources */,
 				8C155391239794B4004936D3 /* NSObject+Json.m in Sources */,
+				8CACC680239908C800B3464E /* Student.m in Sources */,
+				8CACC67F239908C800B3464E /* Person.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
