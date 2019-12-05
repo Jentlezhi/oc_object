@@ -31,7 +31,8 @@
     
     id obj = [[self alloc] init];
     Class target = self;
-    ///class_copyIvarList只能获取当前的成员变量，不能获取父类的，所以用while循环一层一层开始取成员变量。
+    ///class_copyIvarList只能获取当前的成员变量，
+    ///不能获取父类的，所以用while循环一层一层开始取成员变量。
     do {
         unsigned int outCount;
         Ivar *ivars = class_copyIvarList(target , &outCount);

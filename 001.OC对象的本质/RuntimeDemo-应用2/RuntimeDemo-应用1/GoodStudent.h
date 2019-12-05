@@ -12,7 +12,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface GoodStudent : Student
 
-/// 排名
 @property(assign, nonatomic) int rank;
 
 @end

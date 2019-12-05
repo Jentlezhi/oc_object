@@ -20,16 +20,17 @@ int main(int argc, const char * argv[]) {
         NSDictionary *json = @{@"name":@"Jentle",
                                @"weight":@180,
                                @"age":@18,
+                               @"no":@10087,
                                @"rank":@1
         };
         Person *p = [Person cxt_objectWithJson:json];
         NSLog(@"name:%@ weight:%d age:%d",p.name, p.weight,p.age);
         NSLog(@"----------------------");
         Student *s = [Student cxt_objectWithJson:json];
-        NSLog(@"name:%@ weight:%d age:%d no:%ld",s.name, s.weight,s.age,s.no);
-        NSLog(@"----------------------");
-        GoodStudent *gs = [GoodStudent cxt_objectWithJson:json];
-        NSLog(@"name:%@ weight:%d age:%d no:%ld rank:%d",gs.name, gs.weight,gs.age,gs.no,gs.rank);
+        NSLog(@"name:%@ weight:%d age:%d no:%ld",s.name, s.weight,s.age,(long)s.no);
+        NSLog(@"------------------------------");
+        GoodStudent *gStu = [GoodStudent cxt_objectWithJson:json];
+        NSLog(@"name:%@ weight:%d age:%d no:%ld rank:%d",gStu.name, gStu.weight,gStu.age,(long)gStu.no,gStu.rank);
     }
     return 0;
 }
