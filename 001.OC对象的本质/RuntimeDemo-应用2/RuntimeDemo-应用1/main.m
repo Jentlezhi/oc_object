@@ -12,16 +12,19 @@
 #import <objc/message.h>
 #import "NSObject+Json.h"
 #import "Student.h"
+#import "GoodStudent.h"
 
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         NSDictionary *json = @{@"name":@"Jentle",
                                @"weight":@180,
-                               @"age":@18
+                               @"age":@18,
+                               @"rank":@1
         };
-//        Person *p = [Person cxt_objectWithJson:json];
-//        NSLog(@"name:%@ weight:%d age:%d",p.name, p.weight,p.age);
+        Person *p = [Person cxt_objectWithJson:json];
+        NSLog(@"name:%@ weight:%d age:%d",p.name, p.weight,p.age);
+        NSLog(@"----------------------");
         Student *s = [Student cxt_objectWithJson:json];
         NSLog(@"name:%@ weight:%d age:%d",s.name, s.weight,s.age);
         

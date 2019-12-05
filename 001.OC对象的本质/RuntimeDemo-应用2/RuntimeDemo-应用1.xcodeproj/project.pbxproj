@@ -9,9 +9,9 @@
 /* Begin PBXBuildFile section */
 		8C15534223974A0F004936D3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C15534123974A0F004936D3 /* main.m */; };
 		8C15534A23974A77004936D3 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C15534923974A77004936D3 /* Person.m */; };
-		8C15534D23974A95004936D3 /* Car.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C15534C23974A95004936D3 /* Car.m */; };
 		8C155391239794B4004936D3 /* NSObject+Json.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C155390239794B4004936D3 /* NSObject+Json.m */; };
 		8C15539423979A31004936D3 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C15539323979A31004936D3 /* Student.m */; };
+		8C15539A23990244004936D3 /* GoodStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C15539923990244004936D3 /* GoodStudent.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,14 +29,14 @@
 /* Begin PBXFileReference section */
 		8C15533E23974A0F004936D3 /* RuntimeDemo-应用1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "RuntimeDemo-应用1"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C15534123974A0F004936D3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		8C15534823974A77004936D3 /* Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
-		8C15534923974A77004936D3 /* Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
-		8C15534B23974A95004936D3 /* Car.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Car.h; sourceTree = "<group>"; };
-		8C15534C23974A95004936D3 /* Car.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Car.m; sourceTree = "<group>"; };
-		8C15538F239794B4004936D3 /* NSObject+Json.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+Json.h"; sourceTree = "<group>"; };
-		8C155390239794B4004936D3 /* NSObject+Json.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Json.m"; sourceTree = "<group>"; };
-		8C15539223979A31004936D3 /* Student.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
-		8C15539323979A31004936D3 /* Student.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
+		8C15534823974A77004936D3 /* Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Person.h; path = "../../RuntimeDemo-应用1的副本/RuntimeDemo-应用1/Person.h"; sourceTree = "<group>"; };
+		8C15534923974A77004936D3 /* Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = Person.m; path = "../../RuntimeDemo-应用1的副本/RuntimeDemo-应用1/Person.m"; sourceTree = "<group>"; };
+		8C15538F239794B4004936D3 /* NSObject+Json.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "NSObject+Json.h"; path = "../../RuntimeDemo-应用1的副本/RuntimeDemo-应用1/NSObject+Json.h"; sourceTree = "<group>"; };
+		8C155390239794B4004936D3 /* NSObject+Json.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "NSObject+Json.m"; path = "../../RuntimeDemo-应用1的副本/RuntimeDemo-应用1/NSObject+Json.m"; sourceTree = "<group>"; };
+		8C15539223979A31004936D3 /* Student.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Student.h; path = "../../RuntimeDemo-应用1的副本/RuntimeDemo-应用1/Student.h"; sourceTree = "<group>"; };
+		8C15539323979A31004936D3 /* Student.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = Student.m; path = "../../RuntimeDemo-应用1的副本/RuntimeDemo-应用1/Student.m"; sourceTree = "<group>"; };
+		8C15539823990244004936D3 /* GoodStudent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GoodStudent.h; path = "../../RuntimeDemo-应用1的副本/RuntimeDemo-应用1/GoodStudent.h"; sourceTree = "<group>"; };
+		8C15539923990244004936D3 /* GoodStudent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = GoodStudent.m; path = "../../RuntimeDemo-应用1的副本/RuntimeDemo-应用1/GoodStudent.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,12 +72,12 @@
 				8C15534123974A0F004936D3 /* main.m */,
 				8C15534823974A77004936D3 /* Person.h */,
 				8C15534923974A77004936D3 /* Person.m */,
-				8C15534B23974A95004936D3 /* Car.h */,
-				8C15534C23974A95004936D3 /* Car.m */,
 				8C15538F239794B4004936D3 /* NSObject+Json.h */,
 				8C155390239794B4004936D3 /* NSObject+Json.m */,
 				8C15539223979A31004936D3 /* Student.h */,
 				8C15539323979A31004936D3 /* Student.m */,
+				8C15539823990244004936D3 /* GoodStudent.h */,
+				8C15539923990244004936D3 /* GoodStudent.m */,
 			);
 			path = "RuntimeDemo-应用1";
 			sourceTree = "<group>";
@@ -139,10 +139,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C15534D23974A95004936D3 /* Car.m in Sources */,
 				8C15534A23974A77004936D3 /* Person.m in Sources */,
 				8C15539423979A31004936D3 /* Student.m in Sources */,
 				8C15534223974A0F004936D3 /* main.m in Sources */,
+				8C15539A23990244004936D3 /* GoodStudent.m in Sources */,
 				8C155391239794B4004936D3 /* NSObject+Json.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

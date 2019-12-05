@@ -30,23 +30,23 @@
 + (instancetype)cxt_objectWithJson:(NSDictionary *)json {
     
     id obj = [[self alloc] init];
-    unsigned int outCount;
     Class target = self;
-    if([self superclass] != [NSObject class]){
-        target = [self superclass];
-        [[self superclass] cxt_objectWithJson:json];
-    }
-    Ivar *ivars = class_copyIvarList(target , &outCount);
-    for (int i = 0; i < outCount; i ++) {
-        Ivar ivar = ivars[i];
-        NSMutableString *name = [NSMutableString stringWithUTF8String:ivar_getName(ivar)];
-        ///移除首位的下划线
-        [name deleteCharactersInRange:NSMakeRange(0, 1)];
-        if (json[name]) {
-            [obj setValue:json[name] forKey:name];
+    ///class_copyIvarList只能获取当前的成员变量，不能获取父类的，所以用while循环一层一层开始取成员变量。
+    do {
+        unsigned int outCount;
+        Ivar *ivars = class_copyIvarList(target , &outCount);
+        for (int i = 0; i < outCount; i ++) {
+            Ivar ivar = ivars[i];
+            NSMutableString *name = [NSMutableString stringWithUTF8String:ivar_getName(ivar)];
+            ///移除首位的下划线
+            [name deleteCharactersInRange:NSMakeRange(0, 1)];
+            if (json[name]) {
+                [obj setValue:json[name] forKey:name];
+            }
         }
-    }
-    free(ivars);
+        free(ivars);
+        target = [target superclass];
+    } while (target != [NSObject class]);
     return obj;
 }
 
