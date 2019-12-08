@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C6F3159239C81EA0023A3D7 /* NSMutableDictionary+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C6F3158239C81EA0023A3D7 /* NSMutableDictionary+Extension.m */; };
 		8CC1524D239A307600ECC0CC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CC1524C239A307600ECC0CC /* AppDelegate.m */; };
 		8CC15250239A307600ECC0CC /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CC1524F239A307600ECC0CC /* SceneDelegate.m */; };
 		8CC15253239A307600ECC0CC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CC15252239A307600ECC0CC /* ViewController.m */; };
@@ -37,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8C6F3157239C81EA0023A3D7 /* NSMutableDictionary+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+Extension.h"; sourceTree = "<group>"; };
+		8C6F3158239C81EA0023A3D7 /* NSMutableDictionary+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+Extension.m"; sourceTree = "<group>"; };
 		8CC15248239A307600ECC0CC /* RuntimeAPIDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RuntimeAPIDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CC1524B239A307600ECC0CC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8CC1524C239A307600ECC0CC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -118,6 +121,8 @@
 				8CC15259239A307800ECC0CC /* LaunchScreen.storyboard */,
 				8CC1525C239A307800ECC0CC /* Info.plist */,
 				8CC1525D239A307800ECC0CC /* main.m */,
+				8C6F3157239C81EA0023A3D7 /* NSMutableDictionary+Extension.h */,
+				8C6F3158239C81EA0023A3D7 /* NSMutableDictionary+Extension.m */,
 				8CC15283239A3AB000ECC0CC /* NSMutableArray+Extension.h */,
 				8CC15284239A3AB000ECC0CC /* NSMutableArray+Extension.m */,
 			);
@@ -275,6 +280,7 @@
 				8CC15253239A307600ECC0CC /* ViewController.m in Sources */,
 				8CC1524D239A307600ECC0CC /* AppDelegate.m in Sources */,
 				8CC1525E239A307800ECC0CC /* main.m in Sources */,
+				8C6F3159239C81EA0023A3D7 /* NSMutableDictionary+Extension.m in Sources */,
 				8CC15250239A307600ECC0CC /* SceneDelegate.m in Sources */,
 				8CC15285239A3AB000ECC0CC /* NSMutableArray+Extension.m in Sources */,
 			);

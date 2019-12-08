@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface FruitFactory : NSObject
 
-+(Fruit *)createFruitWithName:(NSString *)fruitName;
++ (Fruit *)createFruitWithName:(NSString *)fruitName;
 
 @end
 
