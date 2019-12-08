@@ -91,6 +91,7 @@
 - (IBAction)dicGetItem:(id)sender {
     
     NSString *value = [self.mDict objectForKey:nil];
+    self.dicGetLabel.text = [NSString stringWithFormat:@"%@",value ? value : @"nil"];
 }
 
 @end
