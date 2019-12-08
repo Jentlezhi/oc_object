@@ -15,7 +15,7 @@
 
 @implementation FruitFactory
 
-+(Fruit *)createFruitWithName:(NSString *)fruitName{
++ (Fruit *)createFruitWithName:(NSString *)fruitName{
     Class class_ = NSClassFromString(fruitName);
     Fruit *theFruit = [(Fruit *)[class_ alloc] init];
     return theFruit;

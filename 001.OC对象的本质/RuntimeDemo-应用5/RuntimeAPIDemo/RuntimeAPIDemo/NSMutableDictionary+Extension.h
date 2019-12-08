@@ -1,20 +1,16 @@
 //
-//  FruitFactory.h
-//  FactoryDesignDemo
+//  NSMutableDictionary+Extension.h
+//  RuntimeAPIDemo
 //
 //  Created by Jentle on 2019/12/8.
 //  Copyright © 2019 Jentle. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-#import "Fruit.h"
-
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface FruitFactory : NSObject
-
-+ (Fruit *)createFruitWithName:(NSString *)fruitName;
+@interface NSMutableDictionary (Extension)
 
 @end
 
