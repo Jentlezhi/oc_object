@@ -24,7 +24,7 @@
 - (void)timer {
     
     [NSTimer scheduledTimerWithTimeInterval:3.0 repeats:NO block:^(NSTimer * _Nonnull timer) {
-        NSLog(@"NSTimer");
+        NSLog(@"timer block");
         /*
          (lldb) bt
          * thread #1, queue = 'com.apple.main-thread', stop reason = breakpoint 2.1
@@ -49,6 +49,7 @@
     
     ///此处打断点，然后查看方法调用堆栈（或lldb指令bt 查看）
     NSLog(@"touchesBegan");
+    [self timer];
     /*
      (lldb) bt
      * thread #1, queue = 'com.apple.main-thread', stop reason = breakpoint 2.1
@@ -93,12 +94,13 @@ void runLoopObserverCallBack(CFRunLoopObserverRef observer, CFRunLoopActivity ac
 void runLoopWithActivityType(CFRunLoopActivity activity){
     
     /*
-     kCFRunLoopEntry = (1UL << 0),
-     kCFRunLoopBeforeTimers = (1UL << 1),
-     kCFRunLoopBeforeSources = (1UL << 2),
-     kCFRunLoopBeforeWaiting = (1UL << 5),
-     kCFRunLoopAfterWaiting = (1UL << 6),
-     kCFRunLoopExit = (1UL << 7),
+     kCFRunLoopEntry = (1UL << 0),         // 进入RunLoop
+     kCFRunLoopBeforeTimers = (1UL << 1),  // 即将开始Timer处理
+     kCFRunLoopBeforeSources = (1UL << 2), // 即将开始Source处理
+     kCFRunLoopBeforeWaiting = (1UL << 5), // 即将进入休眠
+     kCFRunLoopAfterWaiting = (1UL << 6),  // 从休眠状态唤醒
+     kCFRunLoopExit = (1UL << 7), //退出RunLoop
+     kCFRunLoopAllActivities = 0x0FFFFFFFU
      */
     switch (activity) {
         case kCFRunLoopEntry:
