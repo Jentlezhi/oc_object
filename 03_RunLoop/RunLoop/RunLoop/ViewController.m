@@ -16,7 +16,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self addRunLoopObserve];
+
+}
+
+
+- (void)timer {
+    
     [NSTimer scheduledTimerWithTimeInterval:3.0 repeats:NO block:^(NSTimer * _Nonnull timer) {
         NSLog(@"NSTimer");
         /*
@@ -34,7 +40,7 @@
          frame #9: 0x000000010105e760 RunLoop`main(argc=1, argv=0x00007ffeeeba0f78) at main.m:14:16
          frame #10: 0x0000000103c76541 libdyld.dylib`start + 1
          frame #11: 0x0000000103c76541 libdyld.dylib`start + 1
-         (lldb) 
+         (lldb)
          */
     }];
 }
@@ -66,7 +72,53 @@
      frame #16: 0x000000010f191541 libdyld.dylib`start + 1
      (lldb)
      */
+}
+
+- (void)addRunLoopObserve {
     
+
+    //    CFRunLoopObserverRef observe = CFRunLoopObserverCreate(kCFAllocatorDefault, kCFRunLoopAllActivities, YES, 0, runLoopObserverCallBack, NULL);
+    CFRunLoopObserverRef observe = CFRunLoopObserverCreateWithHandler(kCFAllocatorDefault, kCFRunLoopAllActivities, YES, 0, ^(CFRunLoopObserverRef observer, CFRunLoopActivity activity) {
+        runLoopWithActivityType(activity);
+    });
+    CFRunLoopAddObserver(CFRunLoopGetMain(), observe, kCFRunLoopCommonModes);
+    CFRelease(observe);
+}
+
+void runLoopObserverCallBack(CFRunLoopObserverRef observer, CFRunLoopActivity activity, void *info){
+    
+    runLoopWithActivityType(activity);
+}
+
+void runLoopWithActivityType(CFRunLoopActivity activity){
+    
+    /*
+     kCFRunLoopEntry = (1UL << 0),
+     kCFRunLoopBeforeTimers = (1UL << 1),
+     kCFRunLoopBeforeSources = (1UL << 2),
+     kCFRunLoopBeforeWaiting = (1UL << 5),
+     kCFRunLoopAfterWaiting = (1UL << 6),
+     kCFRunLoopExit = (1UL << 7),
+     */
+    switch (activity) {
+        case kCFRunLoopEntry:
+            NSLog(@"kCFRunLoopEntry");
+            break;
+        case kCFRunLoopBeforeTimers:
+            NSLog(@"kCFRunLoopBeforeTimers");
+            break;
+        case kCFRunLoopBeforeSources:
+            NSLog(@"kCFRunLoopBeforeSources");
+            break;
+        case kCFRunLoopBeforeWaiting:
+            NSLog(@"kCFRunLoopBeforeWaiting");
+            break;
+        case kCFRunLoopExit:
+            NSLog(@"kCFRunLoopExit");
+            break;
+        default:
+            break;
+    }
 }
 
 
