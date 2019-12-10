@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C3BD48A239F67D900EAFEDE /* MyThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C3BD489239F67D900EAFEDE /* MyThread.m */; };
 		8CFB08AE2344B82B004C9B85 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CFB08AD2344B82B004C9B85 /* AppDelegate.m */; };
 		8CFB08B12344B82B004C9B85 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CFB08B02344B82B004C9B85 /* ViewController.m */; };
 		8CFB08B42344B82B004C9B85 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CFB08B22344B82B004C9B85 /* Main.storyboard */; };
@@ -35,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8C3BD488239F67D900EAFEDE /* MyThread.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyThread.h; sourceTree = "<group>"; };
+		8C3BD489239F67D900EAFEDE /* MyThread.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyThread.m; sourceTree = "<group>"; };
 		8CFB08A92344B82B004C9B85 /* RunLoop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RunLoop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CFB08AC2344B82B004C9B85 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8CFB08AD2344B82B004C9B85 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -110,6 +113,8 @@
 				8CFB08B72344B82C004C9B85 /* LaunchScreen.storyboard */,
 				8CFB08BA2344B82C004C9B85 /* Info.plist */,
 				8CFB08BB2344B82C004C9B85 /* main.m */,
+				8C3BD488239F67D900EAFEDE /* MyThread.h */,
+				8C3BD489239F67D900EAFEDE /* MyThread.m */,
 			);
 			path = RunLoop;
 			sourceTree = "<group>";
@@ -265,6 +270,7 @@
 				8CFB08B12344B82B004C9B85 /* ViewController.m in Sources */,
 				8CFB08BC2344B82C004C9B85 /* main.m in Sources */,
 				8CFB08AE2344B82B004C9B85 /* AppDelegate.m in Sources */,
+				8C3BD48A239F67D900EAFEDE /* MyThread.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
