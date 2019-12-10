@@ -115,6 +115,7 @@ static int32_t __CFRunLoopRun(CFRunLoopRef rl, CFRunLoopModeRef rlm, CFTimeInter
         ///处理source0
         __CFRunLoopDoSources0(rl, rlm, stopAfterHandle);
 //        if (sourceHandledThisLoop) {
+        ///处理blocks
         __CFRunLoopDoBlocks(rl, rlm);
 //        }
         
