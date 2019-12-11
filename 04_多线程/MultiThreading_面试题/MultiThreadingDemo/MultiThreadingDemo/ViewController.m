@@ -20,7 +20,7 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     
-    [self interview06];
+    [self interview07];
 }
 
 - (void)interview01{
@@ -116,6 +116,19 @@
 - (void)printNumber2 {
     
     NSLog(@"2");
+}
+
+- (void)interview07 {
+    ///
+    NSThread *thread = [[NSThread alloc] initWithBlock:^{
+        NSLog(@"1");
+        //RunLoop
+        [[NSRunLoop currentRunLoop] addPort:[[NSPort alloc] init] forMode:NSDefaultRunLoopMode];
+        [[NSRunLoop currentRunLoop] run];
+    }];
+    [thread start];
+    ///崩溃：[ViewController performSelector:onThread:withObject:waitUntilDone:modes:]: target thread exited while waiting for the perform'
+    [self performSelector:@selector(printNumber2) onThread:thread withObject:nil waitUntilDone:YES];
 }
 
 @end
