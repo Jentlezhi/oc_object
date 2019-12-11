@@ -35,7 +35,23 @@
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     
     [self.thread executeTask:^{
-        NSLog(@"%s -- %@",__func__,[NSThread currentThread]);
+        NSLog(@"A");
+    }];
+    
+    [self.thread executeTask:^{
+        NSLog(@"B");
+    }];
+    
+    [self.thread executeTask:^{
+        NSLog(@"C");
+    }];
+    
+    [self.thread executeTask:^{
+        NSLog(@"D");
+    }];
+    
+    [self.thread executeTask:^{
+        NSLog(@"E");
     }];
 }
 
