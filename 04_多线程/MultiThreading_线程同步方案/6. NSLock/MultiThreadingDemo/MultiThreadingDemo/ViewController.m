@@ -16,9 +16,9 @@
 /// 总票数
 @property(assign, nonatomic) int ticketsCount;
 /// ticketLock
-@property(assign, nonatomic) os_unfair_lock ticketLock;
+@property(strong, nonatomic) NSLock *ticketLock;
 /// moneyLock
-@property(assign, nonatomic) os_unfair_lock moneyLock;
+@property(strong, nonatomic) NSLock *moneyLock;
 
 @end
 
@@ -28,6 +28,8 @@
     [super viewDidLoad];
     self.ticketsCount = 100;
     self.money = 5000;
+    self.ticketLock = [[NSLock alloc] init];
+    self.moneyLock = [[NSLock alloc] init];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
@@ -37,9 +39,6 @@
 
 - (void)saleTickets {
     
-    
-    ///创建锁
-    _ticketLock = OS_UNFAIR_LOCK_INIT;
     dispatch_group_t group = dispatch_group_create();
     dispatch_queue_t queue = dispatch_queue_create("gcd_group", DISPATCH_QUEUE_CONCURRENT);
     dispatch_group_async(group, queue, ^{
@@ -62,20 +61,20 @@
 
 - (void)saleTicket {
     ///加锁： 保证同一把锁
-    os_unfair_lock_lock(&_ticketLock);
+    [self.ticketLock lock];
     int oldTicketCount = self.ticketsCount;
     sleep(1.5);
     oldTicketCount--;
     self.ticketsCount = oldTicketCount;
     NSLog(@"还剩%d张票 - %@",self.ticketsCount,[NSThread currentThread]);
     //解锁
-    os_unfair_lock_unlock(&_ticketLock);
+    [self.ticketLock unlock];
 }
 
 
 - (void)moneyOperation {
     
-    _moneyLock = OS_UNFAIR_LOCK_INIT;
+    [self.ticketLock lock];
     dispatch_group_t group = dispatch_group_create();
     dispatch_queue_t queue = dispatch_queue_create("gcd_group", DISPATCH_QUEUE_CONCURRENT);
     dispatch_group_async(group, queue, ^{
@@ -89,25 +88,24 @@
 
 - (void)saveMoney {
     
-    os_unfair_lock_lock(&_moneyLock);
+    [self.ticketLock lock];
     int oldMoney = self.money;
     sleep(1.5);
     oldMoney+=50;
     self.money = oldMoney;
     NSLog(@"存50，还剩%d元 - %@",oldMoney,[NSThread currentThread]);
-    os_unfair_lock_unlock(&_moneyLock);
+    [self.ticketLock unlock];
 }
-
 
 - (void)drawMoney {
     
-    os_unfair_lock_lock(&_moneyLock);
+    [self.ticketLock lock];
     int oldMoney = self.money;
     sleep(1.5);
     oldMoney-=20;
     self.money = oldMoney;
     NSLog(@"取20，还剩%d元 - %@",oldMoney,[NSThread currentThread]);
-    os_unfair_lock_unlock(&_moneyLock);
+    [self.ticketLock unlock];
 }
 
 @end
