@@ -31,9 +31,4 @@
     return _delegate;
 }
 
-- (void)forwardInvocation:(NSInvocation *)anInvocation {
-    
-    [anInvocation invokeWithTarget:_delegate];
-}
-
 @end
