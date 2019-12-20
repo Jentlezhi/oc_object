@@ -31,8 +31,11 @@ int main(int argc, const char * argv[]) {
         NSNumber *number2 = @4;
         NSNumber *number3 = @5;
         NSLog(@"number1=%p",_objc_decodeTaggedPointer_(number1));
+        //number1=0x327
         NSLog(@"number2=%p",_objc_decodeTaggedPointer_(number2));
+        //number2=0x427
         NSLog(@"number3=%p",_objc_decodeTaggedPointer_(number3));
+        //number3=0x527
         
     #pragma clang diagnostic pop
         
