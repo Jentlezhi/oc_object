@@ -25,7 +25,7 @@
             NSString *selectorSetName = [NSString stringWithFormat:@"set%@:",name.capitalizedString];
             NSString *selectorGetName = name;
             id value = ((NSString *(*)  (id , SEL))objc_msgSend)(copyTarget , NSSelectorFromString(selectorGetName));
-            ((void *(*)  (id , SEL , NSString *))objc_msgSend)(self , NSSelectorFromString(selectorSetName) , value);
+            ((void *(*)(id, SEL, NSString *))objc_msgSend)(self, NSSelectorFromString(selectorSetName) , value);
         }
         free(ivars);
         curCls = [curCls superclass];
