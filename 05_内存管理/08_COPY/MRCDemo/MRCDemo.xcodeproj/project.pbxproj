@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		8CA322FF23AE694F007A22EE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CA322FE23AE694F007A22EE /* main.m */; };
+		8CA3230D23AEFD4D007A22EE /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CA3230C23AEFD4D007A22EE /* Person.m */; };
+		8CA3231023AF9EBF007A22EE /* NSObject+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CA3230F23AF9EBF007A22EE /* NSObject+Extension.m */; };
+		8CA3231323AFABAE007A22EE /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CA3231223AFABAE007A22EE /* Student.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +28,12 @@
 /* Begin PBXFileReference section */
 		8CA322FB23AE694F007A22EE /* MRCDemo */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MRCDemo; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CA322FE23AE694F007A22EE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8CA3230B23AEFD4D007A22EE /* Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		8CA3230C23AEFD4D007A22EE /* Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		8CA3230E23AF9EBF007A22EE /* NSObject+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+Extension.h"; sourceTree = "<group>"; };
+		8CA3230F23AF9EBF007A22EE /* NSObject+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Extension.m"; sourceTree = "<group>"; };
+		8CA3231123AFABAE007A22EE /* Student.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
+		8CA3231223AFABAE007A22EE /* Student.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +67,12 @@
 			isa = PBXGroup;
 			children = (
 				8CA322FE23AE694F007A22EE /* main.m */,
+				8CA3230B23AEFD4D007A22EE /* Person.h */,
+				8CA3230C23AEFD4D007A22EE /* Person.m */,
+				8CA3230E23AF9EBF007A22EE /* NSObject+Extension.h */,
+				8CA3230F23AF9EBF007A22EE /* NSObject+Extension.m */,
+				8CA3231123AFABAE007A22EE /* Student.h */,
+				8CA3231223AFABAE007A22EE /* Student.m */,
 			);
 			path = MRCDemo;
 			sourceTree = "<group>";
@@ -119,7 +134,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CA3230D23AEFD4D007A22EE /* Person.m in Sources */,
 				8CA322FF23AE694F007A22EE /* main.m in Sources */,
+				8CA3231023AF9EBF007A22EE /* NSObject+Extension.m in Sources */,
+				8CA3231323AFABAE007A22EE /* Student.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
