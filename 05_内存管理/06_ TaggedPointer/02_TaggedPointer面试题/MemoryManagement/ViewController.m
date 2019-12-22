@@ -38,7 +38,9 @@
         dispatch_async(queue, ^{
             NSString *a = @"abc";
             NSString *b = @"abcdefghijk";
+//            self.name = [NSString stringWithFormat:a];
             self.name = [NSString stringWithFormat:b];
+        
         });
     }
 }
