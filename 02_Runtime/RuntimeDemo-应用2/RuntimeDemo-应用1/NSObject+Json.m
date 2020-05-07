@@ -12,7 +12,7 @@
 @implementation NSObject (Json)
 
 ////没有父类的情况
-//+ (instancetype)cxt_objectWithJson:(NSDictionary *)json {
+//+ (instancetype)zjt_objectWithJson:(NSDictionary *)json {
 //
 //    id obj = [[self alloc] init];
 //    unsigned int outCount;
@@ -27,7 +27,7 @@
 //    return obj;
 //}
 
-+ (instancetype)cxt_objectWithJson:(NSDictionary *)json {
++ (instancetype)zjt_objectWithJson:(NSDictionary *)json {
     
     id obj = [[self alloc] init];
     Class target = self;

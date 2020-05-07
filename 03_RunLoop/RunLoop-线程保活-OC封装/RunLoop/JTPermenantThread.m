@@ -39,7 +39,7 @@
         self.shouldKeepRunning = YES;
         __weak typeof(self) weakSelf = self;
         _innerThread = [[JTThread alloc] initWithBlock:^{
-            [[NSThread currentThread] setName:@"com.bitauto.cxt"];
+            [[NSThread currentThread] setName:@"com.companyName.test"];
             NSRunLoop *runLoop = [NSRunLoop currentRunLoop];
             [runLoop addPort:[[NSPort alloc] init] forMode:NSDefaultRunLoopMode];
             while (weakSelf && weakSelf.shouldKeepRunning) {
