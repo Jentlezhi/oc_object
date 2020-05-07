@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CXTAboutView: UIView {
+class ZJTAboutView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)

@@ -49,7 +49,7 @@
     ///问题：以下代码是在主线程执行，会不会产生死锁？
     ///会产生死锁
     NSLog(@"任务1");
-    dispatch_queue_t queue = dispatch_queue_create("com.bitauto.cxt", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.companyName.test", DISPATCH_QUEUE_SERIAL);
     dispatch_async(queue, ^{///block0
         NSLog(@"任务2");
         dispatch_sync(queue, ^{///block1
@@ -65,8 +65,8 @@
     ///问题：以下代码是在主线程执行，会不会产生死锁？
     ///不会产生死锁
     NSLog(@"任务1");
-    dispatch_queue_t queue = dispatch_queue_create("com.bitauto.cxt", DISPATCH_QUEUE_SERIAL);
-    dispatch_queue_t queue0 = dispatch_queue_create("com.bitauto.cxt", DISPATCH_QUEUE_CONCURRENT);
+    dispatch_queue_t queue = dispatch_queue_create("com.companyName.test", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue0 = dispatch_queue_create("com.companyName.test", DISPATCH_QUEUE_CONCURRENT);
     dispatch_async(queue, ^{///block0
         NSLog(@"任务2");
         dispatch_sync(queue0, ^{///block1
@@ -82,7 +82,7 @@
     ///问题：以下代码是在主线程执行，会不会产生死锁？
     ///不会产生死锁
     NSLog(@"任务1");
-    dispatch_queue_t queue = dispatch_queue_create("com.bitauto.cxt", DISPATCH_QUEUE_CONCURRENT);
+    dispatch_queue_t queue = dispatch_queue_create("com.companyName.test", DISPATCH_QUEUE_CONCURRENT);
     dispatch_async(queue, ^{///block0
         NSLog(@"任务2");
         dispatch_sync(queue, ^{///block1

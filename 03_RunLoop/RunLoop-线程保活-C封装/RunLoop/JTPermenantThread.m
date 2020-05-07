@@ -39,7 +39,7 @@
         self.shouldKeepRunning = YES;
 //        __weak typeof(self) weakSelf = self;
         _innerThread = [[JTThread alloc] initWithBlock:^{
-            [[NSThread currentThread] setName:@"com.bitauto.cxt"];
+            [[NSThread currentThread] setName:@"com.companyName.test"];
             ///避免context拿到脏数据，尽量给赋值
 //            CFRunLoopSourceContext context；
             CFRunLoopSourceContext context = {0};

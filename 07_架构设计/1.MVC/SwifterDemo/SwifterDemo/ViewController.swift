@@ -11,7 +11,7 @@ import UIKit
 class CYTAboutViewController: UIViewController {
     
     override func loadView() {
-        view = CXTAboutView()
+        view = ZJTAboutView()
     }
 
     override func viewDidLoad() {

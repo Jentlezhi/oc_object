@@ -23,13 +23,13 @@ int main(int argc, const char * argv[]) {
                                @"no":@10087,
                                @"rank":@1
         };
-        Person *p = [Person cxt_objectWithJson:json];
+        Person *p = [Person zjt_objectWithJson:json];
         NSLog(@"name:%@ weight:%d age:%d",p.name, p.weight,p.age);
         NSLog(@"----------------------");
-        Student *s = [Student cxt_objectWithJson:json];
+        Student *s = [Student zjt_objectWithJson:json];
         NSLog(@"name:%@ weight:%d age:%d no:%ld",s.name, s.weight,s.age,(long)s.no);
         NSLog(@"------------------------------");
-        GoodStudent *gStu = [GoodStudent cxt_objectWithJson:json];
+        GoodStudent *gStu = [GoodStudent zjt_objectWithJson:json];
         NSLog(@"name:%@ weight:%d age:%d no:%ld rank:%d",gStu.name, gStu.weight,gStu.age,(long)gStu.no,gStu.rank);
     }
     return 0;
