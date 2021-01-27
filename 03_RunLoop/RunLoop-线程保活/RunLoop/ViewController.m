@@ -21,16 +21,27 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.thread start];
+//    [self test];
+}
+
+- (void)test {
+
+    NSLog(@"%@",[NSRunLoop currentRunLoop]);
+    [[NSRunLoop currentRunLoop] addPort:[NSMachPort port] forMode:NSDefaultRunLoopMode];
+    [[NSRunLoop currentRunLoop] run];
+    // 上面线程不死，这句话永远不会打印
+    NSLog(@"-------$$$$");
 }
 
 - (MyThread *)thread {
     
     if (!_thread) {
         _thread = [[MyThread alloc] initWithBlock:^{
-            [[NSThread currentThread] setName:@"com.companyName.test"];
+            [[NSThread currentThread] setName:@"com.jentle.test"];
+            [self addRunLoopStatusObserve];
             NSRunLoop *runLoop = [NSRunLoop currentRunLoop];
             ///如果Mode里没有任何Source0/Source1/Timer/Observer，RunLoop会立马退出
-            [runLoop addPort:[NSMachPort port] forMode:NSDefaultRunLoopMode];
+            [runLoop addPort:[NSPort port] forMode:NSDefaultRunLoopMode];
             [runLoop run];
         }];
     }
@@ -43,9 +54,41 @@
 }
 
 - (void)task {
-
-    NSLog(@"%s - %@",__func__,[NSThread currentThread]);
+    
+    NSLog(@"%s",__func__);
+//    NSLog(@"%@",[NSRunLoop currentRunLoop]);
 }
+
+- (void)addRunLoopStatusObserve {
+    
+    CFRunLoopObserverRef observer = CFRunLoopObserverCreateWithHandler( kCFAllocatorDefault, kCFRunLoopAllActivities, YES, 0, ^(CFRunLoopObserverRef observer, CFRunLoopActivity activity) {
+        switch (activity) {
+            case kCFRunLoopEntry:
+                NSLog(@"kCFRunLoopEntry");
+                break;
+            case kCFRunLoopBeforeTimers:
+                NSLog(@"kCFRunLoopBeforeTimers");
+                break;
+            case kCFRunLoopBeforeSources:
+                NSLog(@"kCFRunLoopBeforeSources");
+                break;
+            case kCFRunLoopBeforeWaiting:
+                NSLog(@"kCFRunLoopBeforeWaiting");
+                break;
+            case kCFRunLoopAfterWaiting:
+                NSLog(@"kCFRunLoopAfterWaiting");
+                break;
+            case kCFRunLoopExit:
+                NSLog(@"kCFRunLoopExit");
+                break;
+            default:
+                break;
+        }
+    });
+    CFRunLoopAddObserver(CFRunLoopGetCurrent(), observer, kCFRunLoopCommonModes);
+    CFRelease(observer);
+}
+
 /* 截自YYWebImageOperation.m
  
  /// Network thread entry point.

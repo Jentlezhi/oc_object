@@ -42,10 +42,11 @@
             [[NSThread currentThread] setName:@"com.companyName.test"];
             ///避免context拿到脏数据，尽量给赋值
 //            CFRunLoopSourceContext context；
-            CFRunLoopSourceContext context = {0};
+            CFRunLoopSourceContext context = {0};//给结构体的所有的成员赋值为0
             CFRunLoopSourceRef source = CFRunLoopSourceCreate(kCFAllocatorDefault, 0, &context);
             CFRunLoopAddSource(CFRunLoopGetCurrent(),source, kCFRunLoopDefaultMode);
             CFRelease(source);
+            ///
             CFRunLoopRunInMode(kCFRunLoopDefaultMode, 1.0e10, false);
 //            NSRunLoop *runLoop = [NSRunLoop currentRunLoop];
 //            [runLoop addPort:[[NSPort alloc] init] forMode:NSDefaultRunLoopMode];
@@ -69,7 +70,7 @@
 
 - (void)executeTask:(JTThreadTask)task {
     
-    if (!task && !self.innerThread) {return;}
+    if (!task || !self.innerThread) {return;}
     [self performSelector:@selector(__task:) onThread:self.innerThread withObject:task waitUntilDone:NO];
 }
 
