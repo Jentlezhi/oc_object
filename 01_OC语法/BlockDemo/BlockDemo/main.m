@@ -27,6 +27,22 @@ struct __main_block_impl_2 {
   int number;
 };
 
+int c = 20;
+void func(){
+    
+    int a = 10;//等价于 auto int a = 10;
+    NSLog(@"%d",a);
+}
+
+void(^blockInStack)(void);
+
+void testBlock(){
+    int a = 10;
+    blockInStack = [^{
+        NSLog(@"%s - %d",__func__,a);
+    } copy];
+}
+
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         ///1.block默认不会执行，像函数一样，调用了才会执行，调用用()。
@@ -38,10 +54,12 @@ int main(int argc, const char * argv[]) {
             NSLog(@"A");
             NSLog(@"B");
             NSLog(@"C");
+            NSLog(@"C= %d",c);
         };
+        c = 99; 
         block();
         ///3.block访问外界值
-        int number = 10;
+        int number = 10;//等价于 auto int number = 10;
         void(^aBlock)(void) = ^{
             NSLog(@"number:%d",number);
         };
@@ -49,6 +67,18 @@ int main(int argc, const char * argv[]) {
         struct __main_block_impl_2 *blockStruct = (__bridge struct __main_block_impl_2 *)aBlock;
         aBlock();
         
+        
+        int (^bBlock)(int, int) = ^(int a, int b){
+            return a*b;
+        };
+        int res = bBlock(3,4);
+        NSLog(@"res=%d",res);
+        
+        NSLog(@"class = %@",[[[[bBlock class] superclass] superclass] superclass]);
+        //NSObject
+        
+        testBlock();
+        blockInStack();
         
     }
     return 0;
