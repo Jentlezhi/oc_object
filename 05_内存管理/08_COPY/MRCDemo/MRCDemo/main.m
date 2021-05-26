@@ -71,6 +71,8 @@ void customObjectCopy(){
     s.age = 18;
     s.data = [NSArray arrayWithObjects:@"A",@"B",@"C",nil].mutableCopy;
     s.rank = 1;
+    
+    
     Student *s1 = [s copy];
     s1.payed = NO;
     s1.name = @"Zhi";

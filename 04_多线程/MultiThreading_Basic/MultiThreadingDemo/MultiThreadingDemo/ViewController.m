@@ -27,7 +27,7 @@
     
     ///DISPATCH_QUEUE_SERIAL or a NULL attribute invoke blocks serially in FIFO order
     ///DISPATCH_QUEUE_CONCURRENT attribute may invoke blocks concurrently
-    dispatch_queue_t queue = dispatch_queue_create("com.bitatuto.cxt", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.companyName.test", DISPATCH_QUEUE_SERIAL);
     dispatch_async(queue, ^{
         for (int i = 0; i < 10; i++) {
             NSLog(@"任务1：index = %d %@",i,[NSThread currentThread]);
@@ -46,7 +46,7 @@
     
     ///DISPATCH_QUEUE_SERIAL or a NULL attribute invoke blocks serially in FIFO order
     ///DISPATCH_QUEUE_CONCURRENT attribute may invoke blocks concurrently
-    dispatch_queue_t queue = dispatch_queue_create("com.bitatuto.cxt", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue = dispatch_queue_create("com.companyName.test", DISPATCH_QUEUE_SERIAL);
     dispatch_sync(queue, ^{
         for (int i = 0; i < 10; i++) {
             NSLog(@"任务1：index = %d %@",i,[NSThread currentThread]);
@@ -65,7 +65,7 @@
     
     ///DISPATCH_QUEUE_SERIAL or a NULL attribute invoke blocks serially in FIFO order
     ///DISPATCH_QUEUE_CONCURRENT attribute may invoke blocks concurrently
-    dispatch_queue_t queue = dispatch_queue_create("com.bitatuto.cxt", DISPATCH_QUEUE_CONCURRENT);
+    dispatch_queue_t queue = dispatch_queue_create("com.companyName.test", DISPATCH_QUEUE_CONCURRENT);
     dispatch_async(queue, ^{
         for (int i = 0; i < 10; i++) {
             NSLog(@"任务1：index = %d %@",i,[NSThread currentThread]);
@@ -84,7 +84,7 @@
     
     ///DISPATCH_QUEUE_SERIAL or a NULL attribute invoke blocks serially in FIFO order
     ///DISPATCH_QUEUE_CONCURRENT attribute may invoke blocks concurrently
-    dispatch_queue_t queue = dispatch_queue_create("com.bitatuto.cxt", DISPATCH_QUEUE_CONCURRENT);
+    dispatch_queue_t queue = dispatch_queue_create("com.companyName.test", DISPATCH_QUEUE_CONCURRENT);
     dispatch_sync(queue, ^{
         for (int i = 0; i < 10; i++) {
             NSLog(@"任务1：index = %d %@",i,[NSThread currentThread]);

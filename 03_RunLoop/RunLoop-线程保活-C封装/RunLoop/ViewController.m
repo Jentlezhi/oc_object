@@ -53,6 +53,8 @@
     [self.thread executeTask:^{
         NSLog(@"E");
     }];
+    
+    
 }
 
 @end

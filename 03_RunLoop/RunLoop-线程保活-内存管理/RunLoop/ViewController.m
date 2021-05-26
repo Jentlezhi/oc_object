@@ -32,11 +32,11 @@
         __weak typeof(self) weakSelf = self;
         self.shouldKeepRunning = YES;
         _thread = [[MyThread alloc] initWithBlock:^{
-            [[NSThread currentThread] setName:@"com.bitauto.cxt"];
+            [[NSThread currentThread] setName:@"com.companyName.test"];
             NSRunLoop *runLoop = [NSRunLoop currentRunLoop];
             ///如果Mode里没有任何Source0/Source1/Timer/Observer，RunLoop会立马退出
             [runLoop addPort:[NSMachPort port] forMode:NSDefaultRunLoopMode];
-            while (weakSelf.shouldKeepRunning) {
+            while (weakSelf && weakSelf.shouldKeepRunning) {
                 ///坏内存访问
                 NSLog(@"self = %@",weakSelf);
                 [runLoop runMode:NSDefaultRunLoopMode beforeDate:[NSDate distantFuture]];

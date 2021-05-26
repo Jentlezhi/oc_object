@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSObject (Json)
 
-+ (instancetype)cxt_objectWithJson:(NSDictionary *)json;
++ (instancetype)zjt_objectWithJson:(NSDictionary *)json;
 
 @end
 
