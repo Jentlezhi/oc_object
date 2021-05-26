@@ -24,13 +24,14 @@
     return proxy;
 }
 
-- (void)forwardInvocation:(NSInvocation *)invocation{
-    
-    [invocation invokeWithTarget:_target];
-}
 - (nullable NSMethodSignature *)methodSignatureForSelector:(SEL)sel {
     
     return [_target methodSignatureForSelector:sel];
+}
+
+- (void)forwardInvocation:(NSInvocation *)invocation{
+    
+    [invocation invokeWithTarget:_target];
 }
 
 @end
