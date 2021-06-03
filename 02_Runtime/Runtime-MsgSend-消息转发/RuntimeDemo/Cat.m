@@ -15,4 +15,14 @@
     NSLog(@"%s",__func__);
 }
 
++ (void)classMethod {
+    
+    NSLog(@"这是类方法：%s",__func__);
+}
+
+- (void)classMethod {
+    
+    NSLog(@"这是对象方法：%s",__func__);
+}
+
 @end

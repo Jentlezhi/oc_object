@@ -9,6 +9,7 @@
 
 #import "Person.h"
 #import <objc/runtime.h>
+#import <objc/message.h>
 #import "Cat.h"
 
 @interface Person ()
@@ -40,7 +41,7 @@
     if (aSelector == @selector(test)) {
         ///若返回nil,则调用methodSignatureForSelector
         return nil;
-//        return [[Cat alloc] init];
+//        return /*底层调用objc_msgSend([[Cat alloc] init],aSelector);*/[[Cat alloc] init];
     }
     return [super forwardingTargetForSelector:aSelector];
 }
@@ -78,5 +79,32 @@
 //    NSLog(@"resolveInstanceMethod");
 //    return [super resolveInstanceMethod:sel];
 //}
+
+/**
+ * 类方法的转发
+ */
++ (BOOL)resolveClassMethod:(SEL)sel {
+    
+    if (sel == @selector(classMethod)) {
+        NSLog(@"%s",__func__);
+        return YES;
+    }
+    return [super resolveClassMethod:sel];
+}
+
++ (id)forwardingTargetForSelector:(SEL)aSelector  {
+    
+    if (aSelector == @selector(classMethod)) {
+        NSLog(@"%s",__func__);
+        return [[Cat alloc] init];
+//        return [Cat class];
+    }
+    return [super forwardingTargetForSelector:aSelector];
+}
+
++ (void)forwardInvocation:(NSInvocation *)anInvocation {
+    
+    NSLog(@"%s",__func__);
+}
 
 @end

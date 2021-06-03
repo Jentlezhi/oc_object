@@ -17,6 +17,7 @@ int main(int argc, const char * argv[]) {
         
         Person *p = [[Person alloc] init];
         [p test];
+        [Person classMethod];
         NSLog(@"-------实例对象--------");
         BOOL pIsMemberOfClass = [p isMemberOfClass:[NSObject class]];//0
         BOOL pIsKindOfClass = [p isKindOfClass:[NSObject class]];//1

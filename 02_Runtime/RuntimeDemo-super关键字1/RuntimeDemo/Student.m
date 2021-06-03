@@ -22,14 +22,14 @@ struct objc_super {
     self = [super init];
     if (self) {
         ///objc_msgSend(self,@selector(class));
-        NSLog(@"[self class]:%@",[self class]);
-        NSLog(@"[self superclass]:%@",[self superclass]);
+        NSLog(@"[self class]:%@",[self class]);/*[self class]:Student*/
+        NSLog(@"[self superclass]:%@",[self superclass]);/*[self superclass]:Person*/
         
         ///objc_msgSendSuper({self,[Person class]},@selector(class));
         ///super调用，消息接收者仍然是子类对象，只不过是从父类的类对象中搜索方法。
         ///[super class] == [self class]
-        NSLog(@"[super class]:%@",[super class]);
-        NSLog(@"[super superclass]:%@",[super superclass]);
+        NSLog(@"[super class]:%@",[super class]);/*[super class]:Student*/
+        NSLog(@"[super superclass]:%@",[super superclass]);/*[super superclass]:Person*/
     }
     return self;
 }
