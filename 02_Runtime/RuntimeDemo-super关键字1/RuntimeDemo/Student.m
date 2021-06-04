@@ -39,6 +39,8 @@ struct objc_super {
     [super run];
     /*
      ((void (*)(__rw_objc_super *, SEL))(void *)objc_msgSendSuper)((__rw_objc_super){(id)self, (id)class_getSuperclass(objc_getClass("Student"))}, sel_registerName("run"));
+     
+     objc_msgSendSuper({self,[Person class]}, @selector(run));
      */
     NSLog(@"%s", __func__);
 }
