@@ -1,13 +1,82 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'dart:ui' as ui;
 
-void main() => runApp(MyApp());
+import 'myPage.dart';
 
-class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
+void main() => runApp(run(ui.window.defaultRouteName));
+
+Widget run(String name){
+  switch (name) {
+    case "first":
+      return FirstScreen();
+      break;
+    case "second":
+      return SecondScreen();
+      break;
+    case "myApp":
+      return MyApp();
+      break;
+  }
+  return Center(
+    child: Text('Unknown route: $name'),
+  );
+}
+
+/*
+  EventChannel eventChannel = EventChannel("App/Event/Channel", const StandardMethodCodec());
+
+  //开始监听
+  @override
+  void initState() {
+    super.initState();
+    eventChannel
+        .receiveBroadcastStream("init")
+        .listen(_onEvent, onError: _onError);
+  }
+
+  // 数据接收
+  void _onEvent(Object value) {
+    print(value);
+}
+  // 错误处理
+  void _onError(dynamic) {}
+**/
+
+class MyApp extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() => MyState();
+}
+
+class MyState extends State {
+  EventChannel eventChannel = EventChannel("com.flutter.guide.EventChannel", const StandardMethodCodec());
+  String _title = 'My App';
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+
+    eventChannel
+        .receiveBroadcastStream()
+        .listen(_onEvent, onError: null);
+
+  }
+  // 数据接收
+  void _onEvent(Object value) {
+    setState(() {
+      _title = value.toString();
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      //设置路由
+//      initialRoute: '/',
+//      routes: {
+//        '/': (context) => FirstScreen(),
+//        '/second': (context) => SecondScreen(),
+//      },
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -19,9 +88,10 @@ class MyApp extends StatelessWidget {
         // counter didn't reset back to zero; the application is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: _title),
     );
   }
+
 }
 
 class MyHomePage extends StatefulWidget {

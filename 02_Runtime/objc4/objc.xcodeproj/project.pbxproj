@@ -461,7 +461,6 @@
 		08FB7793FE84155DC02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				BuildIndependentTargetsInParallel = NO;
 				LastUpgradeCheck = 0440;
 				TargetAttributes = {
 					837F67A81A771F63004D34FA = {
@@ -811,7 +810,7 @@
 				1DEB914C08733D8E0010E9CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		1DEB914E08733D8E0010E9CD /* Build configuration list for PBXProject "objc" */ = {
 			isa = XCConfigurationList;
@@ -820,7 +819,7 @@
 				1DEB915008733D8E0010E9CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		837F67A91A771F63004D34FA /* Build configuration list for PBXAggregateTarget "objc-simulator" */ = {
 			isa = XCConfigurationList;
@@ -829,7 +828,7 @@
 				837F67AB1A771F63004D34FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};
