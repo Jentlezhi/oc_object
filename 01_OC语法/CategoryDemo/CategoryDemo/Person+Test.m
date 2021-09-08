@@ -7,6 +7,7 @@
 //
 
 #import "Person+Test.h"
+#import <objc/message.h>
 
 
 @implementation Person (Test)
@@ -14,6 +15,16 @@
 - (void)test {
     
     NSLog(@"%@",NSStringFromSelector(_cmd));
+}
+
+- (void)setName:(NSString *)name {
+    
+    objc_setAssociatedObject(self, _cmd, name, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (NSString *)name {
+    
+    return objc_getAssociatedObject(self, @selector(setName:));
 }
 
 @end
