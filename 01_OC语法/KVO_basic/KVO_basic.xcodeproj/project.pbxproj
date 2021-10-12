@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C0675E826F1927200AEC8ED /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C0675E726F1927200AEC8ED /* Student.m */; };
 		8C66CACD2328675500BA833F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C66CACC2328675500BA833F /* AppDelegate.m */; };
 		8C66CAD02328675500BA833F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C66CACF2328675500BA833F /* ViewController.m */; };
 		8C66CAD32328675500BA833F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C66CAD12328675500BA833F /* Main.storyboard */; };
@@ -37,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8C0675E626F1927200AEC8ED /* Student.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
+		8C0675E726F1927200AEC8ED /* Student.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
 		8C66CAC82328675500BA833F /* KVO_basic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KVO_basic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C66CACB2328675500BA833F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8C66CACC2328675500BA833F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -120,6 +123,8 @@
 				8C66CAD62328675600BA833F /* LaunchScreen.storyboard */,
 				8C66CAD92328675600BA833F /* Info.plist */,
 				8C66CADA2328675600BA833F /* main.m */,
+				8C0675E626F1927200AEC8ED /* Student.h */,
+				8C0675E726F1927200AEC8ED /* Student.m */,
 			);
 			path = KVO_basic;
 			sourceTree = "<group>";
@@ -277,6 +282,7 @@
 				8C66CB022330470700BA833F /* NSKVONotifying_Person_temp.m in Sources */,
 				8C66CAFF2328677600BA833F /* Person.m in Sources */,
 				8C66CACD2328675500BA833F /* AppDelegate.m in Sources */,
+				8C0675E826F1927200AEC8ED /* Student.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

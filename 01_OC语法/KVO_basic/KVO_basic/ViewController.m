@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "Person.h"
 #import <objc/runtime.h>
+#import "Student.h"
 
 @interface ViewController ()
 
@@ -18,7 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self modifyIsa];
 }
 
 - (void)printMethods:(Class)cls description:(NSString *)des {
@@ -42,7 +43,7 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     
-//    [self learnKVOObserve]
+//    [self learnKVOObserve];
 //    [self learnKVOMethods];
     [self callKVOHandly];
     
@@ -66,7 +67,7 @@
      [p class]: 获取静态类型
      */
     [self printMethods:object_getClass(p) description:@"p添加监听后"];
-    [p removeObserver:self forKeyPath:@"age"];
+//    [p removeObserver:self forKeyPath:@"age"];
     
     ///[p class]:Person
     /*
@@ -75,6 +76,7 @@
 
      */
     NSLog(@"[p class]:%@",NSStringFromClass([p class]));
+    NSLog(@"object_getClass(p):%@",object_getClass(p));
 }
 
 - (void)learnKVOObserve {
@@ -84,7 +86,6 @@
     
     Person *p0 = Person.new;
     p0.age = 2;
-    
     NSLog(@"p添加kvo之前：p->Class=%@,p0->Class=%@",object_getClass(p),object_getClass(p0));
     
     /*
@@ -118,14 +119,24 @@
 - (void)callKVOHandly {
     
     Person *p = Person.new;
-    p.age = 1;
+//    p.age = 1;
     NSKeyValueObservingOptions options = NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld;
     ///p->isa (Class) $1 = Person
     [p addObserver:self forKeyPath:@"age" options:options context:(__bridge void * _Nullable)(@{@"value":@"100"})];
     ///手动触发kvo
     [p willChangeValueForKey:@"age"];
+//    p.age = 5;
     [p didChangeValueForKey:@"age"];
     
+}
+
+- (void)modifyIsa {
+    
+    Student *s = Student.new;
+    Person *p = Person.new;
+    //修改isa的指向
+    object_setClass(p, [s class]);
+    [p test];//Student - test
 }
 
 

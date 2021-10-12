@@ -17,6 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self basic];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
@@ -35,7 +36,7 @@
         Person *p = Person.new;
     //    p->_age = 10;
         [p addObserver:self forKeyPath:@"age" options:NSKeyValueObservingOptionNew context:nil];
-    //    [p setValue:@(20) forKey:@"age"];
+//        [p setValue:@(20) forKey:@"age"];
 }
 
 //- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
@@ -43,6 +44,13 @@
 //    
 //}
 
+- (void)other {
+    
+    UIResponder *r = UIResponder.new;
+    UIView *v;
+    UIControl *c;
+    UIViewController *vc;
+}
 
 
 
