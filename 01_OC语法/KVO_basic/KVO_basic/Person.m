@@ -35,4 +35,9 @@
     return YES;
 }
 
+- (void)test {
+    
+    NSLog(@"Person - test");
+}
+
 @end

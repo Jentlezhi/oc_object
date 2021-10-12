@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 年龄
 @property(assign, nonatomic) NSInteger age;
 
+- (void)test;
 
 
 @end
