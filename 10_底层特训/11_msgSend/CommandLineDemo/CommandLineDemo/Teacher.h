@@ -11,6 +11,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Teacher : Person
 
+//- (void)say1;
+
 @end
 
 NS_ASSUME_NONNULL_END

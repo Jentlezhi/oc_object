@@ -5,11 +5,17 @@
 //  Created by Jentle on 2021/10/19.
 //
 
-#import <Foundation/Foundation.h>
+#import "Person.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Student : NSObject
+@interface Student : Person
+
+
+- (void)studentInstanceMethod;
+
+
++ (void)studentClassMethod;
 
 @end
 

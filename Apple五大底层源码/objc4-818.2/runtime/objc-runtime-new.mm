@@ -3131,9 +3131,10 @@ static void load_categories_nolock(header_info *hi) {
     auto processCatlist = [&](category_t * const *catlist) {
         for (unsigned i = 0; i < count; i++) {
             category_t *cat = catlist[i];
+            //根据分类，获取分类对应的类
             Class cls = remapClass(cat->cls);
             locstamped_category_t lc{cat, hi};
-
+            //如果分类所属的类找不到，那么就会忽略这个分类
             if (!cls) {
                 // Category's target class is missing (probably weak-linked).
                 // Ignore the category.
@@ -3163,6 +3164,7 @@ static void load_categories_nolock(header_info *hi) {
                     objc::unattachedCategories.addForClass(lc, cls);
                 }
             } else {
+                // 把分类新增的方法、协议、属性都添加到元类中
                 // First, register the category with its target class.
                 // Then, rebuild the class's method lists (etc) if
                 // the class is realized.
@@ -3899,10 +3901,11 @@ void prepare_load_methods(const headerType *mhdr)
 
     classref_t const *classlist = 
         _getObjc2NonlazyClassList(mhdr, &count);
+    //先递归调度 类和父类
     for (i = 0; i < count; i++) {
         schedule_class_load(remapClass(classlist[i]));
     }
-
+    //再调度分类
     category_t * const *categorylist = _getObjc2NonlazyCategoryList(mhdr, &count);
     for (i = 0; i < count; i++) {
         category_t *cat = categorylist[i];
@@ -7973,7 +7976,7 @@ _class_createInstanceFromZone(Class cls, size_t extraBytes, void *zone,
     bool hasCxxDtor = cls->hasCxxDtor();
     bool fast = cls->canAllocNonpointer();
     size_t size;
-
+    //对象在内存中所需的大小
     size = cls->instanceSize(extraBytes);
     if (outAllocatedSize) *outAllocatedSize = size;
 

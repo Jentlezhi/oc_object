@@ -6,26 +6,62 @@
 //
 
 #import "Person.h"
+#import <objc/message.h>
 
 @implementation Person
 
-- (instancetype)init {
+//+ (void)load {
+//
+//    NSLog(@"%s",__func__);
+//}
+//
+//+ (void)initialize {
+//
+//    NSLog(@"%s",__func__);
+//}
+
+//- (instancetype)init {
+//    
+//    if (self = [super init]) {
+////        [self printAddress];
+////        [self test2];
+//    }
+//    return self;
+//}
+
+
+//- (void)instanceMethod {
+//    
+//    NSLog(@"%s",__func__);
+//}
+//
+//+ (void)classMethod {
+//    
+//    NSLog(@"%s",__func__);
+//}
+//
+//- (void)printAddress {
+//    
+//    NSLog(@"%s",__func__);
+//}
+- (void)personInstanceMethod {
     
-    if (self = [super init]) {
-        [self sayHello];
-        [self test2];
-    }
-    return self;
+    NSLog(@"%s",__func__);
+}
++ (void)personClassMethod {
+    
+    NSLog(@"%s",__func__);
 }
 
 - (void)sayHello {
-    
-    NSLog(@"%s",__func__);
+    NSLog(@"Person say : Hello!!!");
+}
+- (void)sayGoodBye {
+    NSLog(@"Person say : GoodBye!!!");
+}
++ (void)sayHappy {
+    NSLog(@"Person say : Happy!!!");
 }
 
-- (void)test2 {
-    
-    NSLog(@"%s",__func__);
-}
 
 @end
