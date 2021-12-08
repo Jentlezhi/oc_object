@@ -29,10 +29,12 @@
 }
 
 - (void)operation {
-    
-    for (NSInteger index = 0; index < 30; index++) {
+    for (NSInteger index = 0; index < 3; index++) {
         [[[NSThread alloc] initWithBlock:^{
-            dispatch_semaphore_wait(self.semaphore, DISPATCH_TIME_FOREVER);
+            //返回值：P 操作成功，即对 semaphore.count 成功减 1，返回值为 0
+            //P 操作失败，即对 semaphore.count 没有任何影响，返回值为非 0
+            long semaphoreWait = dispatch_semaphore_wait(self.semaphore, DISPATCH_TIME_FOREVER);
+            NSLog(@"semaphoreWait - %ld",semaphoreWait);
             sleep(3.0);
             NSLog(@"index:%ld - %@",(long)index,[NSThread currentThread]);
             dispatch_semaphore_signal(self.semaphore);

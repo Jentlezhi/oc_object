@@ -77,11 +77,12 @@
 
 - (void)addRunLoopObserve {
     
-
-    //    CFRunLoopObserverRef observe = CFRunLoopObserverCreate(kCFAllocatorDefault, kCFRunLoopAllActivities, YES, 0, runLoopObserverCallBack, NULL);
+//    CFRunLoopObserverContext context = {0, (__bridge void *)self, NULL, NULL};
+//    CFRunLoopObserverRef observe = CFRunLoopObserverCreate(kCFAllocatorDefault, kCFRunLoopAllActivities, YES, 0, runLoopObserverCallBack, &context);
     CFRunLoopObserverRef observe = CFRunLoopObserverCreateWithHandler(kCFAllocatorDefault, kCFRunLoopAllActivities, YES, 0, ^(CFRunLoopObserverRef observer, CFRunLoopActivity activity) {
         runLoopWithActivityType(activity);
     });
+    //添加到主线程
     CFRunLoopAddObserver(CFRunLoopGetMain(), observe, kCFRunLoopCommonModes);
     CFRelease(observe);
 }
