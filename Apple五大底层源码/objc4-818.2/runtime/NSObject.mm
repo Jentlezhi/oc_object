@@ -1926,9 +1926,11 @@ _objc_rootRelease(id obj)
 static ALWAYS_INLINE id
 callAlloc(Class cls, bool checkNil, bool allocWithZone=false)
 {
+//    printf("callAlloc\n");
 #if __OBJC2__
     if (slowpath(checkNil && !cls)) return nil;
     if (fastpath(!cls->ISA()->hasCustomAWZ())) {
+//        printf("_objc_rootAllocWithZone(cls, nil)\n");
         return _objc_rootAllocWithZone(cls, nil);
     }
 #endif
@@ -1937,6 +1939,7 @@ callAlloc(Class cls, bool checkNil, bool allocWithZone=false)
     if (allocWithZone) {
         return ((id(*)(id, SEL, struct _NSZone *))objc_msgSend)(cls, @selector(allocWithZone:), nil);
     }
+//    printf("((id(*)(id, SEL))objc_msgSend)(cls, @selector(alloc));\n");
     return ((id(*)(id, SEL))objc_msgSend)(cls, @selector(alloc));
 }
 
@@ -1953,6 +1956,7 @@ _objc_rootAlloc(Class cls)
 id
 objc_alloc(Class cls)
 {
+//    printf("objc_alloc\n");
     return callAlloc(cls, true/*checkNil*/, false/*allocWithZone*/);
 }
 
@@ -2262,6 +2266,7 @@ __attribute__((objc_nonlazy_class))
 
 + (BOOL)isKindOfClass:(Class)cls {
     for (Class tcls = self->ISA(); tcls; tcls = tcls->getSuperclass()) {
+        printf("-----------\n");
         if (tcls == cls) return YES;
     }
     return NO;
@@ -2544,6 +2549,7 @@ __attribute__((objc_nonlazy_class))
 }
 
 + (id)alloc {
+//    printf("alloc\n");
     return _objc_rootAlloc(self);
 }
 

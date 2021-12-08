@@ -63,7 +63,7 @@
         return;
     }
     
-    //记录tick函数调用次数
+    //记录tick函数调用次数，大致上每秒调用60次
     _count++;
     NSLog(@"_count = %lu",(unsigned long)_count);
     //timestamp属性: 只读的CFTimeInterval值，表示屏幕显示的上一帧的时间戳
@@ -73,6 +73,7 @@
 //    NSLog(@"delta = %f",delta);
     if (delta < 1) return;
     _lastTime = link.timestamp;
+    //大致上每一秒调用一次
     NSLog(@"-----------------------------------------------");
     float fps = _count / delta;
     //帧率：每秒显示帧数，计算方法为：单位时间内刷新的次数

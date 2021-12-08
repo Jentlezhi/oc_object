@@ -147,6 +147,9 @@
 		83F550E0155E030800E95D3B /* objc-cache-old.mm in Sources */ = {isa = PBXBuildFile; fileRef = 83F550DF155E030800E95D3B /* objc-cache-old.mm */; };
 		87BB4EA70EC39854005D08E1 /* objc-probes.d in Sources */ = {isa = PBXBuildFile; fileRef = 87BB4E900EC39633005D08E1 /* objc-probes.d */; };
 		8C0675FB26F201C800AEC8ED /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C0675FA26F201C800AEC8ED /* Person.m */; };
+		8C2D27082726DD3B008B0CAE /* Student+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C2D27072726DD3B008B0CAE /* Student+Extension.m */; };
+		8C5BD250271EB5F900EC22E1 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C5BD24F271EB5F900EC22E1 /* Student.m */; };
+		8CE9CE1427394401001FF8B5 /* RuntimeTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE9CE1227394401001FF8B5 /* RuntimeTool.m */; };
 		9672F7EE14D5F488007CEC96 /* NSObject.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9672F7ED14D5F488007CEC96 /* NSObject.mm */; };
 		C22F5208230EF38B001BFE14 /* objc-ptrauth.h in Headers */ = {isa = PBXBuildFile; fileRef = C22F5207230EF38B001BFE14 /* objc-ptrauth.h */; };
 		C2E6D3FC2225DCF00059DFAA /* DenseMapExtras.h in Headers */ = {isa = PBXBuildFile; fileRef = C2E6D3FB2225DCF00059DFAA /* DenseMapExtras.h */; };
@@ -333,6 +336,12 @@
 		87BB4E900EC39633005D08E1 /* objc-probes.d */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.dtrace; name = "objc-probes.d"; path = "runtime/objc-probes.d"; sourceTree = "<group>"; };
 		8C0675F926F201C800AEC8ED /* Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
 		8C0675FA26F201C800AEC8ED /* Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		8C2D27062726DD3B008B0CAE /* Student+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Student+Extension.h"; sourceTree = "<group>"; };
+		8C2D27072726DD3B008B0CAE /* Student+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Student+Extension.m"; sourceTree = "<group>"; };
+		8C5BD24E271EB5F900EC22E1 /* Student.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
+		8C5BD24F271EB5F900EC22E1 /* Student.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
+		8CE9CE1227394401001FF8B5 /* RuntimeTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RuntimeTool.m; path = "../../../../10_底层特训/4_method_swizzing/method_swizzing/RuntimeTool.m"; sourceTree = "<group>"; };
+		8CE9CE1327394401001FF8B5 /* RuntimeTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RuntimeTool.h; path = "../../../../10_底层特训/4_method_swizzing/method_swizzing/RuntimeTool.h"; sourceTree = "<group>"; };
 		9672F7ED14D5F488007CEC96 /* NSObject.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = NSObject.mm; path = runtime/NSObject.mm; sourceTree = "<group>"; };
 		BC8B5D1212D3D48100C78A5B /* libauto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libauto.dylib; path = /usr/lib/libauto.dylib; sourceTree = "<absolute>"; };
 		C217B55222DE556D004369BA /* objc-env.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "objc-env.h"; path = "runtime/objc-env.h"; sourceTree = "<group>"; };
@@ -388,9 +397,14 @@
 		0466411325A4991B002440A8 /* KCObjcBuild */ = {
 			isa = PBXGroup;
 			children = (
+				8CE9CE11273943F2001FF8B5 /* Tool */,
 				0466411425A4991B002440A8 /* main.m */,
+				8C2D27062726DD3B008B0CAE /* Student+Extension.h */,
+				8C2D27072726DD3B008B0CAE /* Student+Extension.m */,
 				8C0675F926F201C800AEC8ED /* Person.h */,
 				8C0675FA26F201C800AEC8ED /* Person.m */,
+				8C5BD24E271EB5F900EC22E1 /* Student.h */,
+				8C5BD24F271EB5F900EC22E1 /* Student.m */,
 			);
 			path = KCObjcBuild;
 			sourceTree = "<group>";
@@ -596,6 +610,15 @@
 			name = "Project Headers";
 			sourceTree = "<group>";
 		};
+		8CE9CE11273943F2001FF8B5 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				8CE9CE1327394401001FF8B5 /* RuntimeTool.h */,
+				8CE9CE1227394401001FF8B5 /* RuntimeTool.m */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
 		E9AD465824925261002AF1DB /* check-preopt-caches */ = {
 			isa = PBXGroup;
 			children = (
@@ -772,7 +795,7 @@
 				TargetAttributes = {
 					0466411125A4991B002440A8 = {
 						CreatedOnToolsVersion = 12.2;
-						DevelopmentTeam = Q8B5XV6KJQ;
+						DevelopmentTeam = ZRH7G9EDH6;
 						ProvisioningStyle = Automatic;
 					};
 					6EF877D62325D62600963DBB = {
@@ -872,8 +895,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C0675FB26F201C800AEC8ED /* Person.m in Sources */,
 				0466411525A4991B002440A8 /* main.m in Sources */,
+				8C2D27082726DD3B008B0CAE /* Student+Extension.m in Sources */,
+				8C0675FB26F201C800AEC8ED /* Person.m in Sources */,
+				8C5BD250271EB5F900EC22E1 /* Student.m in Sources */,
+				8CE9CE1427394401001FF8B5 /* RuntimeTool.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -988,9 +1014,10 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				DEVELOPMENT_TEAM = Q8B5XV6KJQ;
+				DEVELOPMENT_TEAM = ZRH7G9EDH6;
 				ENABLE_HARDENED_RUNTIME = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -1000,9 +1027,13 @@
 				);
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.jentle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
 			name = Debug;
 		};
@@ -1019,17 +1050,22 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				DEVELOPMENT_TEAM = Q8B5XV6KJQ;
+				DEVELOPMENT_TEAM = ZRH7G9EDH6;
 				ENABLE_HARDENED_RUNTIME = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.jentle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
 			name = Release;
 		};
@@ -1286,7 +1322,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LLVM_LTO = YES;
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				ONLY_ACTIVE_ARCH = YES;
 				ORDER_FILE = "$(SRCROOT)/libobjc.order";
 				OTHER_CFLAGS = "";
@@ -1359,7 +1395,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LLVM_LTO = YES;
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				ORDER_FILE = "$(SRCROOT)/libobjc.order";
 				OTHER_CFLAGS = "-momit-leaf-frame-pointer";
 				"OTHER_CFLAGS[arch=x86_64]" = (

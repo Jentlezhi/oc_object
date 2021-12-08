@@ -9,4 +9,9 @@
 
 @implementation Teacher
 
+//- (void)say1 {
+//    [super say1];
+//    NSLog(@"%s",__func__);
+//}
+
 @end
