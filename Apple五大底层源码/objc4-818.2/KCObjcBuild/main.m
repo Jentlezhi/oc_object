@@ -262,12 +262,13 @@ void isMemberOfClassDemo(void){
 
 void cache_test(void){
     
-    Person *p = [Person new];
-    Class pClass = [p class];
-    NSLog(@"%@",pClass);
-    NSLog(@"%@",p);
+    Person *p = [Person alloc];
+//    Person *p1 = [Person alloc];
+//    Class pClass = [p class];
+//    NSLog(@"%@",pClass);
+//    NSLog(@"%@",p);
     [p sayHello];
-    [p sayGoodBye];
+//    [p sayGoodBye];
     NSLog(@"%s",__func__);
 }
 

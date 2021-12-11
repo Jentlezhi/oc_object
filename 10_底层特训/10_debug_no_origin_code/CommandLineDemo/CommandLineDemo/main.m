@@ -40,12 +40,12 @@ int main(int argc, const char * argv[]) {
     @autoreleasepool {
         Person *p = [Person new];
         [p say1];
-        [p say2];
-        [p say3];
-        [p say4];
-        [p say5];
-        [p say6];
-        [p say7];
+//        [p say2];
+//        [p say3];
+//        [p say4];
+//        [p say5];
+//        [p say6];
+//        [p say7];
         //_maybeMask-扩容
         //4-1=3
         //8-1=7
