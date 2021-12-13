@@ -825,8 +825,7 @@ void cache_t::bad_cache(id receiver, SEL sel)
 
 void cache_t::insert(SEL sel, IMP imp, id receiver)
 {
-    printf("sel-%s,imp-%p,receiver-%p\n",(char *)sel,imp,receiver);
-    printf("",(char *)sel,imp,receiver);
+//    printf("sel-%s,imp-%p,receiver-%p\n",(char *)sel,imp,receiver);
     runtimeLock.assertLocked();
 
     // Never cache before +initialize is done
@@ -869,7 +868,7 @@ void cache_t::insert(SEL sel, IMP imp, id receiver)
         if (capacity > MAX_CACHE_SIZE) {
             capacity = MAX_CACHE_SIZE;
         }
-        printf("capacity = %d\n",capacity);
+//        printf("capacity = %d\n",capacity);
         reallocate(oldCapacity, capacity, true);
     }
     bucket_t *b = buckets();
