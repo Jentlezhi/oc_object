@@ -272,6 +272,11 @@ void cache_test(void){
     NSLog(@"%s",__func__);
 }
 
+void categoryMethod(void){
+    Student *s = [Student new];
+    [s studentInstanceMethod];
+}
+
 int main(int argc, const char * argv[]) {
 //    instanceAndClassMethod();
 //    classMethod();
@@ -284,7 +289,8 @@ int main(int argc, const char * argv[]) {
 //    Person  *p =  [Person new];
 //    instanceMethod_classToMetaclass([p class]);
 //    isMemberOfClassDemo();
-    cache_test();
+//    cache_test();
+    categoryMethod();
     return 0;
 }
 

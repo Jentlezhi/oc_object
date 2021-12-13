@@ -10,20 +10,20 @@
 
 @implementation Student
 
-+ (void)load {
-    
-    NSLog(@"%s",__func__);
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        Method m1 = class_getInstanceMethod(self, @selector(personInstanceMethod));
-        Method m2 = class_getInstanceMethod(self, @selector(studentInstanceMethod));
-        method_exchangeImplementations(m1, m2);
-    });
-}
+//+ (void)load {
+//    
+//    NSLog(@"%s",__func__);
+//    static dispatch_once_t onceToken;
+//    dispatch_once(&onceToken, ^{
+//        Method m1 = class_getInstanceMethod(self, @selector(personInstanceMethod));
+//        Method m2 = class_getInstanceMethod(self, @selector(studentInstanceMethod));
+//        method_exchangeImplementations(m1, m2);
+//    });
+//}
 
 - (void)studentInstanceMethod {
     
-    NSLog(@"%s",__func__);
+    NSLog(@"-- student -studentInstanceMethod--");
 }
 
 //+ (void)initialize {

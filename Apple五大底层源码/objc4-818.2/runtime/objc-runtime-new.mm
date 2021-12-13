@@ -5936,7 +5936,10 @@ findMethodInSortedMethodList(SEL key, const method_list_t *list, const getNameFu
 
     uintptr_t keyValue = (uintptr_t)key;
     uint32_t count;
-    
+    /*
+     count >>= 1 减半
+     probe = 
+     */
     for (count = list->count; count != 0; count >>= 1) {
         probe = base + (count >> 1);
         
