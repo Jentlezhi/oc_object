@@ -355,37 +355,21 @@ LLookupStart\Function:
 	and	p10, p10, #0xffffffffffff	// p10 = buckets
 	and	w12, w1, w11			// x12 = _cmd & mask
 #elif CACHE_MASK_STORAGE == CACHE_MASK_STORAGE_HIGH_16
-    ldr	p11, [x16, #CACHE]			// p11 = mask|buckets
-   /*
-    // __arm64__ && IOS操作系统 && !模拟器 && !TARGET_OS_MACCATALYST
-    #if defined(__arm64__) && TARGET_OS_IOS && !TARGET_OS_SIMULATOR && !TARGET_OS_MACCATALYST
-    #define CONFIG_USE_PREOPT_CACHES 1
-    #else
-    #define CONFIG_USE_PREOPT_CACHES 0
-    #endif
-    */
-   #if CONFIG_USE_PREOPT_CACHES
-     /*
-      __has_feature(ptrauth_calls): 是判断编译器是否支持指针身份验证功能
-      ptrauth_calls 指针身份验证，针对arm64e架构；使用Apple A12或更高版本A系列处理器的设备（如iPhone XS、iPhone XS Max和iPhone XR或更新的设备）支持arm64e架构
-      */
-     #if __has_feature(ptrauth_calls)
-	   tbnz	p11, #0, LLookupPreopt\Function
-	   and	p10, p11, #0x0000ffffffffffff	// p10 = buckets
-     #else
-	   and	p10, p11, #0x0000fffffffffffe	// p10 = buckets
-	   tbnz	p11, #0, LLookupPreopt\Function
-     #endif
-       /*
-        p1, LSR #7 : LSR可完成对通用寄存器中的内容进行右移的操作
-        */
-	   eor	p12, p1, p1, LSR #7
-	   and	p12, p12, p11, LSR #48		// x12 = (_cmd ^ (_cmd >> 7)) & mask
-   #else
-     
-	 and	p10, p11, #0x0000ffffffffffff	// p10 = buckets
-	 and	p12, p1, p11, LSR #48		// x12 = _cmd & mask
-   #endif // CONFIG_USE_PREOPT_CACHES
+	ldr	p11, [x16, #CACHE]			// p11 = mask|buckets
+#if CONFIG_USE_PREOPT_CACHES
+#if __has_feature(ptrauth_calls)
+	tbnz	p11, #0, LLookupPreopt\Function
+	and	p10, p11, #0x0000ffffffffffff	// p10 = buckets
+#else
+	and	p10, p11, #0x0000fffffffffffe	// p10 = buckets
+	tbnz	p11, #0, LLookupPreopt\Function
+#endif
+	eor	p12, p1, p1, LSR #7
+	and	p12, p12, p11, LSR #48		// x12 = (_cmd ^ (_cmd >> 7)) & mask
+#else
+	and	p10, p11, #0x0000ffffffffffff	// p10 = buckets
+	and	p12, p1, p11, LSR #48		// x12 = _cmd & mask
+#endif // CONFIG_USE_PREOPT_CACHES
 #elif CACHE_MASK_STORAGE == CACHE_MASK_STORAGE_LOW_4
 	ldr	p11, [x16, #CACHE]				// p11 = mask|buckets
 	and	p10, p11, #~0xf			// p10 = buckets

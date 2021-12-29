@@ -455,7 +455,6 @@ void
 map_images_nolock(unsigned mhCount, const char * const mhPaths[],
                   const struct mach_header * const mhdrs[])
 {
-//    printf("map_images_nolock\n");
     static bool firstTime = YES;
     header_info *hList[mhCount];
     uint32_t hCount;

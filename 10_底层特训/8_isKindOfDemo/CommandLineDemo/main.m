@@ -42,8 +42,7 @@ void isKindOfDemo(void){
     NSLog(@"re2 = %d",re2);//re1 = 1
     
     
-    
-//    BOOL re1 = [(id)[NSObject class] isKindOfClass:[NSObject class]];       //
+    BOOL re1 = [(id)[NSObject class] isKindOfClass:[NSObject class]];       //
 //    BOOL re2 = [(id)[NSObject class] isMemberOfClass:[NSObject class]];     //
 //    BOOL re3 = [(id)[Person class] isKindOfClass:[Person class]];       //
 //    BOOL re4 = [(id)[Person class] isMemberOfClass:[Person class]];     //

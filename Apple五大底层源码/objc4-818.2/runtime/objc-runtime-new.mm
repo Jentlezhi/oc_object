@@ -173,8 +173,8 @@ STATIC_ASSERT((ISA_MASK & ISA_MAGIC_MASK) == 0);
 STATIC_ASSERT((~ISA_MAGIC_MASK & ISA_MAGIC_VALUE) == 0);
 
 // die if virtual address space bound goes up
-STATIC_ASSERT((~ISA_MASK & MACH_VM_MAX_ADDRESS) == 0  ||  
-              ISA_MASK + sizeof(void*) == MACH_VM_MAX_ADDRESS);
+//STATIC_ASSERT((~ISA_MASK & MACH_VM_MAX_ADDRESS) == 0  ||
+//              ISA_MASK + sizeof(void*) == MACH_VM_MAX_ADDRESS);
 
 // SUPPORT_PACKED_ISA
 #else
@@ -1208,6 +1208,12 @@ public:
 
         auto &map = get();
         auto it = map.find(previously);
+        
+//        const char *clsName = cls->mangledName();
+//        const char *customName = "Person";
+//        if (strcmp(clsName, customName) == 0) {
+//            printf("---attachToClass---\n");
+//        }
 
         if (it != map.end()) {
             category_list &list = it->second;
@@ -1270,6 +1276,7 @@ fixupMethodList(method_list_t *mlist, bool bundleCopy, bool sort)
         for (auto& meth : *mlist) {
             const char *name = sel_cname(meth.name());
             meth.setName(sel_registerNameNoLock(name, bundleCopy));
+            printf("%s - %p \n",name,meth.name());
         }
     }
 
@@ -1474,6 +1481,12 @@ attachCategories(Class cls, const locstamped_category_t *cats_list, uint32_t cat
 static void methodizeClass(Class cls, Class previously)
 {
     runtimeLock.assertLocked();
+    
+    const char *mangledName = cls->mangledName();
+    const char *myClassName = "Person";
+    if (strcmp(mangledName, myClassName) == 0) {
+           printf("%s -  %s\n",__func__,mangledName);
+    }
 
     bool isMeta = cls->isMetaClass();
     auto rw = cls->data();
@@ -2619,9 +2632,35 @@ static Class realizeClassWithoutSwift(Class cls, Class previously)
     ASSERT(cls == remapClass(cls));
 
     // fixme verify class is not in an un-dlopened part of the shared cache?
-
+    /*
+     struct class_rw_t {
+         // Be warned that Symbolication knows the layout of this structure.
+         uint32_t flags;
+         uint16_t witness;
+     #if SUPPORT_INDEXED_ISA
+         uint16_t index;
+     #endif
+     }
+     -----------------------------------------
+     struct class_ro_t {
+         uint32_t flags;
+         uint32_t instanceStart;
+         uint32_t instanceSize;
+     #ifdef __LP64__
+         uint32_t reserved;
+     #endif
+     }
+     */
     auto ro = (const class_ro_t *)cls->data();
     auto isMeta = ro->flags & RO_META;
+    
+    const char *mangledName = cls->mangledName();
+    const char *myClassName = "Person";
+    if (strcmp(mangledName, myClassName) == 0) {
+        printf("%s -  %s\n",__func__,mangledName);
+    }
+    
+    
     if (ro->flags & RO_FUTURE) {
         // This was a future class. rw data is already allocated.
         rw = cls->data();
@@ -3131,10 +3170,15 @@ static void load_categories_nolock(header_info *hi) {
     auto processCatlist = [&](category_t * const *catlist) {
         for (unsigned i = 0; i < count; i++) {
             category_t *cat = catlist[i];
-            //根据分类，获取分类对应的类
             Class cls = remapClass(cat->cls);
             locstamped_category_t lc{cat, hi};
-            //如果分类所属的类找不到，那么就会忽略这个分类
+            
+            const char *clsName = cls->nonlazyMangledName();
+            const char *customName = "Person";
+            if (strcmp(clsName, customName) == 0) {
+                printf("%s - Person...\n",__func__);
+            }
+            
             if (!cls) {
                 // Category's target class is missing (probably weak-linked).
                 // Ignore the category.
@@ -3164,7 +3208,6 @@ static void load_categories_nolock(header_info *hi) {
                     objc::unattachedCategories.addForClass(lc, cls);
                 }
             } else {
-                // 把分类新增的方法、协议、属性都添加到元类中
                 // First, register the category with its target class.
                 // Then, rebuild the class's method lists (etc) if
                 // the class is realized.
@@ -3761,6 +3804,12 @@ void _read_images(header_info **hList, uint32_t hCount, int totalClasses, int un
         for (i = 0; i < count; i++) {
             Class cls = remapClass(classlist[i]);
             if (!cls) continue;
+            
+//            const char *mangledName = cls->nonlazyMangledName();
+//            const char *myName = "Person";
+//            if (strcmp(mangledName, myName) == 0) {
+//                printf("---Realize non-lazy classes (for +load methods and static instances)---");
+//            }
 
             addClassTableEntry(cls);
 
@@ -3901,11 +3950,10 @@ void prepare_load_methods(const headerType *mhdr)
 
     classref_t const *classlist = 
         _getObjc2NonlazyClassList(mhdr, &count);
-    //先递归调度 类和父类
     for (i = 0; i < count; i++) {
         schedule_class_load(remapClass(classlist[i]));
     }
-    //再调度分类
+
     category_t * const *categorylist = _getObjc2NonlazyCategoryList(mhdr, &count);
     for (i = 0; i < count; i++) {
         category_t *cat = categorylist[i];
@@ -5936,10 +5984,7 @@ findMethodInSortedMethodList(SEL key, const method_list_t *list, const getNameFu
 
     uintptr_t keyValue = (uintptr_t)key;
     uint32_t count;
-    /*
-     count >>= 1 减半
-     probe = 
-     */
+    
     for (count = list->count; count != 0; count >>= 1) {
         probe = base + (count >> 1);
         
@@ -7979,7 +8024,7 @@ _class_createInstanceFromZone(Class cls, size_t extraBytes, void *zone,
     bool hasCxxDtor = cls->hasCxxDtor();
     bool fast = cls->canAllocNonpointer();
     size_t size;
-    //对象在内存中所需的大小
+
     size = cls->instanceSize(extraBytes);
     if (outAllocatedSize) *outAllocatedSize = size;
 
