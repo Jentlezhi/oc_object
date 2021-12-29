@@ -175,8 +175,20 @@ _object_set_associative_reference(id object, const void *key, id value, uintptr_
 
     bool isFirstAssociation = false;
     {
-        AssociationsManager manager;
+        AssociationsManager manager;//构造函数
         AssociationsHashMap &associations(manager.get());
+        
+        //manager构造函数加了锁，所以这里需要修改代码，否认会崩溃
+        //AssociationsManager()   { AssociationsManagerLock.lock(); } ->
+        //AssociationsManager()   { }
+//        AssociationsManager manager1;
+//        AssociationsHashMap &associations1(manager1.get());
+//
+//        AssociationsManager manager2;
+//        AssociationsHashMap &associations2(manager2.get());
+//
+//        AssociationsManager manager3;
+//        AssociationsHashMap &associations3(manager3.get());
 
         if (value) {
             auto refs_result = associations.try_emplace(disguised, ObjectAssociationMap{});
@@ -227,7 +239,7 @@ void
 _object_remove_assocations(id object, bool deallocating)
 {
     ObjectAssociationMap refs{};
-
+//    printf("%s - 移除关联对象: %s\n",__func__,object_getClassName(object));
     {
         AssociationsManager manager;
         AssociationsHashMap &associations(manager.get());
