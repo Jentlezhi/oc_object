@@ -27,10 +27,11 @@ int main(int argc, const char * argv[]) {
         [p say1];//[Person say1]
         Class cls = [Person class];
         NSLog(@"%p",cls);
+        //void * 无类型指针，可以指向任何类型
         void *clsPointer = &cls;
         /*
-         方法调用的实质是objcMsgsend(receiver,sel)
-         
+         方法调用的实质是objcMsgSend(receiver,sel)
+         objcMsgSend的查找是通过内存平移等找到方法
          */
         [(__bridge  id)clsPointer say1];//[Person say1]
         NSLog(@"iOS 高级之美");
