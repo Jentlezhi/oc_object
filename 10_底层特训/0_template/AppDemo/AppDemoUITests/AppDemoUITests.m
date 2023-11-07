@@ -2,7 +2,7 @@
 //  AppDemoUITests.m
 //  AppDemoUITests
 //
-//  Created by Jentle on 2021/11/26.
+//  Created by Jentle-Zhi on 2022/5/23.
 //
 
 #import <XCTest/XCTest.h>
@@ -31,7 +31,6 @@
     XCUIApplication *app = [[XCUIApplication alloc] init];
     [app launch];
 
-    // Use recording to get started writing UI tests.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
 }
 

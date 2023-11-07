@@ -9,4 +9,22 @@
 
 @implementation MyTest
 
+- (void)test {
+    
+    NSLog(@"%s",__func__);
+}
+
+//- (void)otherTest {
+//
+//    NSLog(@"%s",__func__);
+//}
+
++ (BOOL)resolveInstanceMethod:(SEL)sel {
+    
+    if (sel == @selector(otherTest)) {
+        NSLog(@"otherTest");
+    }
+    return YES;
+}
+
 @end

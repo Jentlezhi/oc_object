@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>demo</title>
+    <style>
+        *{
+           font-size: 50px;
+         }
+        .btn{height:80px; width:60%;}
+   </style>
+</head>
+<body>
+    <div>以下是网页内容---------------</div>
+    <div id="js_content"></div>
+    <button type="button" onclick="IOSCallJs()">IOS调用js代码</button><br>
+    <button type="button" onclick="IOSCallJsWithArgs('js')">IOS调用js代码并传递参数</button><br>
+    <button type="button" onclick="jsCallIOS()">JS调用IOS代码</button><br>
+    <button type="button" onclick="jsCallIOSWithArgs('ios')">JS调用IOS代码并传递参数</button><br>
+    <script>
+        //IOS调用js代码无参数
+        function IOSCallJs() {
+            document.getElementById('js_content').innerHTML = 'hello js';
+        }
+
+       //IOS调用js代码带参数
+        function IOSCallJsWithArgs(name) {
+            document.getElementById('js_content').innerHTML = `hello withArgs ${name}`;
+        }
+        //js调用IOS代码无参数
+        function jsCallIOS(){
+             window.webkit.messageHandlers.jsInvokeOCMethod.postMessage('Javascript invoke OC');
+        }
+        //js调用IOS代码有参数
+        function jsCallIOSWithArgs(name){
+            window.webkit.messageHandlers.jsInvokeOCMethodArgs.postMessage(`Javascript invoke OC Args:${name}`);
+        }
+    </script>
+</body>
+</html>

@@ -13,13 +13,13 @@
     Dog *_dog;
 }
 
+
 - (void)setDog:(nullable Dog*)dog {
     
     if (_dog != dog) {
         [_dog release];
         _dog = [dog retain];
     }
-    
 }
 
 - (Dog *)dog {

@@ -16,6 +16,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    UIButton *b;
+    [b addTarget:self action:@selector(xx) forControlEvents:UIControlEventTouchUpInside];
     Person *p = [Person new];
     __weak Person *weakP = p;
     NSLog(@"----------");

@@ -13,7 +13,9 @@ NS_ASSUME_NONNULL_BEGIN
 @interface Person : NSObject<NSCopying>
 
 /// data
-@property(strong, nonatomic) NSMutableArray *data;
+//@property(strong, nonatomic) NSMutableArray *data;
+
+@property(copy, nonatomic) NSMutableArray *data;
 /// name
 @property(copy, nonatomic) NSString *name;
 /// 学号

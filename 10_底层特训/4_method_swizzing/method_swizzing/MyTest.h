@@ -11,6 +11,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MyTest : NSObject
 
+- (void)test;
+
+- (void)otherTest;
+
 @end
 
 NS_ASSUME_NONNULL_END

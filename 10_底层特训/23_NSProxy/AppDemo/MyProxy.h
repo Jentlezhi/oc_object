@@ -11,6 +11,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MyProxy : NSProxy
 
+- (id)initWithTarget1:(id)t1 target:(id)t2;
+
 @end
 
 NS_ASSUME_NONNULL_END

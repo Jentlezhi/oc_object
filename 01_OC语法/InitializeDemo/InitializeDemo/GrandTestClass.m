@@ -10,4 +10,8 @@
 
 @implementation GrandTestClass
 
++ (void)initialize {
+    NSLog(@"%@-%@",@"SubTestClass",NSStringFromSelector(_cmd));
+}
+
 @end

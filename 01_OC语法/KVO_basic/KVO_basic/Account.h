@@ -12,6 +12,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Account : NSObject
 
+@property(assign, nonatomic) NSInteger interestRate;
+
+@property(assign, nonatomic) NSInteger balance;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C3AA2D527D6D4C300CD00C5 /* Student2.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C3AA2D427D6D4C300CD00C5 /* Student2.m */; };
 		8C5FFF332730A6E3005BF1D1 /* RuntimeTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C5FFF322730A6E3005BF1D1 /* RuntimeTool.m */; };
 		8C5FFF362730A899005BF1D1 /* Student+EXT.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C5FFF352730A899005BF1D1 /* Student+EXT.m */; };
 		8C945204272903000043862A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C945203272903000043862A /* AppDelegate.m */; };
@@ -21,6 +22,7 @@
 		8C945239272903310043862A /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C945238272903310043862A /* Person.m */; };
 		8C94523C2729036D0043862A /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C94523B2729036D0043862A /* Student.m */; };
 		8CB0D69027321E6300F8DE72 /* NSObject+EXT.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CB0D68F27321E6300F8DE72 /* NSObject+EXT.m */; };
+		8CCEE77827EABA1800D65132 /* MyTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CCEE77727EABA1800D65132 /* MyTest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8C3AA2D327D6D4C300CD00C5 /* Student2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Student2.h; sourceTree = "<group>"; };
+		8C3AA2D427D6D4C300CD00C5 /* Student2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Student2.m; sourceTree = "<group>"; };
 		8C5FFF312730A6E3005BF1D1 /* RuntimeTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RuntimeTool.h; sourceTree = "<group>"; };
 		8C5FFF322730A6E3005BF1D1 /* RuntimeTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RuntimeTool.m; sourceTree = "<group>"; };
 		8C5FFF342730A899005BF1D1 /* Student+EXT.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Student+EXT.h"; sourceTree = "<group>"; };
@@ -69,6 +73,8 @@
 		8C94523B2729036D0043862A /* Student.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
 		8CB0D68E27321E6300F8DE72 /* NSObject+EXT.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+EXT.h"; sourceTree = "<group>"; };
 		8CB0D68F27321E6300F8DE72 /* NSObject+EXT.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+EXT.m"; sourceTree = "<group>"; };
+		8CCEE77627EABA1800D65132 /* MyTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyTest.h; sourceTree = "<group>"; };
+		8CCEE77727EABA1800D65132 /* MyTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyTest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +136,8 @@
 				8C945210272903010043862A /* LaunchScreen.storyboard */,
 				8C945213272903010043862A /* Info.plist */,
 				8C945214272903010043862A /* main.m */,
+				8C3AA2D327D6D4C300CD00C5 /* Student2.h */,
+				8C3AA2D427D6D4C300CD00C5 /* Student2.m */,
 				8C94523A2729036D0043862A /* Student.h */,
 				8C94523B2729036D0043862A /* Student.m */,
 				8C945237272903310043862A /* Person.h */,
@@ -140,6 +148,8 @@
 				8C5FFF352730A899005BF1D1 /* Student+EXT.m */,
 				8CB0D68E27321E6300F8DE72 /* NSObject+EXT.h */,
 				8CB0D68F27321E6300F8DE72 /* NSObject+EXT.m */,
+				8CCEE77627EABA1800D65132 /* MyTest.h */,
+				8CCEE77727EABA1800D65132 /* MyTest.m */,
 			);
 			path = method_swizzing;
 			sourceTree = "<group>";
@@ -295,8 +305,10 @@
 				8C945204272903000043862A /* AppDelegate.m in Sources */,
 				8C945239272903310043862A /* Person.m in Sources */,
 				8C5FFF362730A899005BF1D1 /* Student+EXT.m in Sources */,
+				8CCEE77827EABA1800D65132 /* MyTest.m in Sources */,
 				8C945215272903010043862A /* main.m in Sources */,
 				8C5FFF332730A6E3005BF1D1 /* RuntimeTool.m in Sources */,
+				8C3AA2D527D6D4C300CD00C5 /* Student2.m in Sources */,
 				8C945207272903000043862A /* SceneDelegate.m in Sources */,
 				8C94523C2729036D0043862A /* Student.m in Sources */,
 				8CB0D69027321E6300F8DE72 /* NSObject+EXT.m in Sources */,

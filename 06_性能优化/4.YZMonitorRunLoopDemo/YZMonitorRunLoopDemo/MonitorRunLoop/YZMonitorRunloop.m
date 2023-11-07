@@ -24,7 +24,7 @@ static const NSInteger MXRMonitorRunloopMinStandstillCount = 1;
 // 超过多少毫秒为一次卡顿
 static const NSInteger MXRMonitorRunloopOneStandstillMillisecond = 50;
 // 多少次卡顿纪录为一次有效卡顿
-static const NSInteger MXRMonitorRunloopStandstillCount = 1;
+static const NSInteger MXRMonitorRunloopStandstillCount = 5;
 
 @interface YZMonitorRunloop(){
     CFRunLoopObserverRef _observer;  // 观察者
@@ -159,7 +159,7 @@ static void runLoopObserverCallBack(CFRunLoopObserverRef observer, CFRunLoopActi
             // 返回值：如果线程是唤醒的，则返回非0，否则返回0
             // NSEC_PER_MSEC:毫秒
             long semaphoreWait = dispatch_semaphore_wait(self->_semaphore, dispatch_time(DISPATCH_TIME_NOW, strongSelf.limitMillisecond * NSEC_PER_MSEC));
-            //semaphoreWait != 0 : p操作失败
+            //semaphoreWait != 0 : 超时
             if (semaphoreWait != 0) {
                 
                 // 如果 RunLoop 的线程，进入睡眠前方法的执行时间过长而导致无法进入睡眠(kCFRunLoopBeforeSources)，或者线程唤醒后接收消息时间过长(kCFRunLoopAfterWaiting)而无法进入下一步的话，就可以认为是线程受阻。
@@ -167,10 +167,12 @@ static void runLoopObserverCallBack(CFRunLoopObserverRef observer, CFRunLoopActi
                 /*
                  如果我们要利用RunLoop原理来监控卡顿的话，就要关注这两个阶段。RunLoop在进入睡眠之前和唤醒后的两个loop状态定义的值，分别是kCFRunLoopBeforeSource和kCFRunLoopAfterWaiting，也就是要触发Source0回调和接受mac_port消息两个状态
                  */
-                if (self->_activity == kCFRunLoopBeforeSources || self->_activity == kCFRunLoopAfterWaiting) {
-                    
-                    if (++strongSelf.countTime < strongSelf.standstillCount){
-                        NSLog(@"%ld",strongSelf.countTime);
+                CFRunLoopActivity activity = self->_activity;
+                NSInteger countTime = strongSelf.countTime;
+                if (activity == kCFRunLoopBeforeSources || activity == kCFRunLoopAfterWaiting) {
+                    ++countTime;
+                    NSLog(@"countTime - %ld",countTime);
+                    if (countTime < strongSelf.standstillCount){
                         continue;
                     }
                     [strongSelf logStack];

@@ -1,0 +1,20 @@
+#source 'https://github.com/CocoaPods/Specs.git'
+
+platform :ios, ‘8.0’
+use_frameworks!
+
+def pods
+	pod "BeeHive", :path => "../"
+  pod 'LookinServer', :configurations => ['Debug']
+
+end
+
+
+target 'BeeHive_Example' do
+	pods
+end
+
+target 'BeeHive_Tests' do
+	pods
+end
+

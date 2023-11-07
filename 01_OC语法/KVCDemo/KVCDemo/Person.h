@@ -10,12 +10,18 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+
 @interface Person : NSObject
 
 //{
 //    @public
 //    NSInteger _age;
 //}
+
+{
+    @public
+    NSString *name;
+}
 
 @property(assign, nonatomic) NSInteger age;
 

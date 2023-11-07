@@ -17,6 +17,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self testPersonNotFind];
+}
+
+- (void)testPersonNotFind {
+    Person *p = [Person new];
+    [p test:@"hhhhh"];
+}
+
+- (void)test {
     NSString *l = @"123";
     id cls = [Person class];
     void *obj = &cls;
@@ -24,7 +33,7 @@
     
     NSLog(@"------------------------");
     Person *p = Person.new;
-    [p test];
+//    [p test];
     NSLog(@"------------------------");
 }
 @end

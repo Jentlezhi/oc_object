@@ -25,6 +25,7 @@ void funCall(void) {
     Person *p = [[Person alloc] init];
     ///objc_msgSend((p, sel_registerName("personTest"));
     NSLog(@"@selector:%p - sel_registerName: %p",@selector(personTest),sel_registerName("personTest"));
+    SEL sel = sel_registerName("personTest");
     [p personTest];
     
     ///类方法的方法调用

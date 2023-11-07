@@ -44,18 +44,19 @@
 
 - (id)forwardingTargetForSelector:(SEL)aSelector {
     
-    if (aSelector == @selector(test)) {
-        ///若返回nil,则调用methodSignatureForSelector
-        return nil;
-//        return /*底层调用objc_msgSend([[Cat alloc] init],aSelector);*/[[Cat alloc] init];
-    }
+//    if (aSelector == @selector(test)) {
+//        ///若返回nil,则调用methodSignatureForSelector
+//        return nil;
+////        return /*底层调用objc_msgSend([[Cat alloc] init],aSelector);*/[[Cat alloc] init];
+//    }
     return [super forwardingTargetForSelector:aSelector];
 }
 
 - (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector {
     
     if (aSelector == @selector(test)) {
-        return [NSMethodSignature signatureWithObjCTypes:"v16@0:8"];
+//        return [NSMethodSignature signatureWithObjCTypes:"v16@0:8"];
+        return [NSMethodSignature signatureWithObjCTypes:"v@:"];
     }
     return [super methodSignatureForSelector:aSelector];
 }
@@ -65,8 +66,13 @@
     
 //    anInvocation.target = [[Cat alloc] init];
 //    [anInvocation invoke];
-    [anInvocation invokeWithTarget:[[Cat alloc] init]];
-    [anInvocation invokeWithTarget:[[Sheep alloc] init]];
+    
+    anInvocation.target = [[Cat alloc] init];
+    anInvocation.selector = @selector(test);
+//    [anInvocation invoke];
+    
+//    [anInvocation invokeWithTarget:[[Cat alloc] init]];
+//    [anInvocation invokeWithTarget:[[Sheep alloc] init]];
     
 }
 

@@ -11,6 +11,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol OtherProtocol <NSObject>
 
+- (void)other;
+
 @end
 
 NS_ASSUME_NONNULL_END

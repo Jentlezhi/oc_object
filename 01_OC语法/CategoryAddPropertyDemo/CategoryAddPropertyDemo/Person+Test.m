@@ -46,4 +46,8 @@ NSMutableDictionary *weights_;
     return [weights_[key] floatValue];
 }
 
+//- (void)setAge:(NSInteger)age {
+//    NSLog(@"setAge");
+//}
+
 @end

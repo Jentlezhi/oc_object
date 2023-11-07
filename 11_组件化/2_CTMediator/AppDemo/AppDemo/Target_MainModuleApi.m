@@ -9,9 +9,15 @@
 
 @implementation Target_MainModuleApi
 
-+ (NSString *)greet:(NSDictionary *)par {
+- (NSString *)Action_greet:(NSDictionary *)par {
     NSString *content = [NSString stringWithFormat:@"欢迎%@%@",par[@"firstName"],par[@"secondName"]];
     return content;
+}
+
+- (UIImageView *)Action_getImageView:(NSDictionary *)par {
+    UIImageView *igv = [UIImageView new];
+    igv.image = [par valueForKey:@"image"];
+    return igv;
 }
 
 @end

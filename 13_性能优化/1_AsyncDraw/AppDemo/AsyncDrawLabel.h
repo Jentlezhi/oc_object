@@ -11,6 +11,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface AsyncDrawLabel : UIView
 
+@property(copy, nonatomic) NSString *text;
+
+@property(strong, nonatomic) UIFont *font;
+
 @end
 
 NS_ASSUME_NONNULL_END

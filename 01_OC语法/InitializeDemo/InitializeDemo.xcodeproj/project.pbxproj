@@ -20,6 +20,7 @@
 		8C0A934D237CFA67005D937A /* SubTestClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C0A934C237CFA67005D937A /* SubTestClass.m */; };
 		8C0A9353237CFCE8005D937A /* GrandTestClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C0A9352237CFCE8005D937A /* GrandTestClass.m */; };
 		8C0A9356237CFF66005D937A /* TestClass+Y.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C0A9355237CFF66005D937A /* TestClass+Y.m */; };
+		8CBCE7572AA56CE3006B1EC4 /* TestClass+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CBCE7562AA56CE3006B1EC4 /* TestClass+X.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,8 @@
 		8C0A9352237CFCE8005D937A /* GrandTestClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GrandTestClass.m; sourceTree = "<group>"; };
 		8C0A9354237CFF66005D937A /* TestClass+Y.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TestClass+Y.h"; sourceTree = "<group>"; };
 		8C0A9355237CFF66005D937A /* TestClass+Y.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "TestClass+Y.m"; sourceTree = "<group>"; };
+		8CBCE7552AA56CE3006B1EC4 /* TestClass+X.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TestClass+X.h"; sourceTree = "<group>"; };
+		8CBCE7562AA56CE3006B1EC4 /* TestClass+X.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "TestClass+X.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +121,8 @@
 			children = (
 				8C0A9313237CFA2F005D937A /* AppDelegate.h */,
 				8C0A9314237CFA2F005D937A /* AppDelegate.m */,
+				8CBCE7552AA56CE3006B1EC4 /* TestClass+X.h */,
+				8CBCE7562AA56CE3006B1EC4 /* TestClass+X.m */,
 				8C0A9354237CFF66005D937A /* TestClass+Y.h */,
 				8C0A9355237CFF66005D937A /* TestClass+Y.m */,
 				8C0A9348237CFA4C005D937A /* TestClass.h */,
@@ -289,6 +294,7 @@
 			files = (
 				8C0A934A237CFA4C005D937A /* TestClass.m in Sources */,
 				8C0A931B237CFA2F005D937A /* ViewController.m in Sources */,
+				8CBCE7572AA56CE3006B1EC4 /* TestClass+X.m in Sources */,
 				8C0A9356237CFF66005D937A /* TestClass+Y.m in Sources */,
 				8C0A9315237CFA2F005D937A /* AppDelegate.m in Sources */,
 				8C0A934D237CFA67005D937A /* SubTestClass.m in Sources */,

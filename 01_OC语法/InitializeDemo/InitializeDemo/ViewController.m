@@ -23,7 +23,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [TestClass alloc];
+//    [[TestClass alloc] init];
+    [[SubTestClass alloc] init];
+//    [GrandTestClass alloc];
     ///消息发送机制：等价于
     ///((void(*)(id,SEL))objc_msgSend)([TestClass class], @selector(alloc));
     

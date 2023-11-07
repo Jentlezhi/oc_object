@@ -1,0 +1,28 @@
+PODS:
+  - Masonry (1.1.0)
+  - MGJRouter (0.8.0)
+
+DEPENDENCIES:
+  - Masonry
+  - MGJRouter (from `https://github.com/Jentlezhi/MGJRouter`)
+
+SPEC REPOS:
+  trunk:
+    - Masonry
+
+EXTERNAL SOURCES:
+  MGJRouter:
+    :git: https://github.com/Jentlezhi/MGJRouter
+
+CHECKOUT OPTIONS:
+  MGJRouter:
+    :commit: 565841ec6b70889262ed232704978fcf7deb9e44
+    :git: https://github.com/Jentlezhi/MGJRouter
+
+SPEC CHECKSUMS:
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MGJRouter: d8bc21beb8cc8567491854d8a4b7533d95889e22
+
+PODFILE CHECKSUM: e491197c4f4ac6d235da3b6819ad36496f36c0b4
+
+COCOAPODS: 1.12.1

@@ -10,8 +10,10 @@
 
 @interface ViewController ()
 
-/// <#注释#>
+
 @property(assign, nonatomic) Person *p;
+
+@property(strong, nonatomic) NSString *address;
 
 @property(assign, nonatomic) NSString *name;
 
@@ -22,6 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.address = @"Beijing";
     self.name = [NSString stringWithFormat:@"Jentle"];
     NSLog(@"%@",self.name);
     
@@ -33,7 +36,8 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     
-    NSLog(@"%@",self.name);
+    NSLog(@"address = %@",self.address);
+    NSLog(@"name = %@",self.name);
 }
 
 

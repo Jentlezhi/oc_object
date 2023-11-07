@@ -8,7 +8,32 @@
 
 #import "Person.h"
 
+
+@interface Person ()
+
+
+
+@property(copy, nonatomic) NSString *name;
+
+@end
+
+
 @implementation Person
+
+//@synthesize name = myName;
+//@dynamic name;
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+//        _name
+//        myName
+        self.name = @"hhhhhhhhh";
+//        NSLog(@"%@",self.name);
+    }
+    return self;
+}
 
 //- (NSInteger)getAge {
 //
@@ -40,6 +65,13 @@
     NSLog(@"%@--%@",NSStringFromSelector(_cmd),key);
 }
 
++ (BOOL)accessInstanceVariablesDirectly {
+    
+    return YES;
+}
 
+- (void)setValue:(id)value forUndefinedKey:(NSString *)key {
+    NSLog(@"%@",key);
+}
 
 @end

@@ -30,12 +30,11 @@ struct method_t {
 };
 
 - (void)other {
-    
     NSLog(@"%s",__func__);
+    [self personTest];
 }
 
 + (BOOL)resolveInstanceMethod:(SEL)sel {
-    
     if (sel == @selector(personTest)) {
         ///方案一
 //        struct method_t *otherMethod = (struct method_t *)class_getInstanceMethod(self, @selector(other));

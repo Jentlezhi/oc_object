@@ -11,6 +11,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol MyProtocol <NSObject>
 
+- (void)foo;
+
 @end
 
 NS_ASSUME_NONNULL_END

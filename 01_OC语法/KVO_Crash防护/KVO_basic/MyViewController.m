@@ -7,8 +7,13 @@
 //
 
 #import "MyViewController.h"
+#import <objc/runtime.h>
 
 @interface MyViewController ()
+
+@property(assign, nonatomic) int age;
+
+@property(strong, nonatomic) NSTimer *timer;
 
 @end
 
@@ -16,17 +21,38 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    NSString *aString = @"iphone 8";
+    NSString *bString = [NSString stringWithFormat:@"iphone %i", 8];
+    NSLog(@"%d", [aString isEqual:bString]);
+    NSLog(@"%d", [aString isEqualToString:bString]);
+    NSLog(@"%d", aString == bString);
+    self.view.backgroundColor = UIColor.orangeColor;
+    [self addObserver:self forKeyPath:@"age" options:NSKeyValueObservingOptionNew context:nil];
+    __weak typeof(self) weakSelf = self;
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:2.0 repeats:YES block:^(NSTimer * _Nonnull timer) {
+        NSLog(@"timer - block");
+        static int age = 18;
+        weakSelf.age = age;
+        age++;
+    }];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
-*/
+
+//添加了观察者，未实现该方法也会崩溃
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
+    NSLog(@"%@",change);
+
+}
+
+- (void)dealloc
+{
+    [self.timer invalidate];
+    //移除未注册的观察者会崩溃
+//    [self removeObserver:self forKeyPath:@"name"];
+}
+
 
 @end

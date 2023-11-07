@@ -28,7 +28,10 @@
 }
 
 - (void)forwardInvocation:(NSInvocation *)anInvocation {
-    
+    void *returnValue = NULL;
+    NSMethodSignature *methodSignature = [anInvocation methodSignature];
+    NSString *selectorName = NSStringFromSelector(anInvocation.selector);
+    NSInteger numberOfArguments = [methodSignature numberOfArguments];
     NSLog(@"找不到%@方法",NSStringFromSelector(anInvocation.selector));
 }
 

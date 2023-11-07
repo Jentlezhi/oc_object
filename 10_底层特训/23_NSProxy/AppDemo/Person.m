@@ -9,4 +9,12 @@
 
 @implementation Person
 
+- (void)foo {
+    NSLog(@"%s",__func__);
+}
+
+- (void)other {
+    NSLog(@"%s",__func__);
+}
+
 @end

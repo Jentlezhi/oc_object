@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C28D6C62A75046000F65C7F /* NSObject+Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C28D6C52A75046000F65C7F /* NSObject+Test.m */; };
+		8C28D6C92A7504A500F65C7F /* JZPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C28D6C82A7504A500F65C7F /* JZPerson.m */; };
 		8C2B72C8230BC14200B4A298 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C2B72C7230BC14200B4A298 /* main.m */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +25,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8C28D6C22A72C1D200F65C7F /* main-arm64.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "main-arm64.cpp"; path = "Convert_To_C++/main-arm64.cpp"; sourceTree = SOURCE_ROOT; };
+		8C28D6C32A72C1D200F65C7F /* mian.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = mian.cpp; path = "Convert_To_C++/mian.cpp"; sourceTree = SOURCE_ROOT; };
+		8C28D6C42A75046000F65C7F /* NSObject+Test.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+Test.h"; sourceTree = "<group>"; };
+		8C28D6C52A75046000F65C7F /* NSObject+Test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Test.m"; sourceTree = "<group>"; };
+		8C28D6C72A7504A500F65C7F /* JZPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JZPerson.h; sourceTree = "<group>"; };
+		8C28D6C82A7504A500F65C7F /* JZPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JZPerson.m; sourceTree = "<group>"; };
 		8C2B72C4230BC14200B4A298 /* Convert_To_C++ */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Convert_To_C++"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C2B72C7230BC14200B4A298 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -38,9 +46,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8C28D6C12A72C1BD00F65C7F /* C++ */ = {
+			isa = PBXGroup;
+			children = (
+				8C28D6C22A72C1D200F65C7F /* main-arm64.cpp */,
+				8C28D6C32A72C1D200F65C7F /* mian.cpp */,
+			);
+			path = "C++";
+			sourceTree = "<group>";
+		};
 		8C2B72BB230BC14200B4A298 = {
 			isa = PBXGroup;
 			children = (
+				8C28D6C12A72C1BD00F65C7F /* C++ */,
 				8C2B72C6230BC14200B4A298 /* Convert_To_C++ */,
 				8C2B72C5230BC14200B4A298 /* Products */,
 			);
@@ -58,6 +76,10 @@
 			isa = PBXGroup;
 			children = (
 				8C2B72C7230BC14200B4A298 /* main.m */,
+				8C28D6C42A75046000F65C7F /* NSObject+Test.h */,
+				8C28D6C52A75046000F65C7F /* NSObject+Test.m */,
+				8C28D6C72A7504A500F65C7F /* JZPerson.h */,
+				8C28D6C82A7504A500F65C7F /* JZPerson.m */,
 			);
 			path = "Convert_To_C++";
 			sourceTree = "<group>";
@@ -118,7 +140,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C28D6C92A7504A500F65C7F /* JZPerson.m in Sources */,
 				8C2B72C8230BC14200B4A298 /* main.m in Sources */,
+				8C28D6C62A75046000F65C7F /* NSObject+Test.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,7 +264,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 82HALYV6X2;
+				DEVELOPMENT_TEAM = HJXF7SV9V7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -249,7 +273,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 82HALYV6X2;
+				DEVELOPMENT_TEAM = HJXF7SV9V7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

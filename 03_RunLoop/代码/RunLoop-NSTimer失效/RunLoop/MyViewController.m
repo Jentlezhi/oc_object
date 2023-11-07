@@ -10,23 +10,42 @@
 
 @interface MyViewController ()
 
+@property(strong, nonatomic) NSTimer *timer;
+
 @end
 
 @implementation MyViewController
 
 - (void)viewDidLoad {
+    self.view.backgroundColor = UIColor.orangeColor;
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+//    self.timer = [NSTimer scheduledTimerWithTimeInterval:3 repeats:YES block:^(NSTimer * _Nonnull timer) {
+//        NSLog(@"---------------");
+//    }];
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:2.f target:self selector:@selector(test) userInfo:nil repeats:YES];
+    //即使没有self对timer强引用 也不能销毁
+    
+    
+    //手动解决循环引用
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10.f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.timer invalidate];
+        self.timer = nil;
+    });
+    
+    [self performSelector:@selector(test) withObject:nil afterDelay:1.f];
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)test {
+    
+    NSLog(@"%s",__func__);
 }
-*/
+
+- (void)dealloc
+{
+    NSLog(@"%s",__func__);
+    [self.timer invalidate];
+    self.timer = nil;
+}
 
 @end
