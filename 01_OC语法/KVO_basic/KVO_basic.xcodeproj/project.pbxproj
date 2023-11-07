@@ -18,6 +18,7 @@
 		8C66CAF02328675600BA833F /* KVO_basicUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C66CAEF2328675600BA833F /* KVO_basicUITests.m */; };
 		8C66CAFF2328677600BA833F /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C66CAFE2328677600BA833F /* Person.m */; };
 		8C66CB022330470700BA833F /* NSKVONotifying_Person_temp.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C66CB012330470700BA833F /* NSKVONotifying_Person_temp.m */; };
+		8C97D5A4279EBB7A005E5F94 /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C97D5A3279EBB7A005E5F94 /* Account.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,8 @@
 		8C66CAFE2328677600BA833F /* Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		8C66CB002330470700BA833F /* NSKVONotifying_Person_temp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSKVONotifying_Person_temp.h; sourceTree = "<group>"; };
 		8C66CB012330470700BA833F /* NSKVONotifying_Person_temp.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSKVONotifying_Person_temp.m; sourceTree = "<group>"; };
+		8C97D5A2279EBB7A005E5F94 /* Account.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Account.h; sourceTree = "<group>"; };
+		8C97D5A3279EBB7A005E5F94 /* Account.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Account.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +128,8 @@
 				8C66CADA2328675600BA833F /* main.m */,
 				8C0675E626F1927200AEC8ED /* Student.h */,
 				8C0675E726F1927200AEC8ED /* Student.m */,
+				8C97D5A2279EBB7A005E5F94 /* Account.h */,
+				8C97D5A3279EBB7A005E5F94 /* Account.m */,
 			);
 			path = KVO_basic;
 			sourceTree = "<group>";
@@ -281,6 +286,7 @@
 				8C66CADB2328675600BA833F /* main.m in Sources */,
 				8C66CB022330470700BA833F /* NSKVONotifying_Person_temp.m in Sources */,
 				8C66CAFF2328677600BA833F /* Person.m in Sources */,
+				8C97D5A4279EBB7A005E5F94 /* Account.m in Sources */,
 				8C66CACD2328675500BA833F /* AppDelegate.m in Sources */,
 				8C0675E826F1927200AEC8ED /* Student.m in Sources */,
 			);

@@ -6,10 +6,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MyProtocol.h"
+#import "OtherProtocol.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Person : NSObject
+@interface Person : NSObject<MyProtocol,OtherProtocol>
 
 @end
 

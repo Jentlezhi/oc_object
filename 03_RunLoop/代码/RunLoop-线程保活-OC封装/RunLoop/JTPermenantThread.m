@@ -89,4 +89,13 @@
     [self stop];
 }
 
+
+//- (void)test {
+//    [[NSRunLoop currentRunLoop] run];
+//    ///等价于
+//    while (1) {
+//        [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate distantFuture]];
+//    }
+//}
+
 @end

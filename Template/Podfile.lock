@@ -1,0 +1,30 @@
+PODS:
+  - Masonry (1.1.0)
+  - YYCategories (1.0.4):
+    - YYCategories/no-arc (= 1.0.4)
+  - YYCategories/no-arc (1.0.4)
+
+DEPENDENCIES:
+  - Masonry
+  - YYCategories (from `https://github.com/Jentlezhi/YYCategories.git`)
+
+SPEC REPOS:
+  trunk:
+    - Masonry
+
+EXTERNAL SOURCES:
+  YYCategories:
+    :git: https://github.com/Jentlezhi/YYCategories.git
+
+CHECKOUT OPTIONS:
+  YYCategories:
+    :commit: 5e2a7a6288e6eb30bbf2400b31e88d65a24cf0f4
+    :git: https://github.com/Jentlezhi/YYCategories.git
+
+SPEC CHECKSUMS:
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  YYCategories: 6bcd4314c6661a561410dce4a793379ebd306abd
+
+PODFILE CHECKSUM: fdd72672be8e0f3ffd6091cf76ecd16bcb95c6ca
+
+COCOAPODS: 1.12.1

@@ -11,6 +11,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Student : Person
 
+@property(assign, nonatomic) int age;
+
+- (void)studentInstanceMethod;
 
 @end
 

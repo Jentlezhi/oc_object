@@ -26,7 +26,9 @@
 //            [[NSRunLoop currentRunLoop] run];
         }
     }];
-    [self.myThread start];
+//    [self.myThread start];
+    
+    [self testPerformSelector];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
@@ -35,10 +37,20 @@
 }
 
 - (void)task {
-    
-    NSLog(@"%s",__func__);
+    NSLog(@"2");
+//    NSLog(@"%s",__func__);
 }
 
+- (void)testPerformSelector {
+    NSThread *thread = [[NSThread alloc] initWithBlock:^{
+        NSLog(@"1");
+    }];
+    [thread start];
+    [self performSelector:@selector(subTask) onThread:thread withObject:nil waitUntilDone:YES];
+}
 
+- (void)subTask {
+    NSLog(@"%s",__func__);
+}
 
 @end

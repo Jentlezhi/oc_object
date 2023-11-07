@@ -11,9 +11,9 @@
 
 @implementation TestClass (Y)
 
-//+ (void)initialize {
-//    
-//    NSLog(@"%@-%@",@"TestClass (Y)",NSStringFromSelector(_cmd));
-//}
++ (void)initialize {
+    
+    NSLog(@"%@-(Y)-%@",@"TestClass",NSStringFromSelector(_cmd));
+}
 
 @end

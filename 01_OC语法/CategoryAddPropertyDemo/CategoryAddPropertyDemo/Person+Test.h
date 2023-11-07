@@ -15,6 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 /// weight
 @property(assign, nonatomic) float weight;
 
+//@property(assign, nonatomic) NSInteger age;
+
 @end
 
 NS_ASSUME_NONNULL_END

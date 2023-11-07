@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8C750BB42669C2BE00BE7D32 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C750BB32669C2BE00BE7D32 /* main.m */; };
 		8C750BBD2669C2D500BE7D32 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C750BBC2669C2D500BE7D32 /* Person.m */; };
 		8C750BC12669C2E900BE7D32 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C750BC02669C2E900BE7D32 /* Student.m */; };
 /* End PBXBuildFile section */
@@ -129,7 +128,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C750BBD2669C2D500BE7D32 /* Person.m in Sources */,
-				8C750BB42669C2BE00BE7D32 /* main.m in Sources */,
 				8C750BC12669C2E900BE7D32 /* Student.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -252,7 +250,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 82HALYV6X2;
+				DEVELOPMENT_TEAM = HJXF7SV9V7;
 				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -262,7 +260,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 82HALYV6X2;
+				DEVELOPMENT_TEAM = HJXF7SV9V7;
 				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

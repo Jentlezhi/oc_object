@@ -28,6 +28,9 @@ int main(int argc, const char * argv[]) {
         NSLog(@"-------_buckets的查看---------");
         NSLog(@"_occupied:%d",cache._occupied);
         NSLog(@"_mask:%d",cache._mask);
+        
+//        mj_objc_class *personClass = (__bridge mj_objc_class *)[Person class];
+//        cache_t personCache = personClass->cache;
         bucket_t *buckets = cache._buckets;
         ///散列表的长度为mask + 1
         for (int i = 0; i < cache._mask; i++) {
@@ -39,7 +42,7 @@ int main(int argc, const char * argv[]) {
         ///这里只是演示部分，有时候方法太多会有直接取出来失败的情况！！！！
         int index = (long long)@selector(personTest) & cache._mask;
         bucket_t bucket = buckets[index];
-        NSLog(@"%s %p",(char*)bucket._key,bucket._imp);
+//        NSLog(@"%s %p",(char*)bucket._key,bucket._imp);
         ///方法的封装
         IMP imp = cache.imp(@selector(personTest));
         NSLog(@"imp:%p",imp);

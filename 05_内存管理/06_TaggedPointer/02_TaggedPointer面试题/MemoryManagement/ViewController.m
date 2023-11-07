@@ -16,6 +16,8 @@
 
 @property(copy, nonatomic) NSString *name;
 
+@property(strong, nonatomic) NSLock *lock;
+
 @end
 
 @implementation ViewController
@@ -30,18 +32,32 @@
 //    }
 //}
 
+- (NSLock *)lock {
+    
+    if (!_lock) {
+        _lock = [[NSLock alloc] init];
+    }
+    return _lock;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     dispatch_queue_t queue = dispatch_get_global_queue(0, 0);
     for (int i = 0; i < 1000; i++) {
         dispatch_async(queue, ^{
-            NSString *a = @"abc";
-            NSString *b = @"abcdefghijk";
+//            NSString *a = @"abc";//Tagged Pointer技术，非普通对象
+            NSString *b = @"abcdefghijklmn";//普通对象，多线程同时执行release的时候，会crash
 //            self.name = [NSString stringWithFormat:a];
+//            @synchronized (self) {
+//                self.name = [NSString stringWithFormat:@"%@", b];
+//            }
+            [self.lock lock];
             self.name = [NSString stringWithFormat:@"%@", b];
+            [self.lock unlock];
 
         });
     }
+    NSLog(@"-%s ---end",__func__);
 }
 
 

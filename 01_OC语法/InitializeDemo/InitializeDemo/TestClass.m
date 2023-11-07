@@ -12,7 +12,7 @@
 
 + (void)initialize {
     
-    NSLog(@"%@-%@",NSStringFromClass([self class]),NSStringFromSelector(_cmd));
+    NSLog(@"%@-%@",@"TestClass",NSStringFromSelector(_cmd));
 }
 
 @end

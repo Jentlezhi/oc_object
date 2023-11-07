@@ -10,6 +10,33 @@
 
 @implementation Person
 
+- (instancetype)init {
+    
+    if (self = [super init]) {
+        _array = NSMutableArray.new;
+    }
+    return self;
+}
+
+- (NSString *)fullName {
+    
+    return [NSString stringWithFormat:@"%@ %@",_firstName, _lastName];
+}
+
++ (NSSet<NSString *> *)keyPathsForValuesAffectingValueForKey:(NSString *)key {
+    NSSet<NSString *> *keyPath = [super keyPathsForValuesAffectingValueForKey:key];
+    if ([key isEqualToString:@"fullName"]) {
+        NSArray *affectingKeys = @[@"lastName",@"firstName"];
+        keyPath = [keyPath setByAddingObjectsFromArray:affectingKeys];
+    }
+    return keyPath;
+}
+
+
+
+
+
+
 - (void)setAge:(NSInteger)age {
     
     _age = age;
@@ -31,13 +58,23 @@
 
 ///默认返回yes
 + (BOOL)accessInstanceVariablesDirectly {
-    
+    NSLog(@"%s",__func__);
     return YES;
+}
++ (BOOL)automaticallyNotifiesObserversForKey:(NSString *)key {
+    return NO;
 }
 
 - (void)test {
     
     NSLog(@"Person - test");
+}
+
+- (void)callObserHandly {
+    NSLog(@"callObserHandly");
+    [self willChangeValueForKey:@"age"];
+    _age = 1000;
+    [self didChangeValueForKey:@"age"];
 }
 
 @end

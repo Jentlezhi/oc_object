@@ -10,4 +10,12 @@
 
 @implementation NSObject (Test)
 
+- (void)test {
+    NSLog(@"-NSObject-%p",self);
+}
+
+//+ (void)test {
+//    NSLog(@"+NSObject-%p",self);
+//}
+
 @end

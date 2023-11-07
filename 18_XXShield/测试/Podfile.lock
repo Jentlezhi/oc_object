@@ -1,0 +1,40 @@
+PODS:
+  - LookinServer (1.1.7):
+    - LookinServer/Core (= 1.1.7)
+  - LookinServer/Core (1.1.7)
+  - Masonry (1.1.0)
+  - XXShield (2.3.1)
+  - YYCategories (1.0.4):
+    - YYCategories/no-arc (= 1.0.4)
+  - YYCategories/no-arc (1.0.4)
+
+DEPENDENCIES:
+  - LookinServer
+  - Masonry
+  - XXShield
+  - YYCategories (from `https://github.com/Jentlezhi/YYCategories.git`)
+
+SPEC REPOS:
+  trunk:
+    - LookinServer
+    - Masonry
+    - XXShield
+
+EXTERNAL SOURCES:
+  YYCategories:
+    :git: https://github.com/Jentlezhi/YYCategories.git
+
+CHECKOUT OPTIONS:
+  YYCategories:
+    :commit: 5e2a7a6288e6eb30bbf2400b31e88d65a24cf0f4
+    :git: https://github.com/Jentlezhi/YYCategories.git
+
+SPEC CHECKSUMS:
+  LookinServer: 4ce0469b066871525611d009d8d16a7a50c23491
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  XXShield: c3095b2e1f0e29bc9f660be1eea01813b557cd99
+  YYCategories: 6bcd4314c6661a561410dce4a793379ebd306abd
+
+PODFILE CHECKSUM: dc6f96377abefe0c4419202045977e0313bc5aba
+
+COCOAPODS: 1.12.1

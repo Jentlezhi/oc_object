@@ -29,6 +29,8 @@
      */
     BOOL didAdd = class_addMethod(cls, oriSel, class_getMethodImplementation(cls, swizzledSel), method_getTypeEncoding(m2));
     if (didAdd) {
+        //swizzledSel：要替换的sel
+        //class_getMethodImplementation(cls, oriSel):给sel绑定的映射
         class_replaceMethod(cls, swizzledSel,class_getMethodImplementation(cls, oriSel), method_getTypeEncoding(m1));
     }else{
         method_exchangeImplementations(m1, m2);

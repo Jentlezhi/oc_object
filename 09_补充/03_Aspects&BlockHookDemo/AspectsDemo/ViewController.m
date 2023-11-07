@@ -122,7 +122,7 @@
 - (void)tapAction {
     
     NSLog(@"%s",__func__);
-}
+    [self performSelector:<#(nonnull SEL)#> onThread:<#(nonnull NSThread *)#> withObject:<#(nullable id)#> waitUntilDone:<#(BOOL)#>
 
 
 

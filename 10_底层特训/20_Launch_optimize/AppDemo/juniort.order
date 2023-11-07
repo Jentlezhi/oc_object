@@ -1,0 +1,11 @@
+-[AppDelegate application:didDiscardSceneSessions:]
++[ViewController myClassMethod2]
++[ViewController load]
++[ViewController myClassMethod1]
+-[ViewController viewDidLoad]
+-[ViewController touchesBegan:withEvent:]
++[AppDelegate load]
+-[AppDelegate application:didFinishLaunchingWithOptions:]
++[ViewController myClassMethod3]
+-[AppDelegate application:configurationForConnectingSceneSession:options:]
+

@@ -10,16 +10,23 @@
 #import "Person.h"
 #import "Student.h"
 #import "MJClassInfo.h"
+#import <objc/runtime.h>
 
-
+void testSuper(void);
 void cacheMember(void);
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         
-        cacheMember();
+//        cacheMember();
+        testSuper();
     }
     return 0;
+}
+
+void testSuper(void) {
+    Student *stu = [Student new];
+    [stu studentTest];
 }
 
 void cacheMember() {

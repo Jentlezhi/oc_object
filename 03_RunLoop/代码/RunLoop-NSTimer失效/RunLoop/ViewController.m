@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "MyViewController.h"
 
 @interface ViewController ()
 
@@ -16,8 +17,25 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self base];
 //    [self timer];
-    [self perform];
+//    [self perform];
+}
+
+- (void)base {
+    
+//    NSTimer *timer = [NSTimer timerWithTimeInterval:1.0 repeats:YES block:^(NSTimer * _Nonnull timer) {
+//        static dispatch_once_t onceToken;
+//        dispatch_once(&onceToken, ^{
+//            ///kCFRunLoopDefaultMode
+//            NSLog(@"currentRunLoop:%@",[NSRunLoop currentRunLoop]);
+//        });
+////        NSLog(@"%d",count_++);
+//    }];
+    
+//    [NSTimer scheduledTimerWithTimeInterval:3 repeats:YES block:^(NSTimer * _Nonnull timer) {
+//        NSLog(@"currentRunLoop:%@",[NSRunLoop currentRunLoop]);
+//    }];
 }
 
 - (void)timer {
@@ -87,6 +105,11 @@
 - (void)test {
     
     NSLog(@"%s",__func__);
+}
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    
+    MyViewController *myVc = [MyViewController new];
+    [self presentViewController:myVc animated:YES completion:nil];
 }
 
 @end

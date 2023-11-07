@@ -15,6 +15,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// age
 @property(assign, nonatomic) NSInteger age;
 
+
+@property(copy, nonatomic) NSString *name;
+
 @end
 
 NS_ASSUME_NONNULL_END

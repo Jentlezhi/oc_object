@@ -10,18 +10,21 @@
 #import "Person.h"
 #import "Dog.h"
 
-void base(){
+void base(void){
     
     Person *p = [[Person alloc] init];
     NSLog(@"p:%zd",p.retainCount);
     [p release];
-    NSLog(@"p:%zd",p.retainCount);
+//    NSLog(@"p:%zd",p.retainCount);
     
-    Person *p1 = [[[Person alloc] init] autorelease];
-    NSLog(@"p1:%zd",p.retainCount);
+    {
+        Person *p1 = [[[Person alloc] init] autorelease];
+        NSLog(@"p1:%zd",p1.retainCount);
+    }
+    NSLog(@"%s-------------end",__func__);
 }
 
-void objcReference1(){
+void objcReference1(void){
     
     Dog *dog = [[Dog alloc] init];
     Person *p = [[Person alloc] init];
@@ -29,7 +32,7 @@ void objcReference1(){
     [p release];
 }
 
-void objcReference2(){
+void objcReference2(void){
     
     Dog *dog = [[Dog alloc] init];
     Person *p = [[Person alloc] init];
@@ -39,7 +42,7 @@ void objcReference2(){
     [p release];
 }
 
-void objcReference3(){
+void objcReference3(void){
     
     Dog *dog1 = [[Dog alloc] init];
     Dog *dog2 = [[Dog alloc] init];
@@ -53,7 +56,7 @@ void objcReference3(){
     [p release];
 }
 
-void objcReference4(){
+void objcReference4(void){
     
     Dog *dog = [[Dog alloc] init];
     Person *p = [[Person alloc] init];
@@ -66,7 +69,7 @@ void objcReference4(){
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        objcReference4();
+        base();
     }
     return 0;
 }

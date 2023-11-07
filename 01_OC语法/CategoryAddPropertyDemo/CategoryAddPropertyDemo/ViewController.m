@@ -22,7 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setAssociated];
+    [self setValueWithDict];
     
 //    NSLog(@"StuNameKey:%p",StuNameKey);
 //    StuNameKey = @"123";
@@ -54,6 +54,18 @@
     p2.age = 10;
     p2.weight = 120;
     NSLog(@"age = %ld - weight = %f",(long)p2.age,p2.weight);
+    
+    //dynamic name
+    p2.name = @"HHHA";
+}
+
+- (void)dynamicName {
+    
+    Person *p2 = Person.new;
+    p2.age = 10;
+    p2.weight = 120;
+    //dynamic name
+    p2.name = @"HHHA";
 }
 
 

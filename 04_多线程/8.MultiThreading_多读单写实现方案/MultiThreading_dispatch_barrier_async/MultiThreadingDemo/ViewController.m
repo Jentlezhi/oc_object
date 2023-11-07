@@ -24,35 +24,35 @@
     ///dispatch_barrier_async只有在自定义并发队列才有效，其他情况相当于dispatch_async的作用
     self.queue = dispatch_queue_create("dispatch_barrier", DISPATCH_QUEUE_CONCURRENT);
     
-    for (int index = 0; index<10; index++) {
-        [self read];
-        [self write];
-        [self write];
-        [self write];
-        [self write];
-        [self write];
-        
-        //////////////
+    [self read];
+    [self read];
+    [self read];
+    [self read];
+    [self read];
+    [self write];
+    NSLog(@"其他任务");
+    
+//    for (int index = 0; index<10; index++) {
 //        [self read];
 //        [self read];
 //        [self read];
 //        [self read];
 //        [self read];
 //        [self write];
-    }
+//    }
 }
 
 - (void)read {
     dispatch_async(self.queue, ^{
-        sleep(1.f);
-        NSLog(@"%s",__func__);
+        sleep(2.f);
+        NSLog(@"%s-%@",__func__,[NSThread currentThread]);
     });
 }
 
 - (void)write {
-    dispatch_barrier_async(self.queue, ^{
-        sleep(1.f);
-        NSLog(@"%s",__func__);
+    dispatch_barrier_sync(self.queue, ^{
+        sleep(3.f);
+        NSLog(@"%s-%@",__func__,[NSThread currentThread]);
     });
 }
 

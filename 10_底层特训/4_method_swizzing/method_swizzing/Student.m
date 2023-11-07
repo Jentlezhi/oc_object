@@ -6,8 +6,21 @@
 //
 
 #import "Student.h"
+#import <objc/runtime.h>
 
 @implementation Student
+
++ (void)load {
+    
+    Method m1 = class_getInstanceMethod([self class], @selector(studentInstanceMethod));
+    Method m2 = class_getInstanceMethod([self class], @selector(personInstanceMethod));
+    method_exchangeImplementations(m1, m2);
+}
+
+- (void)studentInstanceMethod {
+    
+    NSLog(@"%d",self.age);
+}
 
 - (instancetype)init {
     

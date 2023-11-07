@@ -2,7 +2,7 @@
 //  ViewController.m
 //  AppDemo
 //
-//  Created by Jentle on 2021/11/26.
+//  Created by Jentle-Zhi on 2022/5/23.
 //
 
 #import "ViewController.h"
@@ -15,7 +15,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.view.backgroundColor = UIColor.redColor;
 }
 
 

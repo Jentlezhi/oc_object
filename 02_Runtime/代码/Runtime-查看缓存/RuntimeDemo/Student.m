@@ -10,9 +10,21 @@
 
 @implementation Student
 
+- (instancetype)init {
+    if (self = [super init]) {
+        NSLog(@"[self class] = %@",[self class]);//Student
+        NSLog(@"[self superclass] = %@",[self superclass]);//Person
+        
+        NSLog(@"[super class] = %@",[super class]);//Student
+        
+        NSLog(@"[super superclass] = %@",[super superclass]);//Person
+    }
+    return self;
+}
+
 - (void)studentTest {
     
-    NSLog(@"%s",__func__);
+
 }
 
 - (void)othetStudentTest {
