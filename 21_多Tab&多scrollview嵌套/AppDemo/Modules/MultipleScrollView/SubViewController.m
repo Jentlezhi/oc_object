@@ -7,7 +7,11 @@
 
 #import "SubViewController.h"
 
-@interface SubViewController ()
+@interface SubViewController ()<UITableViewDataSource,UITableViewDelegate>
+
+@property(nonatomic, strong) UITableView *tableView;
+
+@property (nonatomic, copy) void(^scrollCallback)(UIScrollView *scrollView);
 
 @end
 
@@ -15,17 +19,40 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self.view addSubview:self.tableView];
+    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.view);
+    }];
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (UITableView *)tableView {
+    if (!_tableView) {
+        _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
+        _tableView.dataSource = self;
+        _tableView.delegate = self;
+    }
+    return _tableView;
 }
-*/
-
+#pragma mark - UITableViewDataSource
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 30;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [UITableViewCell new];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@%ld",self.rowTitle,indexPath.row];
+    return cell;
+}
+#pragma mark - UITableViewDelegate
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    !self.scrollCallback ?: self.scrollCallback(scrollView);
+}
+#pragma mark - JXPagingViewListViewDelegate
+- (UIView *)listView {
+    return self.view;
+}
+- (UIScrollView *)listScrollView {
+    return self.tableView;
+}
+- (void)listViewDidScrollCallback:(void (^)(UIScrollView *))callback {
+    self.scrollCallback = callback;
+}
 @end

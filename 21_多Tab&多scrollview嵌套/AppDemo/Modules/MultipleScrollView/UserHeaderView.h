@@ -11,6 +11,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UserHeaderView : UIView
 
+- (void)scrollViewDidScroll:(CGFloat)contentOffsetY;
+
+- (void)reSetFrame:(CGRect)frame;
+
 @end
 
 NS_ASSUME_NONNULL_END
