@@ -6,10 +6,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JXPagerView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface SubViewController : UIViewController
+@interface SubViewController : UIViewController<JXPagerViewListViewDelegate>
+
+@property(nonatomic, copy) NSString *rowTitle;
 
 @end
 
