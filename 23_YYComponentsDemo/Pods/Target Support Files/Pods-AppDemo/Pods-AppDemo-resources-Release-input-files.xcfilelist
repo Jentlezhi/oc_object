@@ -1,0 +1,6 @@
+${PODS_ROOT}/Target Support Files/Pods-AppDemo/Pods-AppDemo-resources.sh
+${PODS_ROOT}/AMapNavi-NO-IDFA/AMapNaviKit.framework/AMapNavi.bundle
+${PODS_ROOT}/AMapNavi-NO-IDFA/AMapNaviKit.framework/AMap.bundle
+${PODS_CONFIGURATION_BUILD_DIR}/YYComponents/YYAMap3DMap.bundle
+${PODS_CONFIGURATION_BUILD_DIR}/YYComponents/YYAMapNavi.bundle
+${PODS_CONFIGURATION_BUILD_DIR}/YYComponents/YYCommonItem.bundle

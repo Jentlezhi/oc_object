@@ -1,0 +1,6 @@
+framework module JZScrollViewDataSet {
+  umbrella header "JZScrollViewDataSet-umbrella.h"
+
+  export *
+  module * { export * }
+}

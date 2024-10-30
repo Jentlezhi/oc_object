@@ -1,0 +1,330 @@
+{
+  "name": "YYComponents",
+  "version": "1.2.1",
+  "summary": "A collection of iOS components.",
+  "homepage": "https://github.com/Jentlezhi",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Jentle": "juntaozhi@163.com"
+  },
+  "source": {
+    "git": "https://git.zuche.com/jt.zhi/yycomponents.git",
+    "tag": "1.2.1"
+  },
+  "platforms": {
+    "ios": "11.0"
+  },
+  "source_files": "YYComponents/YYComponents.h",
+  "public_header_files": "YYComponents/YYComponents.h",
+  "pod_target_xcconfig": {
+    "VALID_ARCHS": "arm64 armv7 x86_64"
+  },
+  "subspecs": [
+    {
+      "name": "Base",
+      "subspecs": [
+        {
+          "name": "BundleHelper",
+          "source_files": "YYComponents/Base/BundleHelper/*.{h,m}"
+        },
+        {
+          "name": "Macro",
+          "source_files": "YYComponents/Base/Macro/*.h"
+        },
+        {
+          "name": "Utilities",
+          "source_files": "YYComponents/Base/Utilities/*.h"
+        }
+      ]
+    },
+    {
+      "name": "Categories",
+      "subspecs": [
+        {
+          "name": "Foundation",
+          "source_files": "YYComponents/Categories/Foundation/*.{h,m}"
+        },
+        {
+          "name": "UIKit",
+          "source_files": "YYComponents/Categories/UIKit/*.{h,m}",
+          "dependencies": {
+            "YYComponents/Categories/Foundation": [
+
+            ],
+            "YYComponents/Base/Macro": [
+
+            ],
+            "YYComponents/Aop": [
+
+            ],
+            "Masonry": [
+
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Layout",
+      "source_files": "YYComponents/Layout/YYLayout.{h,m}"
+    },
+    {
+      "name": "Aop",
+      "source_files": "YYComponents/Aop/*.{h,m}"
+    },
+    {
+      "name": "Format",
+      "subspecs": [
+        {
+          "name": "NumberFormat",
+          "source_files": "YYComponents/Format/NumberFormat/*.{h,m}"
+        },
+        {
+          "name": "DateFormat",
+          "source_files": "YYComponents/Format/DateFormat/*.{h,m}"
+        }
+      ]
+    },
+    {
+      "name": "UIKit",
+      "subspecs": [
+        {
+          "name": "AlertView",
+          "source_files": "YYComponents/UIKit/AlertView/*.{h,m}"
+        },
+        {
+          "name": "NavigationBar",
+          "source_files": "YYComponents/UIKit/NavigationBar/*.{h,m}",
+          "dependencies": {
+            "YYComponents/Layout": [
+
+            ]
+          }
+        },
+        {
+          "name": "ScrollViewDataSet",
+          "source_files": "YYComponents/UIKit/ScrollViewDataSet/*.{h,m}"
+        },
+        {
+          "name": "BottomSheet",
+          "source_files": "YYComponents/UIKit/BottomSheet/*.{h,m}",
+          "dependencies": {
+            "YYComponents/Layout": [
+
+            ]
+          }
+        },
+        {
+          "name": "Button",
+          "source_files": "YYComponents/UIKit/Button/*.{h,m}"
+        },
+        {
+          "name": "BarChart",
+          "source_files": "YYComponents/UIKit/BarChart/*.{h,m}",
+          "dependencies": {
+            "Masonry": [
+
+            ],
+            "YYComponents/Categories/UIKit": [
+
+            ]
+          }
+        },
+        {
+          "name": "Banner",
+          "source_files": "YYComponents/UIKit/Banner/*.{h,m}",
+          "dependencies": {
+            "Masonry": [
+
+            ]
+          }
+        },
+        {
+          "name": "CommonItem",
+          "subspecs": [
+            {
+              "name": "Classes",
+              "source_files": "YYComponents/UIKit/CommonItem/Classes/*.{h,m}",
+              "dependencies": {
+                "Masonry": [
+
+                ],
+                "YYComponents/Base/BundleHelper": [
+
+                ]
+              }
+            },
+            {
+              "name": "Resource",
+              "resource_bundles": {
+                "YYCommonItem": [
+                  "YYComponents/UIKit/CommonItem/Resource/YYCommonItem/*.*"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FloatingBall",
+          "source_files": "YYComponents/UIKit/FloatingBall/*.{h,m}"
+        },
+        {
+          "name": "CollectionView",
+          "subspecs": [
+            {
+              "name": "LeftAlignedLayout",
+              "source_files": "YYComponents/UIKit/CollectionView/LeftAlignedLayout/*.{h,m}"
+            },
+            {
+              "name": "WaterFallLayout",
+              "source_files": "YYComponents/UIKit/CollectionView/WaterFallLayout/*.{h,m}"
+            },
+            {
+              "name": "CollectionContainer",
+              "source_files": "YYComponents/UIKit/CollectionView/CollectionContainer/*.{h,m}",
+              "dependencies": {
+                "Masonry": [
+
+                ],
+                "YYComponents/UIKit/CollectionView/LeftAlignedLayout": [
+
+                ],
+                "YYComponents/UIKit/CollectionView/WaterFallLayout": [
+
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "TableView",
+          "subspecs": [
+            {
+              "name": "TableContainer",
+              "source_files": "YYComponents/UIKit/TableView/TableContainer/*.{h,m}",
+              "dependencies": {
+                "Masonry": [
+
+                ],
+                "YYComponents/Categories/UIKit": [
+
+                ],
+                "YYComponents/UIKit/TableView/TableViewCell": [
+
+                ]
+              }
+            },
+            {
+              "name": "TableViewCell",
+              "source_files": "YYComponents/UIKit/TableView/TableViewCell/*.{h,m}",
+              "dependencies": {
+                "Masonry": [
+
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "TagView",
+          "source_files": "YYComponents/UIKit/TagView/*.{h,m}",
+          "dependencies": {
+            "Masonry": [
+
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Map",
+      "subspecs": [
+        {
+          "name": "AMap",
+          "subspecs": [
+            {
+              "name": "AMapBase",
+              "source_files": "YYComponents/Map/AMap/AMapBase/*.{h,m}",
+              "dependencies": {
+                "AMapNavi-NO-IDFA": [
+
+                ]
+              }
+            },
+            {
+              "name": "AMap3DMap",
+              "resource_bundles": {
+                "YYAMap3DMap": [
+                  "YYComponents/Map/AMap/AMap3DMap/Resources/*.*"
+                ]
+              },
+              "subspecs": [
+                {
+                  "name": "Classes",
+                  "source_files": "YYComponents/Map/AMap/AMap3DMap/Classes/*.{h,m,md}",
+                  "dependencies": {
+                    "AMapNavi-NO-IDFA": [
+
+                    ],
+                    "YYComponents/Map/AMap/AMapBase": [
+
+                    ],
+                    "AMapFoundation-NO-IDFA": [
+
+                    ],
+                    "YYComponents/Base/BundleHelper": [
+
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "name": "AMapNavi",
+              "subspecs": [
+                {
+                  "name": "Classes",
+                  "source_files": "YYComponents/Map/AMap/AMapNavi/Classes/*.{h,m,md}",
+                  "dependencies": {
+                    "AMapNavi-NO-IDFA": [
+
+                    ],
+                    "YYComponents/Map/AMap/AMapBase": [
+
+                    ],
+                    "AMapFoundation-NO-IDFA": [
+
+                    ],
+                    "YYComponents/Base/BundleHelper": [
+
+                    ]
+                  }
+                },
+                {
+                  "name": "Resource",
+                  "resource_bundles": {
+                    "YYAMapNavi": [
+                      "YYComponents/Map/AMap/AMapNavi/Resource/YYAMapNavi/*.*"
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Others",
+      "subspecs": [
+        {
+          "name": "LookinConfig",
+          "source_files": "YYComponents/Others/LookinConfig/*.{h,m}"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,205 @@
+PODS:
+  - AMapFoundation-NO-IDFA (1.8.2)
+  - AMapLocation-NO-IDFA (2.10.0):
+    - AMapFoundation-NO-IDFA (>= 1.8.0)
+  - AMapNavi-NO-IDFA (10.0.810):
+    - AMapFoundation-NO-IDFA (>= 1.8.2)
+  - LookinServer (1.2.4):
+    - LookinServer/Core (= 1.2.4)
+  - LookinServer/Core (1.2.4)
+  - Masonry (1.1.0)
+  - YYCategories (1.0.4):
+    - YYCategories/no-arc (= 1.0.4)
+  - YYCategories/no-arc (1.0.4)
+  - YYComponents (1.3.2):
+    - YYComponents/Aop (= 1.3.2)
+    - YYComponents/Base (= 1.3.2)
+    - YYComponents/Categories (= 1.3.2)
+    - YYComponents/DataSecurity (= 1.3.2)
+    - YYComponents/DataValidator (= 1.3.2)
+    - YYComponents/Format (= 1.3.2)
+    - YYComponents/Layout (= 1.3.2)
+    - YYComponents/Map (= 1.3.2)
+    - YYComponents/Others (= 1.3.2)
+    - YYComponents/UIKit (= 1.3.2)
+    - YYComponents/Utility (= 1.3.2)
+  - YYComponents/Aop (1.3.2)
+  - YYComponents/Base (1.3.2):
+    - YYComponents/Base/BundleHelper (= 1.3.2)
+    - YYComponents/Base/Macro (= 1.3.2)
+    - YYComponents/Base/Utilities (= 1.3.2)
+  - YYComponents/Base/BundleHelper (1.3.2)
+  - YYComponents/Base/Macro (1.3.2)
+  - YYComponents/Base/Utilities (1.3.2)
+  - YYComponents/Categories (1.3.2):
+    - YYComponents/Categories/Foundation (= 1.3.2)
+    - YYComponents/Categories/UIKit (= 1.3.2)
+  - YYComponents/Categories/Foundation (1.3.2)
+  - YYComponents/Categories/UIKit (1.3.2):
+    - Masonry
+    - YYComponents/Aop
+    - YYComponents/Base/Macro
+    - YYComponents/Categories/Foundation
+  - YYComponents/DataSecurity (1.3.2)
+  - YYComponents/DataValidator (1.3.2)
+  - YYComponents/Format (1.3.2):
+    - YYComponents/Format/DateFormat (= 1.3.2)
+    - YYComponents/Format/NumberFormat (= 1.3.2)
+  - YYComponents/Format/DateFormat (1.3.2)
+  - YYComponents/Format/NumberFormat (1.3.2)
+  - YYComponents/Layout (1.3.2)
+  - YYComponents/Map (1.3.2):
+    - YYComponents/Map/AMap (= 1.3.2)
+  - YYComponents/Map/AMap (1.3.2):
+    - YYComponents/Map/AMap/AMap3DMap (= 1.3.2)
+    - YYComponents/Map/AMap/AMapBase (= 1.3.2)
+    - YYComponents/Map/AMap/AMapLocation (= 1.3.2)
+    - YYComponents/Map/AMap/AMapNavi (= 1.3.2)
+  - YYComponents/Map/AMap/AMap3DMap (1.3.2):
+    - YYComponents/Map/AMap/AMap3DMap/Classes (= 1.3.2)
+    - YYComponents/Map/AMap/AMap3DMap/Resources (= 1.3.2)
+  - YYComponents/Map/AMap/AMap3DMap/Classes (1.3.2):
+    - AMapFoundation-NO-IDFA
+    - AMapNavi-NO-IDFA
+    - YYComponents/Base/BundleHelper
+    - YYComponents/Map/AMap/AMapBase
+  - YYComponents/Map/AMap/AMap3DMap/Resources (1.3.2)
+  - YYComponents/Map/AMap/AMapBase (1.3.2):
+    - AMapNavi-NO-IDFA
+  - YYComponents/Map/AMap/AMapLocation (1.3.2):
+    - AMapLocation-NO-IDFA
+    - YYComponents/Map/AMap/AMapBase
+  - YYComponents/Map/AMap/AMapNavi (1.3.2):
+    - YYComponents/Map/AMap/AMapNavi/Classes (= 1.3.2)
+    - YYComponents/Map/AMap/AMapNavi/Resource (= 1.3.2)
+  - YYComponents/Map/AMap/AMapNavi/Classes (1.3.2):
+    - AMapFoundation-NO-IDFA
+    - AMapNavi-NO-IDFA
+    - YYComponents/Base/BundleHelper
+    - YYComponents/Map/AMap/AMapBase
+  - YYComponents/Map/AMap/AMapNavi/Resource (1.3.2)
+  - YYComponents/Others (1.3.2):
+    - YYComponents/Others/LookinConfig (= 1.3.2)
+  - YYComponents/Others/LookinConfig (1.3.2)
+  - YYComponents/UIKit (1.3.2):
+    - YYComponents/UIKit/AlertView (= 1.3.2)
+    - YYComponents/UIKit/Banner (= 1.3.2)
+    - YYComponents/UIKit/BarChart (= 1.3.2)
+    - YYComponents/UIKit/BottomSheet (= 1.3.2)
+    - YYComponents/UIKit/Button (= 1.3.2)
+    - YYComponents/UIKit/CollectionView (= 1.3.2)
+    - YYComponents/UIKit/CommonItem (= 1.3.2)
+    - YYComponents/UIKit/Container (= 1.3.2)
+    - YYComponents/UIKit/FloatingBall (= 1.3.2)
+    - YYComponents/UIKit/InputView (= 1.3.2)
+    - YYComponents/UIKit/NavigationBar (= 1.3.2)
+    - YYComponents/UIKit/PickerContainer (= 1.3.2)
+    - YYComponents/UIKit/ScrollContainer (= 1.3.2)
+    - YYComponents/UIKit/ScrollViewDataSet (= 1.3.2)
+    - YYComponents/UIKit/TabBarContainer (= 1.3.2)
+    - YYComponents/UIKit/TableView (= 1.3.2)
+    - YYComponents/UIKit/TagView (= 1.3.2)
+    - YYComponents/UIKit/Toast (= 1.3.2)
+  - YYComponents/UIKit/AlertView (1.3.2)
+  - YYComponents/UIKit/Banner (1.3.2):
+    - Masonry
+  - YYComponents/UIKit/BarChart (1.3.2):
+    - Masonry
+    - YYComponents/Categories/UIKit
+  - YYComponents/UIKit/BottomSheet (1.3.2):
+    - Masonry
+  - YYComponents/UIKit/Button (1.3.2)
+  - YYComponents/UIKit/CollectionView (1.3.2):
+    - YYComponents/UIKit/CollectionView/CollectionContainer (= 1.3.2)
+    - YYComponents/UIKit/CollectionView/LeftAlignedLayout (= 1.3.2)
+    - YYComponents/UIKit/CollectionView/WaterFallLayout (= 1.3.2)
+  - YYComponents/UIKit/CollectionView/CollectionContainer (1.3.2):
+    - Masonry
+    - YYComponents/UIKit/CollectionView/LeftAlignedLayout
+    - YYComponents/UIKit/CollectionView/WaterFallLayout
+  - YYComponents/UIKit/CollectionView/LeftAlignedLayout (1.3.2)
+  - YYComponents/UIKit/CollectionView/WaterFallLayout (1.3.2)
+  - YYComponents/UIKit/CommonItem (1.3.2):
+    - YYComponents/UIKit/CommonItem/Classes (= 1.3.2)
+    - YYComponents/UIKit/CommonItem/Resource (= 1.3.2)
+  - YYComponents/UIKit/CommonItem/Classes (1.3.2):
+    - Masonry
+    - YYComponents/Base/BundleHelper
+  - YYComponents/UIKit/CommonItem/Resource (1.3.2)
+  - YYComponents/UIKit/Container (1.3.2):
+    - YYComponents/Categories/UIKit
+  - YYComponents/UIKit/FloatingBall (1.3.2)
+  - YYComponents/UIKit/InputView (1.3.2):
+    - Masonry
+    - YYComponents/Categories/UIKit
+  - YYComponents/UIKit/NavigationBar (1.3.2):
+    - YYComponents/Layout
+  - YYComponents/UIKit/PickerContainer (1.3.2):
+    - Masonry
+    - YYComponents/Categories/UIKit
+  - YYComponents/UIKit/ScrollContainer (1.3.2):
+    - Masonry
+    - YYComponents/Categories/UIKit
+    - YYComponents/UIKit/ScrollViewDataSet
+  - YYComponents/UIKit/ScrollViewDataSet (1.3.2)
+  - YYComponents/UIKit/TabBarContainer (1.3.2):
+    - Masonry
+    - YYComponents/Categories/UIKit
+  - YYComponents/UIKit/TableView (1.3.2):
+    - YYComponents/UIKit/TableView/TableContainer (= 1.3.2)
+    - YYComponents/UIKit/TableView/TableViewCell (= 1.3.2)
+  - YYComponents/UIKit/TableView/TableContainer (1.3.2):
+    - Masonry
+    - YYComponents/Categories/UIKit
+    - YYComponents/UIKit/TableView/TableViewCell
+  - YYComponents/UIKit/TableView/TableViewCell (1.3.2):
+    - Masonry
+  - YYComponents/UIKit/TagView (1.3.2):
+    - Masonry
+  - YYComponents/UIKit/Toast (1.3.2):
+    - YYComponents/UIKit/Toast/Classes (= 1.3.2)
+    - YYComponents/UIKit/Toast/Resource (= 1.3.2)
+  - YYComponents/UIKit/Toast/Classes (1.3.2):
+    - YYComponents/Base/BundleHelper
+  - YYComponents/UIKit/Toast/Resource (1.3.2)
+  - YYComponents/Utility (1.3.2):
+    - YYComponents/Utility/RepeatingTimer (= 1.3.2)
+  - YYComponents/Utility/RepeatingTimer (1.3.2)
+
+DEPENDENCIES:
+  - LookinServer
+  - Masonry
+  - YYCategories (from `https://github.com/Jentlezhi/YYCategories.git`)
+  - YYComponents (from `/Users/Jentle/Desktop/zuche/COMPONENTS/YYComponents`)
+
+SPEC REPOS:
+  trunk:
+    - AMapFoundation-NO-IDFA
+    - AMapLocation-NO-IDFA
+    - AMapNavi-NO-IDFA
+    - LookinServer
+    - Masonry
+
+EXTERNAL SOURCES:
+  YYCategories:
+    :git: https://github.com/Jentlezhi/YYCategories.git
+  YYComponents:
+    :path: "/Users/Jentle/Desktop/zuche/COMPONENTS/YYComponents"
+
+CHECKOUT OPTIONS:
+  YYCategories:
+    :commit: 5e2a7a6288e6eb30bbf2400b31e88d65a24cf0f4
+    :git: https://github.com/Jentlezhi/YYCategories.git
+
+SPEC CHECKSUMS:
+  AMapFoundation-NO-IDFA: 6ce0ef596d4eb8d934ff498e56747b6de1247b05
+  AMapLocation-NO-IDFA: 735791aeb1ba52dff666e4158b86caf4b68b5be7
+  AMapNavi-NO-IDFA: 68476dbbcbee24aa3a9af0ce4c9d269dab77c2f7
+  LookinServer: 00c7588043ed8e7ab64ce55b9fb747e51371ad06
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  YYCategories: 6bcd4314c6661a561410dce4a793379ebd306abd
+  YYComponents: 78e5e602d8d481afa3472e3b9a01b6da7020898b
+
+PODFILE CHECKSUM: 850606337544f6dca719eb9436fe3da456f8876f
+
+COCOAPODS: 1.15.2

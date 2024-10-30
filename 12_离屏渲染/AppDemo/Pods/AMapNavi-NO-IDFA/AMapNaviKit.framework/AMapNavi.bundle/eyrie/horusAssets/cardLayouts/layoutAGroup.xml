@@ -1,0 +1,71 @@
+<root>
+<!--
+组队动态纹理样式
+-->
+
+<!--头像动态纹理样式-->
+<res useCommonParser='true' resId='300005' direction='topCenter' anchorRatio='(0.5,1.0)' >
+  <div style='display:flex;justify-content:center;flex-direction:row;width:{iconBgWidth};height:{iconBgHeight};'>
+    <image style='border-radius:{radius};margin-top:{iconMarginTop};width:{iconWidth};height:{iconHeight}' src='{icon}'/>
+    <div style='border-radius:{radius};width:{iconWidth};height:{iconHeight};background-color:{maskColor};position:absolute;top:{iconMarginTop}'></div>
+    <image style='position:absolute' src='{iconBg}'/>
+    <div style='visibility:{visibility};border-radius:{numRadius};width:{numWidth};height:{numHeight};background-color:#1A66FF;opacity:0.9;position:absolute;left:{numMarginLeft};top:{numMarginTop};display:flex;align-items:center;justify-content:center;'>
+        <label style='color:#FFFFFF;font-size:26;position:absolute' text='{aggregationNum}'/>
+    </div>
+  </div>
+</res>
+
+
+<!--Tip动态纹理样式-->
+<res useCommonParser='true' resId='300006' direction='topCenter' anchorRatio='(0.5,1.0)' >
+  <div style='display:flex;flex-direction:column;align-items:center'>
+      <div style='background-image:{tipBg}'>
+          <div style='display:flex;justify-content:left;flex-direction:row;margin-top:{leaderMarginTop}px'>
+              <image src='{tagSrc}' style='display:{tagDisplay};justify-content:center;align-items:center;margin-end:{leaderMarginEnd}px'/>
+              <label style='font-size:{nickNameFontSize}px;color:{nickNameFontColor};max-width:{nickNameMaxWidth};justify-content:center;align-items:center;line-clamp:1;font-weight:bold' text='{memberName}'/>
+          </div>
+          <div style='display:{plateDisplay};justify-content:left;flex-direction:row;margin-bottom:{leaderMarginTop}px'>
+              <label style='font-size:{plateFontSize}px;color:{plateFontColor};max-width:{plateMaxWidth};line-clamp:1;font-weight:bold' text='{plateText}'/>
+          </div>
+      </div>
+  </div>
+</res>
+
+
+<!--Tip动态纹理样式-->
+<res useCommonParser='true' resId='300006' direction='centerCenter' anchorRatio='(0.5,0.5)' >
+  <div style='display:flex;flex-direction:column;align-items:center'>
+      <div style='background-image:{tipBg}'>
+          <div style='display:flex;justify-content:center;align-items:center;flex-direction:row;margin-top:{leaderMarginTop}px'>
+              <image src='{tagSrc}' style='display:{tagDisplay};margin-end:{leaderMarginEnd}px'/>
+              <label style='font-size:{nickNameFontSize}px;color:{nickNameFontColor};max-width:{nickNameMaxWidth};line-clamp:1;font-weight:bold' text='{memberName}'/>
+          </div>
+      </div>
+  </div>
+</res>
+
+
+<!--光柱图我的动态纹理(箭头向上)样式-->
+<res useCommonParser='true' resId='300008' direction='centerCenter' anchorRatio='(0.5,0.5)' >
+  <div style='display:flex;flex-direction:row;justify-content:center;'>
+      <image style='border-radius:{radius};width:{iconWidth};height:{iconHeight};position:absolute;bottom:{bottom}' src='{icon}'/><image style='width:{iconBgWidth};height:{iconBgHeight}' src='{iconBg}'/>
+  </div>
+</res>
+
+<!--光柱图队员动态纹理(箭头向右)样式-->
+<res useCommonParser='true' resId='300009' direction='centerCenter' anchorRatio='(0.5,0.5)' >
+  <div style='display:flex;flex-direction:column;justify-content:center;'>
+      <image style='border-radius:{radius};width:{iconWidth};height:{iconHeight};position:absolute;left:{left}' src='{icon}'/>
+      <image style='width:{iconBgWidth};height:{iconBgHeight}' src='{iconBg}'/>
+  </div>
+</res>
+
+<!-- 头像聚合时纹理样式-->
+<res useCommonParser='true' resId='300040' direction='rightTop' anchorRatio='(0.0,1.0)' >
+  <div style='display:flex;justify-content:center;flex-direction:row;width:{iconBgWidth};height:{iconBgHeight};margin-bottom:{marginBottom}'>
+      <image style='position:absolute' src='{iconBg}'/>
+  </div>
+</res>
+
+
+</root>

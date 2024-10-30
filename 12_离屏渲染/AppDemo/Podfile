@@ -7,4 +7,5 @@ target 'AppDemo' do
   pod 'CTMediator'
   pod 'Masonry'
   pod 'LookinServer', :configurations => ['Debug']
+  pod 'AMapNavi-NO-IDFA'
 end

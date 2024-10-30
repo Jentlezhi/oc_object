@@ -1,0 +1,27 @@
+<root>
+
+<!--
+驾车探路样式
+-->
+
+<!--多路线气泡样式-->
+<res useCommonParser='true' resId='110502,110502,110502,110502,110550,110550,110550,110550,110541,110541,110541,110541,110551,110551,110551,110551' direction='leftTop,leftBottom,rightTop,rightBottom,leftTop,leftBottom,rightTop,rightBottom,leftTop,leftBottom,rightTop,rightBottom,leftTop,leftBottom,rightTop,rightBottom' anchorOffset='(15,25),(15,15),(15,25),(15,15),(15,25),(15,15),(15,25),(15,15),(15,25),(15,15),(15,25),(15,15),(15,25),(15,15),(15,25),(15,15)' >
+ <background-image id='backimage'>110516,110517,110518,110519,110542,110543,110544,110545,110520,110521,110522,110523,110546,110547,110548,110549</background-image>
+ <backgroundstretch id='backimage'>34% 52% 61% 36%,52% 46% 43% 42%,34% 41% 61% 48%,52% 41% 43% 48%,34% 52% 61% 36%,52% 46% 43% 42%,34% 41% 61% 48%,52% 41% 43% 48%,34% 52% 61% 36%,52% 46% 43% 42%,34% 41% 61% 48%,52% 41% 43% 48%,34% 52% 61% 36%,52% 46% 43% 42%,34% 41% 61% 48%,52% 41% 43% 48%</backgroundstretch>
+ <padding id='backimage'>21px 47px 45px 32px,39px 47px 30px 32px,21px 32px 45px 47px,39px 32px 30px 47px,21px 47px 45px 32px,39px 47px 30px 32px,21px 32px 45px 47px,39px 32px 30px 47px,21px 47px 45px 32px,39px 47px 30px 32px,21px 32px 45px 47px,39px 32px 30px 47px,21px 47px 45px 32px,39px 47px 30px 32px,21px 32px 45px 47px,39px 32px 30px 47px</padding>
+ <div id='backimage' style="flex-direction:column;align-items:flex-start;justify-content:flex-start;">
+  <div style="flex-direction:row;justify-content:center;align-items:center;">
+    <label text="{timeDif}" style="font-size:{timeSize};font-weight:bold;text-align:center;color:{timeColor};"/>
+    <image src="{chargeIcon}" style="margin-left:6px;margin-right:2px;width:34px; height:34px;display:{allNoCost};"/>
+    <label text="{costText}" style="font-size:{textSize};text-align:center;display:{allNoCostDisplay}; color:{costColor};"/>
+  </div>
+  <div style="flex-direction:row;justify-content:center;align-items:center;">
+    <label text="{disDif}" style="font-size:{textSize};text-align:center;color:{distColor};"/>
+    <image src="{trafficIcon}" style="margin-left:8px;margin-right:1px;width:32px; height:32px;"/>
+    <label text="{trafficDif}" style="font-size:{textSize};text-align:center;color:{trafficColor};"/>
+  </div>
+ </div>
+</res>
+
+</root>
+

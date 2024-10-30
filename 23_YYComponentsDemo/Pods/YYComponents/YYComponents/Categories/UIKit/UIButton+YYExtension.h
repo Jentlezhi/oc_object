@@ -1,0 +1,84 @@
+//
+//  UIButton+YYExtension.h
+//  YYComponents
+//
+//  Created by Jentle-Zhi on 2018/06/08.
+//
+
+#import <UIKit/UIKit.h>
+
+NS_ASSUME_NONNULL_BEGIN
+
+@interface YYButtonConfig : NSObject
+
+@property(nonatomic, copy) NSString *normalTitle;
+
+@property(nonatomic, copy) NSString *highlightedTitle;
+
+@property(nonatomic, strong) UIColor *normalTitleColor;
+
+@property(nonatomic, strong) UIColor *highlightedTitleColor;
+
+@property(nonatomic, strong) UIFont *titleLabelFont;
+
+@property(nonatomic, strong) UIColor *normalBackgroundColor;
+
+@property(nonatomic, strong) UIColor *disabledBackgroundColor;
+
+@property(nonatomic, assign) CGFloat cornerRaduis;
+
+@property(nonatomic, assign) CGFloat borderWidth;
+
+@property(nonatomic, strong) UIColor *borderColor;
+
+@property(nonatomic, assign) BOOL hidden;
+
+@property(nonatomic, assign) UIEdgeInsets contentEdgeInsets;
+
+@property(nonatomic, strong) UIImage *normalImage;
+
+@property(nonatomic, strong) UIImage *normalBackgroundImage;
+
+@property(nonatomic, assign) BOOL enable;
+
+@end
+
+@interface UIButton (YYExtension)
+
+/// 点击事件block
+@property(nonatomic, copy) void(^yy_touchUpInsideAction)(void);
+/**
+ 快速创建button
+ @param configBlock          配置描述
+ @return                     button
+ */
++ (instancetype)yy_buttonWithConfig:(void(^)(YYButtonConfig *config))configBlock;
+/**
+ 快速创建button
+ @param configBlock          配置描述
+ @param touchUpInsideBlock   响应事件
+ @return                     button
+ */
++ (instancetype)yy_buttonWithConfig:(void(^)(YYButtonConfig *config))configBlock
+                      touchUpInside:(nullable void(^)(void))touchUpInsideBlock;
+
+/**
+ 生成一个和该对象特征一样的对象，仅限YYButtonConfig中的属性
+ @return            新对象
+ */
+- (instancetype)yy_copy;
+/**
+ 生成一个和该对象特征一样的对象，仅限YYButtonConfig中的属性
+ @param configBlock      配置block
+ @return                 新对象
+ */
+- (instancetype)yy_copyWithConfig:(nullable void(^)(YYButtonConfig *config))configBlock;
+
+/**
+ 设置按钮被点击的Action
+ */
+- (void)yy_executeClickedAction;
+
+@end
+
+NS_ASSUME_NONNULL_END

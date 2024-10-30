@@ -1,0 +1,1 @@
+../../../YYComponents/YYComponents/UIKit/CollectionView/LeftAlignedLayout/YYCollectionViewLeftAlignedLayout.h

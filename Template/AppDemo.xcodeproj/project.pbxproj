@@ -3,11 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		40A48A4712A35C8B7D0168D5 /* Pods_AppDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEBCE86C8ED0190FC12204C0 /* Pods_AppDemo.framework */; };
+		357A0236679062957EBC18D6 /* libPods-AppDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CA366B5C53CCBB8B25DD7BA /* libPods-AppDemo.a */; };
 		8C2879962A8B7E1800F095F4 /* JZBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C2879952A8B7E1800F095F4 /* JZBaseNavigationController.m */; };
 		8C28799C2A8BBCDD00F095F4 /* JZAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C28799B2A8BBCDD00F095F4 /* JZAppDelegate.m */; };
 		8C2879A22A8BBDD700F095F4 /* JZMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C2879A12A8BBDD700F095F4 /* JZMainViewController.m */; };
@@ -38,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		0B493B1444133F514B65D17E /* Pods-AppDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppDemo.debug.xcconfig"; path = "Target Support Files/Pods-AppDemo/Pods-AppDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		5CA366B5C53CCBB8B25DD7BA /* libPods-AppDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AppDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		71254D51E6E5E3F12893F44C /* Pods-AppDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppDemo.release.xcconfig"; path = "Target Support Files/Pods-AppDemo/Pods-AppDemo.release.xcconfig"; sourceTree = "<group>"; };
 		8C2879932A8B786B00F095F4 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		8C2879942A8B7E1800F095F4 /* JZBaseNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JZBaseNavigationController.h; sourceTree = "<group>"; };
@@ -59,7 +60,6 @@
 		8C426DAB2751107F00014BD2 /* AppDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C426DAF2751107F00014BD2 /* AppDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDemoUITests.m; sourceTree = "<group>"; };
 		8C426DB12751107F00014BD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EEBCE86C8ED0190FC12204C0 /* Pods_AppDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,7 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40A48A4712A35C8B7D0168D5 /* Pods_AppDemo.framework in Frameworks */,
+				357A0236679062957EBC18D6 /* libPods-AppDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,7 +208,7 @@
 		F730B564895E3661233DD5A4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				EEBCE86C8ED0190FC12204C0 /* Pods_AppDemo.framework */,
+				5CA366B5C53CCBB8B25DD7BA /* libPods-AppDemo.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -224,7 +224,7 @@
 				8C426D812751107B00014BD2 /* Sources */,
 				8C426D822751107B00014BD2 /* Frameworks */,
 				8C426D832751107B00014BD2 /* Resources */,
-				FF8538BF7566018D8AD0B756 /* [CP] Embed Pods Frameworks */,
+				5428B8D32331991DE7A6E912 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -339,6 +339,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		5428B8D32331991DE7A6E912 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AppDemo/Pods-AppDemo-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AppDemo/Pods-AppDemo-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AppDemo/Pods-AppDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		C8A544F3B6238B5C820EE323 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -359,23 +376,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		FF8538BF7566018D8AD0B756 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-AppDemo/Pods-AppDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-AppDemo/Pods-AppDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AppDemo/Pods-AppDemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -558,6 +558,7 @@
 				DEVELOPMENT_TEAM = ZRH7G9EDH6;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/AppDemo/PrefixHeader.pch";
 				INFOPLIST_FILE = AppDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -578,6 +579,7 @@
 				DEVELOPMENT_TEAM = ZRH7G9EDH6;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/AppDemo/PrefixHeader.pch";
 				INFOPLIST_FILE = AppDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

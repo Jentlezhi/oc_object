@@ -1,0 +1,785 @@
+<root>
+<!--
+驾车行前样式
+-->
+
+<!--长途天气气泡样式-->
+<res useCommonParser='true' resId='200112,200112' direction='leftTop,rightTop' anchorOffset='(18,24),(18,24)' >
+    <background-image id='backimage'>112008,112007</background-image>
+    <backgroundstretch id='backimage'>35% 53% 61% 38%,35% 40% 61% 51%</backgroundstretch>
+    <padding id='backimage'>13px 47px 37px 32px,13px 32px 37px 47px</padding>
+    <div id='backimage' style='display:flex;flex-direction:row;align-items:center;justify-content:space-around'>
+        <image src='{iconId}' style='width:60px;height:60px'/>
+        <div style='margin-left:4;display:flex;flex-direction:column;align-items:flex-start; padding-top:12; padding-bottom:10'>
+            <label style='color:#000000;opacity:1.0;font-size:28px;font-weight:bold' text='{label}段'></label>
+            <label style='color:#000000;opacity:0.6;font-size:24px;' text='途经时{subLabel}'></label>
+        </div>
+    </div>
+</res>
+
+<!--长途天气气泡多行样式-->
+<res useCommonParser='true' resId='200113,200113' direction='leftTop,rightTop' anchorOffset='(18,24),(18,24)' >
+    
+    <background-image id='backimage'>112008,112007</background-image>
+    <backgroundstretch id='backimage'>35% 53% 61% 38%,35% 40% 61% 51%</backgroundstretch>
+    <padding id='backimage'>13px 47px 37px 32px,13px 32px 37px 47px</padding>
+    <div id='backimage' style='display:flex;flex-direction:row;align-items:center;justify-content:space-around'>
+        <image src='{iconId}' style='width:60px;height:60px'/>
+        <div style='margin-left:4;display:flex;flex-direction:column;align-items:flex-start;padding-top:12; padding-bottom:10'>
+            <label style='color:#000000;opacity:1.0;font-size:28px;font-weight:bold;' text='{label}段'></label>
+            <label style='color:#000000;opacity:0.6;font-size:24px;' text='途经时{subLabel}'></label>
+            <label style='color:#000000;opacity:0.6;font-size:24px;' text='{label3}'></label>
+        </div>
+    </div>
+</res>
+
+<!--行前天气扎点样式-->
+<res useCommonParser='true' resId='200126' direction='leftTop' anchorOffset='(18,24)' >
+    <div style='width:auto;height:auto;display:flex'>
+        <div style='display:flex;background-image:112008;flex-direction:row;align-items:center;justify-content:space-around;backgroundstretch:35% 53% 61% 38%;padding:13px 47px 37px 32px;'>
+        <div style='width:30px;height:60px;background-color:transparent'/></div>
+        <image style='position:absolute;left:17px;top:12px;width:60px;height:60px;' src='{label}' />
+    </div>
+</res>
+
+<!--偏航抑制区域面门子点样式-->
+<res useCommonParser='true' resId='10212' direction='rightTop' anchorOffset='(0,0)' >
+    <div style='display:flex;flex-direction:row;align-items:center'>
+        <image style='width:{door_width};height:{door_height};' src='{door_res}'/>
+        <label  style='padding-left:4px;color:{door_name_color};font-size:22px;font-weight:bold;' text='{door_name}' />
+    </div>
+</res>
+
+<!--偏航抑制区域面子点-常走样式-->
+<res useCommonParser='true' resId='10213' direction='rightTop' anchorOffset='(0,0)' >
+    <div style='width:110 px;height:90 px'>
+        <div style='position:absolute;'>
+            <image style='padding-left:12px;width:110px;height:60px;'  src='{label_bg_res}'/>
+            <label style='left:48px;top:10px;position:absolute;color:{common_label_color};font-size:22px;font-weight:bold' text='常走'/>
+        </div>
+        <div>
+            <image style='width:48px;height:60px;' src='{door_res}' />
+        </div>
+        <label style='position:absolute;top:64px;left:0px;color:{door_name_color};font-size:22px;font-weight:bold;max-width:160px;line-clamp:2;' text='{door_name}'/>
+    </div>
+</res>
+
+<!--途径地市-气泡样式-->
+<res useCommonParser='true' resId='200120,200120' direction='leftTop,rightTop' anchorOffset='(18,24),(18,24)' >
+    <background-image id='backimage'>112008,112007</background-image>
+    <backgroundstretch id='backimage'>35% 53% 61% 38%,35% 40% 61% 51%</backgroundstretch>
+    <padding id='backimage'>25px 47px 47px 32px,25px 32px 47px 47px</padding>
+    <div id='backimage' style='display:flex;flex-direction:row;align-items:center;justify-content:center;'>
+        <image src='200122' style='width:32px;height:36px'/>
+        <label style='margin-left:4;color:#000000;opacity:1.0;font-size:28px;font-weight:bold;' text='{label}'></label>
+    </div>
+</res>
+
+<!--途径城市-泡点击态样式-->
+<res useCommonParser='true' resId='200121,200121' direction='leftTop,rightTop' anchorOffset='(18,24),(18,24)'  >
+    <background-image id='backimage'>112008,112007</background-image>
+    <backgroundstretch id='backimage'>35% 53% 61% 38%,35% 40% 61% 51%</backgroundstretch>
+    <padding id='backimage'>25px 47px 47px 32px,25px 32px 47px 47px</padding>
+    <div id='backimage' style='display:flex;flex-direction:row;align-items:center;justify-content:space-around;'>
+        <image src='200122' style='width:32px;height:36px'/>
+        <div style='margin-left:4;display:flex;flex-direction:column;align-items:flex-start;'>
+            <label style='color:#000000;opacity:1.0;font-size:28px;font-weight:bold;' text='{label}'></label>
+            <label style='color:#000000;opacity:0.6;font-size:24px;' text='{subLabel}'></label>
+        </div>
+    </div>
+</res>
+
+<!--途径路-气泡样式-->
+<res useCommonParser='true' resId='200123,200123' direction='leftTop,rightTop' anchorOffset='(18,24),(18,24)' >
+    <background-image id='backimage'>112008,112007</background-image>
+    <backgroundstretch id='backimage'>35% 53% 61% 38%,35% 40% 61% 51%</backgroundstretch>
+    <padding id='backimage'>25px 47px 47px 32px,25px 32px 47px 47px</padding>
+    <div id='backimage' style='display:flex;flex-direction:row;align-items:center;justify-content:space-around;'>
+        <label style='font-size:24;font-weight:bold;border-radius:12px;background-color:{roadcolor};color:#ffffff; padding:4px 8px 4px 8px;' text='{roadno}'/>
+        <label style='margin-left:4;color:#000000;opacity:1.0;font-size:28px;font-weight:bold;' text='{roadname}'></label>
+    </div>
+</res>
+
+<!--途径路-气泡点击态样式-->
+<res useCommonParser='true' resId='200124,200124' direction='leftTop,rightTop' anchorOffset='(18,24),(18,24)' >
+    <background-image id='backimage'>112008,112007</background-image>
+    <backgroundstretch id='backimage'>35% 53% 61% 38%,35% 40% 61% 51%</backgroundstretch>
+    <padding id='backimage'>25px 47px 47px 32px,25px 32px 47px 47px</padding>
+    <div id='backimage' style='display:flex;flex-direction:row;align-items:center;justify-content:space-around;'>
+        <label style='font-size:24;font-weight:bold;border-radius:12px;background-color:{roadcolor};color:#ffffff; padding:4px 8px 4px 8px;' text='{roadno}'/>
+        <div style='margin-left:4;display:flex;flex-direction:column;align-items:flex-start;'>
+            <label style='color:#000000;opacity:1.0;font-size:28px;font-weight:bold;' text='{roadname}'></label>
+            <label style='color:#000000;opacity:0.6;font-size:24px;' text='{roadInfo}'></label>
+        </div>
+    </div>
+</res>
+
+
+<!--导航中途径点可删除(200117)-不可删除(200116)样式-->
+<res useCommonParser='true' resId='200117,200116' direction='topCenter,topCenter' anchorOffset='(0,0),(0,0)' >
+    <div style='display:flex;'>
+        <image src='{iconId}' style='width:80px;height:80px'/>
+        <div style='position:absolute;left:25px;top:22px;width:30px;height:42px;align-items:center;justify-content:center'>
+            <label style='color:#FFFFFF;font-size:30px;font-weight:bold;text-align:center' text='{label}' />
+        </div>
+    </div>
+</res>
+
+<!--行前途经点焦点态样式-->
+<res useCommonParser='true' resId='200125' direction='topCenter' anchorOffset='(0,0)'>
+    <div style='display:flex;'>
+        <image src='150260' style='width:132px;height:132px'/>
+        <div style='position:absolute;left:42px;top:39px;width:48px;height:65px;align-items:center;justify-content:center'>
+            <label style='color:#FFFFFF;font-size:45px;font-weight:bold;text-align:center' text='{label}'/>
+        </div>
+    </div>
+</res>
+
+ <!--新能源行前途经点焦点扎标样式-->
+<res useCommonParser='true' resId='205002' direction='rightTop' anchorOffset='(65,3)'  >
+    <div style='display:flex'>
+        <div style='display:flex;flex-direction:row;align-items:center;justify-content:start;background-image:205007;backgroundstretch:47% 28% 46% 69%;padding:49px 22px 45px 114px;'>
+            <label style='font-size:32px;color:#00BD9D' text='{subLabel}' />
+        </div>
+        <div style='display:flex;flex-direction:row;position:absolute;left:0px'>
+            <div style='display:flex;flex-direction:row;'>
+                <image style='width:132px;height:132px;' src='150260' />
+                <div style='position:absolute;left:42px;top:39px;width:48px;height:65px;align-items:center;justify-content:center'>
+                    <label style='color:#FFFFFF;font-size:45px;font-weight:bold;text-align:center' text='{label}' />
+                </div>
+            </div>
+        </div>
+    </div>
+</res>
+
+ <!--新能源行前途经点普通扎标样式-->
+<res useCommonParser='true' resId='205001' direction='rightTop' anchorOffset='(38,0)' >
+    <div style='display:flex;flex-direction:row'>
+        <div style='display:flex;flex-direction:row;margin-start:0px;align-items:center;justify-content:start;background-image:205006;backgroundstretch:51% 27% 45% 71%;padding:28px 17px 22px 64px;'>
+            <label style='margin-top:2px;margin-left:5px;font-size:20px;color:#00BD9D' text='{subLabel}' />
+        </div>
+        <div style='display:flex;flex-direction:row;position:absolute;left:0px;'>
+            <div style='display:flex;flex-direction:row;width:80px;height:80px;align-items:center;justify-content:center'>
+                <image style='width:80px;height:80px;' src='205004' />
+                <div style='position:absolute;top:23px;display:flex;flex-direction:row;width:30px;height:40px;align-items:center;justify-content:center'>
+                    <label style='color:#FFFFFF;font-size:30px;font-weight:bold;text-align:center' text='{label}' />
+                </div>
+            </div>
+        </div>
+    </div>
+</res>
+
+
+<!--驾车行前-熟路气泡样式-->
+<res useCommonParser='true' resId='204001,204001' direction='leftTop,rightTop' anchorOffset='(18,24),(18,24)' >
+   <background-image id='backimage'>112008,112007</background-image>
+   <backgroundstretch id='backimage'>35% 53% 61% 38%,35% 40% 61% 51%</backgroundstretch>
+   <padding id='backimage'>24px 47px 51px 32px,24px 32px 51px 47px</padding>
+   <div id='backimage' style='display:flex;flex-direction:row;align-items:center;justify-content:center;'>
+       <label style='color:#000000;opacity:1.0;font-size:28px;font-weight:bold;' text='{title}'></label>
+   </div>
+</res>
+
+<!--新能源推荐气泡-新能源下高速推荐气泡 样式-->
+<res useCommonParser='true' resId='205008,205008,205008,205008,205021,205021,205021,205021' direction='leftTop,rightTop,rightBottom,leftBottom,leftTop,rightTop,rightBottom,leftBottom' anchorOffset='(0,0),(0,0),(0,40),(0,40),(0,0),(0,0),(0,40),(0,40)'>
+
+    <background-image id='backimage'>205013,205014,205016,205015,205017,205018,205020,205019</background-image>
+    <backgroundstretch id='backimage'>35% 53% 61% 38%,35% 40% 61% 51%,53% 40% 44% 51%,53% 52% 44% 39%,35% 53% 61% 38%,35% 40% 61% 51%,53% 40% 44% 51%,53% 52% 44% 39%</backgroundstretch>
+    <padding id='backimage'>13px 47px 37px 32px,13px 32px 37px 47px,29px 32px 21px 47px,29px 46px 21px 33px,13px 47px 37px 32px,13px 32px 37px 47px,29px 32px 21px 47px,29px 46px 21px 33px</padding>
+    <color id='labelcolor'>black,black,black,black,#F47A23,#F47A23,#F47A23,#F47A23</color>
+    <div id='backimage' style='display:flex;flex-direction:row;margin-left:0px;margin-bottom:0px;'>
+        <div style='display:flex;flex-direction:column;align-items:flex-start;justify-content:center;'>
+            <label id='labelcolor' style='font-size:28px;font-weight:bold;margin-top:9px;margin-bottom:6px;' text='{name}'/>
+            <div style='display:flex;flex-direction:row;align-items:center;justify-content:center;'>
+                <label style='display:flex;color:#99000000;font-size:24px;font-weight:bold;margin-bottom:9px;' text='距起点'/>
+                <label style='display:flex;color:#1A66FF;font-size:24px;margin-left:4px;margin-bottom:9px;' text='{distance}'/>
+            </div>
+        </div>
+        <div id='30700' style='display:flex;flex-direction:column;align-items:center;justify-content:center;margin-left:10px'>
+            <image style='width:42px;height:42px;' src='205012'/>
+            <label style='display:flex;color:#99000000;font-size:20px;' text='添加'/>
+        </div>
+    </div>
+</res>
+
+<!--行前沿途搜普通扎标样式-->
+<res useCommonParser='true' resId='110142' direction='rightTop' anchorOffset='(38,0)' >
+   <div style='display:flex;flex-direction:row'>
+       <div style='display:flex;flex-direction:row;margin-start:0px;align-items:center;justify-content:start;background-image:205006;backgroundstretch:51% 27% 45% 71%;padding:28px 17px 22px 64px;'>
+           <label style='margin-top:2px;margin-left:5px;font-size:20px;font-weight:bold;color:{labelColor}' text='{label}' />
+       </div>
+       <div style='display:flex;flex-direction:row;position:absolute;left:0px;'>
+           <div style='display:flex;flex-direction:row;width:80px;height:80px;align-items:center;justify-content:center'>
+               <image style='width:64px;height:80px;' src='{iconId}' />
+           </div>
+       </div>
+   </div>
+</res>
+
+<!--行前沿途搜焦点气泡样式-->
+<res useCommonParser='true' resId='110149' direction='rightTop' anchorOffset='(45,3)' >
+   <div style='display:flex'>
+       <div style='display:flex;flex-direction:row;align-items:center;justify-content:start;background-image:205007;backgroundstretch:47% 28% 46% 69%;padding:49px 22px 45px 99px;'>
+           <label style='font-size:26px;font-weight:bold;color:{labelColor}' text='{label}' />
+       </div>
+       <div style='display:flex;flex-direction:row;position:absolute;left:0px'>
+           <div style='display:flex;flex-direction:row;'>
+               <image style='width:96px;height:132px;' src='{iconId}' />
+           </div>
+       </div>
+   </div>
+</res>
+
+<!--沿途搜新样式普通态-->
+<res useCommonParser='true' resId='200142' direction='topCenter' anchorOffset='(0,0)' >
+    <div style='display:flex;'>
+        <image src='150261' style='width:64px;height:64px;'/>
+        <div style='position:absolute;left:17px;top:7px;width:30px;height:42px;align-items:center;justify-content:center'>
+            <label style='color:#FFFFFF;font-size:30px;font-weight:bold;text-align:center' text='{label}' />
+        </div>
+    </div>
+</res>
+
+<!--沿途搜新样式焦点态-->
+<res useCommonParser='true' resId='200143' direction='topCenter' anchorOffset='(0,0)'>
+    <div style='display:flex;'>
+        <image src='150262' style='width:106px;height:106px;'/>
+        <div style='position:absolute;left:30px;top:14px;width:48px;height:65px;align-items:center;justify-content:center'>
+            <label style='color:#FFFFFF;font-size:45px;font-weight:bold;text-align:center' text='{label}'/>
+        </div>
+    </div>
+</res>
+
+
+<!--起点气泡-->
+<res useCommonParser='true' resId='231048,231048,231048,231048' direction='leftTop,rightTop,leftBottom,rightBottom' anchorOffset='(0,0),(0,0),(0,0),(0,0)' >
+ <background-image id='backimage'>231051,231049,231052,231050</background-image>
+ <backgroundstretch id='backimage'>20% 45% 40% 35%,20% 35% 40% 45%,40% 45% 20% 35%,40% 35% 30% 45%</backgroundstretch>
+ <padding id='backimage'>25px 45px 47px 30px,25px 30px 47px 45px,40px 45px 35px 30px,40px 30px 35px 45px</padding>
+ <div id='backimage' style='width:auto;height:auto;display:flex;flex-direction:row;align-items:center;justify-content:center'>
+     <img style='width:32px;height:32px;margin-right:5px;' src='{iconId}'></img>
+     <label style='align-self:flex-start;font-weight:bold;font-size:28px;color:#1a66ff;line-height:32px' text='{text}'></label>
+ </div>
+</res>
+
+<!--兴趣点icon纹理普通态-->
+<res useCommonParser='true' resId='231054,231119' direction='topCenter,topCenter' anchorOffset='(0,0),(0,0)' >
+ <width id='icon'>56px,46px;</width>
+ <height id='icon'>56px,46px;</height>
+ <margin-bottom id='icon'>10px,5px</margin-bottom>
+ <margin-top id='icon'>0px,11px</margin-top>
+ <div style='background-image:{backImg};width:64px;height:64px;display:flex;flex-direction:row;align-items:center;justify-content:center'>
+     <img id='icon' style='display:flex' src='{iconId}'></img>
+ </div>
+</res>
+
+<!--兴趣点icon纹理点击态-->
+<res useCommonParser='true' resId='231055,231120' direction='topCenter,topCenter' anchorOffset='(0,0),(0,0)' >
+<width id='icon'>88px,50px;</width>
+<height id='icon'>88px,50px;</height>
+<margin-top id='icon'>0px,8px</margin-top>
+<width id='background'>112px,112px;</width>
+<height id='background'>118px,124px;</height>
+ <div id = "background" style='background-image:{backImg};width:auto;height:auto;display:flex;flex-direction:row;align-items:center;justify-content:center'>
+     <img id='icon' style='margin-bottom:12px;' src='{iconId}'></img>
+ </div>
+</res>
+
+<!--兴趣点文字纹理普通态-->
+<res useCommonParser='true' resId='231056' direction='bottomCenter' anchorOffset='(0,0)' >
+ <div style='width:auto;height:auto;display:flex;flex-direction:column;align-items:center;justify-content:center'>
+     <label style='font-weight:medium;font-size:32px;color:#E6000000;max-width:360px;line-clamp:1' text='{maintext}'></label>
+     <label style='font-weight:medium;font-size:27px;color:#99000000;' text='{subtext}'></label>
+ </div>
+</res>
+
+<!--兴趣点文字纹理点击态-->
+<res useCommonParser='true' resId='231057' direction='bottomCenter' anchorOffset='(0,0)' >
+ <div style='width:auto;height:auto;display:flex;flex-direction:column;align-items:center;justify-content:center'>
+     <label style='font-weight:medium;font-size:37px;color:#E6000000;max-width:360px;line-clamp:1' text='{maintext}'></label>
+     <label style='font-weight:medium;font-size:32px;color:#99000000;' text='{subtext}'></label>
+ </div>
+</res>
+
+<!--兴趣点icon纹理聚合态-->
+<res useCommonParser='true' resId='231121' direction='topCenter' anchorOffset='(0,0)' >
+ <div style='background-image:{backImg};width:64px;height:64px;display:flex;flex-direction:row;align-items:center;justify-content:center'>
+     <label style='font-weight:bold;font-size:{textSize};color:#FFFFFF;margin-top:5px' text='{num}'></label>
+ </div>
+</res>
+
+<!--兴趣点文字纹理聚合态-->
+<res useCommonParser='true' resId='231122' direction='bottomCenter' anchorOffset='(0,0)' >
+ <div style='width:auto;height:auto;display:flex;flex-direction:column;align-items:center;justify-content:center'>
+     <label style='font-weight:medium;font-size:32px;color:#E6000000;max-width:360px;line-clamp:1' text='{maintext}'></label>
+     <label style='font-weight:medium;font-size:27px;color:#99000000;' text='和其他{num}个收藏点'></label>
+ </div>
+</res>
+
+<!--连续无加油站气泡样式-->
+<res useCommonParser='true' resId='204002,204002,204002,204002' direction='rightTop,leftTop,leftBottom,rightBottom' anchorOffset='(18,20),(18,20),(18,20),(18,20)'>
+    <background-image id='backimage'>205014,205013,205015,205016</background-image>
+    <backgroundstretch id='backimage'>35% 40% 61% 51%,35% 53% 61% 38%,53% 52% 44% 39%,53% 40% 44% 51%</backgroundstretch>
+    <padding id='backimage'>25px 32px 47px 47px,25px 47px 47px 32px,41px 46px 31px 33px,41px 32px 31px 47px</padding>
+    <div id='backimage' style='display:flex;flex-direction:row;align-items:center;justify-content:space-around;'>
+        <image id='30309' src='{iconRes}' style='width:56px;height:56px;'/>
+        <div id='30309' style='margin-left:4;display:flex;flex-direction:column;align-items:flex-start;'>
+            <div style='display:flex;flex-direction:row;align-items:center;justify-content:center;margin-left:4px;'>
+                <label style='display:flex;color:#000000;font-size:24px;margin-bottom:3px;' text='{subtitle}'/>
+                <label style='display:flex;color:#F9762A;font-size:24px;margin-bottom:3px;' text='{miss_distance}'/>
+            </div>
+            <label style='color:#000000;font-size:28px;font-weight:bold;' text='{title}'></label>
+        </div>
+    </div>
+</res>
+
+<!--行前终点附近(加油站)气泡样式-->
+<res useCommonParser='true' resId='200141,200141,200141,200141' direction='bottomCenter,topCenter,leftTop,rightTop' anchorOffset='(0,0),(0,0),(0,0),(0,0)' >
+    <height id='bottomPlaceholder'>0px,70px,0px,0px</height>
+    <width id='leftPlaceholder'>0px,0px,0px,30px</width>
+    <width id='rightPlaceholder'>0px,0px,30px,0px</width>
+
+    <div style='display: flex; flex-direction: row; align-items: center'>
+        <div id='leftPlaceholder' style="background-color:transparent"></div>
+        <div style='display: flex; font-weight: medium; flex-direction: column; align-items: center'>
+            <label
+                style='align-self: center; font-size: 26px; color: #222222; line-height: 30px; text-overflow: ellipsis; max-width:185px; line-clamp:1; overflow: hidden; margin-top: 2px; position: relative; text-stroke:2px white'
+                text='{label}'
+                ></label>
+
+            <div style='display: flex; line-height: 22px; background-color: #2eff4200; border-radius: 9.6px; margin-top: 2px; flex-direction: row; align-items: center; position: relative'>
+                <label
+                    style='align-self: center; font-size: 22px; color: #ff682d; margin-left: 8px; text-stroke:2px white'
+                    text='¥'
+                    ></label>
+
+                <label
+                    style='align-self: center; font-size: 22px; color: #ff682d; text-stroke:2px white'
+                    text='{discountPrice}'
+                    ></label>
+
+                <label
+                    style='align-self: center; font-size: 22px; color: #99000000; margin-right: 8px; text-stroke:2px white'
+                    text='/L'
+                    ></label>
+
+                <label
+                    style='align-self: center; margin-right: 10px; font-size: 22px; color: #99000000; text-decoration: line-through; text-stroke:2px white'
+                    text='¥{defaultPrice}/L'
+                    ></label>
+            </div>
+            <div id='bottomPlaceholder' style="background-color:transparent"></div>
+        </div>
+        <div id='rightPlaceholder' style="background-color:transparent"></div>
+    </div>
+</res>
+
+<!--1112沿途搜白天气泡样式 正常态 左上右上-->
+<res useCommonParser='true' resId='200203,200203' direction='leftTop,rightTop' anchorOffset='(0,-30),(0,-30)' >
+    <background-image id="backimage">110516,110518</background-image>
+    <backgroundstretch id='backimage'>35% 48% 60% 36%,35% 40% 60% 48%</backgroundstretch>
+    <padding id='backimage'>25px 47px 49px 32px,25px 32px 49px 50px</padding>
+    <div id='backimage' style="display:flex;flex-direction:row;align-items:center;">
+        <div id='clickArea' style="display:flex;flex-direction:row;align-items:center;">
+            <div style="display:{labelVisible};padding:5px 8px 5px 8px;{labelStyle}border-radius: 16px;text-align:center;margin-right:4px;">
+                <label style="font-size:{labelFontSize}px;color:#FFFFFF;font-weight:bold" text="{label}"/>
+            </div>
+            <label style="color:black;font-size:{infoFontSize}px;color:rgba(0,0,0,0.90);letter-spacing:0;font-weight: medium;" text="{text}"/>
+        </div>
+    </div>
+</res>
+
+
+<!--1112沿途搜白天气泡样式 选中态 左上右上-->
+<res useCommonParser='true' resId='200204,200204' direction='leftTop,rightTop' anchorOffset='(0,-60),(0,-60)' >
+    <background-image id="backimage">110516,110518</background-image>
+    <backgroundstretch id='backimage'>35% 48% 60% 36%,35% 40% 60% 48%</backgroundstretch>
+    <padding id='backimage'>25px 47px 49px 32px,25px 32px 49px 50px</padding>
+    <div id='backimage' style="display:flex;flex-direction:row;align-items:center;">
+        <div id='clickArea' style="display:flex;flex-direction:row;align-items:center;">
+            <div style="display:{labelVisible};padding:5px 8px 5px 8px;{labelStyle}border-radius: 16px;text-align:center;margin-right:4px;">
+                <label style="font-size:{labelFontSize}px;color:#FFFFFF;font-weight:bold" text="{label}"/>
+            </div>
+            <label style="color:black;font-size:{infoFontSize}px;color: rgba(0,0,0,0.90);letter-spacing:0;font-weight: medium;" text="{text}"/>
+        </div>
+    </div>
+</res>
+
+
+
+<!--1112沿途搜白天气泡样式 正常态及选中态 左下右下-->
+<res useCommonParser='true' resId='200203,200203,200204,200204' direction='rightBottom,leftBottom,rightBottom,leftBottom' anchorOffset='(0,40),(0,40),(0,40),(0,40)' >
+    <background-image id="backimage">110519,110517,110519,110517</background-image>
+    <backgroundstretch id='backimage'>52% 41% 43% 48%,52% 46% 43% 42%,52% 41% 43% 48%,52% 46% 43% 42%</backgroundstretch>
+    <padding id='backimage'>42px 32px 33px 47px,42px 47px 33px 32px,42px 32px 33px 47px,42px 47px 33px 32px</padding>
+    <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;">
+        <div id='backimage' style="display:flex;flex-direction:row;align-items:center;">
+            <div id='30601' style="display:flex;flex-direction:row;align-items:center;">
+                <div style="display:{labelVisible};padding:5px 8px 5px 8px;{labelStyle}border-radius: 16px;text-align:center;margin-right:4px;">
+                    <label style="font-size:{labelFontSize}px;color:#FFFFFF;font-weight:bold" text="{label}"/>
+                </div>
+                <label style="color:black;font-size:{infoFontSize}px;color: rgba(0,0,0,0.90);letter-spacing:0;font-weight: medium;" text="{text}"/>
+            </div>
+        </div>
+    </div>
+</res>
+
+
+
+<!--1112沿途搜扎标普通态-->
+<res useCommonParser='true' resId='200201' direction='topCenter' anchorOffset='(0,0)' >
+    <background-image id="backimage">{bgId}</background-image>
+    <div  id='backimage' style='width: 94px; height: 64px; padding: 10px 14px 20px 14px; left: 0; top: 0px'>
+        <div style='display: flex; flex-direction: row; align-items: center; position: relative; justify-content: space-between;'>
+            <div style='align-self: center; flex-grow: 1; display: flex; flex-direction: row; align-items: center; justify-content: center; width: auto'>
+                <label style='align-self: center; font-weight: medium; font-size: {fontSize}px; color: #ffffff; line-height: 28px;' text='{poiIndex}'></label>
+            </div>
+            <img style='width: 34px; height: 34px; align-self: center' src='{brandIconId}'></img>
+        </div>
+    </div>
+</res>
+
+<!--1112沿途搜扎标选中态-->
+<res useCommonParser='true' resId='200202' direction='topCenter' anchorOffset='(0,0)' >
+    <background-image id="backimage">{bgId}</background-image>
+    <div id='backimage' style='width: 123px; height: 95px; padding: 6px 6px 31px 6px; left: 0; top: 0px'>
+        <div style='display: flex; flex-direction: row; align-items: center; position: relative; justify-content: space-between;'>
+            <div style='align-self: center; flex-grow: 1; display: flex; flex-direction: row; align-items: center; justify-content: center;'>
+                <label style='align-self: center; font-weight: medium; font-size: {fontSize}px; color: #ffffff; line-height: 42px;' text='{poiIndex}'></label>
+            </div>
+            <img style='width: 58px; height: 58px; align-self: center' src='{brandIconId}'></img>
+        </div>
+    </div>
+</res>
+
+
+<!--终点名称样式-->
+<res useCommonParser='true' resId='30002,30002,30002' direction='bottomCenter,rightCenter,leftCenter' anchorRatio='(0.5,0.0),(0.0,0.5),(1.0,0.5)' >
+    <padding id='endPointName'>24px 0px 0px 0px,0px 0px 0px 32px,0px 32px 0px 0px</padding>
+  <div id='endPointName' style='width:auto;height:auto;background-color:#00FFFFFF;display:flex;border-radius:8px;flex-direction:column;margin:6px;align-items:flex-start'>
+      <label style='color:{color};font-size:{fontSize};opacity: 0.87;font-weight:bold;max-width:166px;line-clamp:2;stroke="true";strokewidth="4"; text-stroke:2px {strokeColor}' text='{label}'></label>
+  </div>
+</res>
+
+
+<!--终点ETA+景区关闭/停车建议、终点详情合并气泡-->
+<res useCommonParser='true' resId='30006,30006,30006,30006,30006,30007,30007,30007,30007,30007' direction='rightTop,leftTop,rightBottom,leftBottom,bottomCenter,rightTop,leftTop,rightBottom,leftBottom,bottomCenter' anchorOffset='(0,0),(0,0),(0,0),(0,0),(0,0),(0,0),(0,0),(0,0),(0,0),(0,0)'>
+    
+    <background-image id='backimage'>205014,205013,205016,205015,30031,205014,205013,205016,205015,30031</background-image>
+    <backgroundstretch id='backimage'>37% 40% 62% 43%,37% 43% 62% 40%,42% 48% 57% 43%,42% 43% 57% 48%,52% 60% 47% 35% 53% 35% 46% 60%,
+        37% 40% 62% 43%,37% 43% 62% 40%,42% 48% 57% 43%,42% 43% 57% 48%,52% 60% 47% 35% 53% 35% 46% 60%</backgroundstretch>
+    <padding id='backimage'>21px 24px 48px 46px,21px 43px 48px 27px,37px 26px 32px 44px,37px 38px 32px 31px,35px 26px 28px 30px,
+        21px 24px 48px 46px,21px 43px 48px 27px,37px 27px 32px 43px,37px 38px 32px 31px,35px 26px 28px 30px</padding>
+    <div id='backimage' style='width:auto;height:auto;'>
+        <div style='display: flex; flex-direction: row; align-items: center; position: relative'>
+          <div style='display: flex; margin-right: 5px; flex-direction: column; align-items: flex-start'>
+            <label style='align-self: flex-start; font-weight: bold; font-size: 28px; color: #212121; line-height: 33px; position: relative' text="{mainLabel}" stroke='false' strokewidth='1'></label>
+            
+            <div style='display: flex; line-height: 24px; background-color: {etatime_bgcolor};  padding-left: 8px; padding-right: 8px; border-radius: 17.5px; margin-top: 4px; flex-direction: row; align-items: center; position: relative'>
+              <label style='align-self: center; margin: 3px 8px; font-weight: normal; font-size: 24px; color: {etatime_color}' text="{etaTime}" stroke='false' strokewidth='1'></label>
+            </div>
+          </div>
+
+          <img style='width: 24px; height: 24px; align-self: center; margin-top: 2px' src='30025' syncload='true'></img>
+        </div>
+    </div>
+</res>
+
+<!--双行图+文字合并气泡-->
+<res useCommonParser='true' resId='30004,30004,30004,30004,30004' direction='rightTop,leftTop,rightBottom,leftBottom,bottomCenter' anchorOffset='(0,0),(0,0),(0,0),(0,0),(0,0)'>
+    
+    <background-image id='backimage'>205014,205013,205016,205015,30031</background-image>
+    <backgroundstretch id='backimage'>45% 44% 54% 42%,45% 42% 54% 44%,54% 36% 45% 50%,54% 50% 45% 36%,59% 59% 40% 31% 60% 31% 39% 59%</backgroundstretch>
+    <padding id='backimage'>17px 24px 50px 46px,17px 42px 50px 28px,32px 29px 32px 43px,32px 40px 32px 32px,32px 26px 32px 30px</padding>
+    <div id='backimage' style='width:auto;height:auto;'>
+        <div style='display: flex; justify-content: center; flex-direction: row; align-items: center; position: relative'>
+          <div style='display: flex; flex-direction: column; align-items: flex-start; position: relative'>
+            <div style='display: flex; justify-content: center; flex-direction: row; align-items: center; position: relative'>
+              <div style='display: flex; justify-content: center; flex-direction: row; align-items: center'>
+                <div style='width: 34px;height: 34px; background-image:{bgImg};display:flex;flex-direction:row;align-items:center;justify-content:center'>
+                  <img style='width: 32px; height: 32px; align-self: center; margin-top: 1px; margin-right: px' src="{gistResId}" syncload='true'></img>
+                </div>
+                <label style='font-size:32px;color:#1A66FF;font-weight: bold; margin-right: 1px; margin-bottom:16px' text='...'/>
+                <div style='width: 34px;height: 34px; background-image:{bgImg2};display:flex;flex-direction:row;align-items:center;justify-content:center'>
+                  <img style='width: 32px; height: 32px; align-self: center; margin-top: -1px; margin-right: 2px' src="{gistResId2}" syncload='true'></img>
+                </div>
+              </div>
+            </div>
+            <div style='display: flex; justify-content: center; flex-direction: row; align-items: center; position: relative'>
+              <label style='align-self: center; font-weight: bold; font-size: 24px; color: #212121; line-height: 24px; margin-top: -7px' text="{mainLabel}" stroke='false' strokewidth='1'></label>
+            </div>
+
+            <div style='display: flex; line-height: 24px; padding-left: 8px; padding-right: 8px; background-color: #E8F3FF; border-radius: 17.5px; margin-top: 4px; flex-direction: row; align-items: center; position: relative'>
+              <label style='align-self: center; margin: 3px 8px; font-weight: normal; font-size: 24px; color: #1a66ff' text="{etaTime}" stroke='false' strokewidth='1'></label>
+            </div>
+          </div>
+          <img style='width: 24px; height: 24px; margin-top: 12px; align-self: center' src='30025' syncload='true'></img>
+        </div>
+    </div>
+</res>
+
+<!--双行文字合并气泡-->
+<res useCommonParser='true' resId='30005,30005,30005,30005,30005' direction='rightTop,leftTop,rightBottom,leftBottom,bottomCenter' anchorOffset='(0,0),(0,0),(0,0),(0,0),(0,0)'>
+    
+    <background-image id='backimage'>205014,205013,205016,205015,30031</background-image>
+    <backgroundstretch id='backimage'>43% 34% 56% 42%,43% 42% 56% 34%,56% 34% 43% 42%,56% 42% 43% 34%,59% 59% 40% 31% 60% 31% 39% 59%</backgroundstretch>
+    <padding id='backimage'>22px 24px 48px 46px,22px 42px 48px 28px,39px 27px 32px 43px,39px 40px 32px 30px,37px 26px 32px 30px</padding>
+    <div id='backimage' style='width:auto;height:auto;'>
+        <div style='display: flex; flex-direction: row; align-items: center; position: relative'>
+          <div style='display: flex; flex-direction: column; align-items: flex-start; position: relative'>
+            <label style='align-self: flex-start; font-weight: bold; font-size: 28px; color: #212121; line-height: 33px; text-overflow: ellipsis; overflow: hidden; position: relative' text="{mainLabel}" stroke='false' strokewidth='1'></label>
+            <div style='display: flex; margin-top: 2px; flex-direction: row; align-items: center; position: relative'>
+              <label style='align-self: center; font-weight: normal; font-size: 24px; color: #000000; line-height: 24px;' text="{subLabel}" stroke='false' strokewidth='1'></label>
+            </div>
+            <div style='display: flex; line-height: 24px; padding-left: 8px; padding-right: 8px; background-color: #E8F3FF; border-radius: 17.5px; margin-top: 4px; flex-direction: row; align-items: center; position: relative'>
+              <label style='align-self: center; margin: 3px 8px; font-weight: normal; font-size: 24px; color: #1a66ff' text="{etaTime}" stroke='false' strokewidth='1'></label>
+            </div>
+          </div>
+          <img style='width: 24px; height: 24px; margin-top: 2px; align-self: center' src='30025' syncload='true'></img>
+        </div>
+    </div>
+</res>
+
+<!--终点ETA+窄路合并气泡-->
+<res useCommonParser='true' resId='30003,30003,30003,30003,30003' direction='rightTop,leftTop,rightBottom,leftBottom,bottomCenter' anchorOffset='(0,0),(0,0),(0,0),(0,0),(0,0)'>
+    
+    <background-image id='backimage'>205014,205013,205016,205015,30031</background-image>
+    <backgroundstretch id='backimage'>37% 40% 62% 43%,37% 43% 62% 40%,42% 48% 57% 43%,42% 43% 57% 33%,52% 60% 47% 35% 53% 35% 46% 60%</backgroundstretch>
+    <padding id='backimage'>15px 26px 46px 44px,15px 45px 46px 25px,31px 28px 30px 42px,31px 39px 30px 31px,29px 26px 31px 30px</padding>
+    <div id='backimage' style='width:auto;height:auto;'>
+        <div style='display: flex; flex-direction: row; align-items: center; position: relative'>
+            <div style='display: flex; margin-right: 5px; flex-direction: column; align-items: flex-start'>
+              <div style='display: flex; flex-direction: row; align-items: flex-start; position: relative'>
+                <div style='width: 34px;height: 34px; background-image:{bgImg};display:flex;flex-direction:row;margin-left:4px;align-items:center;justify-content:center'>
+                  <img style='width: 36px; height: 36px; align-self: flex-start; margin-right: 6px; margin-top: 9px' src="{gistResId}" syncload='true'></img>
+                </div>
+                <div style='width: 36px;height: 36px; background-image:{bgImg2};display:{bgImg2Display};flex-direction:row; margin-right: 6px;align-items:center;justify-content:center'>
+                  <img style='width: 36px; height: 36px; align-self: center' src="{gistResId2}"syncload='true'></img>
+                </div>
+                <label style='align-self: flex-start; font-weight: bold; margin-top: 8px;margin-left: 4px; font-size: 28px; color: #212121; line-height: 33px; position: relative' text="{mainLabel}" stroke='false' strokewidth='1'></label>
+              </div>
+              <div style='display: flex; line-height: 24px; background-color: #E8F3FF; padding-left: 8px; padding-right: 8px; border-radius: 17.5px; margin-top: 4px;margin-left: 42px; flex-direction: row; align-items: center; position: relative'>
+                <label style='align-self: center; margin: 3px 8px; font-weight: normal; font-size: 24px; color: #1a66ff' text="{etaTime}" stroke='false' strokewidth='1'></label>
+              </div>
+            </div>
+
+            <img style='width: 24px; height: 24px; align-self: center; margin-top: 2px' src='30025' syncload='true'
+            ></img>
+          </div>
+    </div>
+</res>
+
+<!--终点ETA+星巴克订单/关闭合并气泡-->
+<res useCommonParser='true' resId='30008,30008,30008,30008,30008,30009,30009,30009,30009,30009' direction='rightTop,leftTop,rightBottom,leftBottom,bottomCenter,rightTop,leftTop,rightBottom,leftBottom,bottomCenter' anchorOffset='(0,0),(0,0),(0,0),(0,0),(0,0),(0,0),(0,0),(0,0),(0,0),(0,0)'>
+    
+    <background-image id='backimage'>205014,205013,205016,205015,30031,205014,205013,205016,205015,30031</background-image>
+    <backgroundstretch id='backimage'>38% 41% 61% 57%,38% 57% 61% 41%,54% 36% 45% 50%,54% 50% 45% 36%,59% 59% 40% 31% 60% 31% 39% 59%,
+        38% 41% 61% 57%,38% 57% 61% 41%,54% 36% 45% 50%,54% 50% 45% 36%,59% 59% 40% 31% 60% 31% 39% 59%</backgroundstretch>
+    <padding id='backimage'>21px 26px 48px 46px,21px 42px 48px 28px,37px 34px 32px 43px,37px 40px 32px 33px,36px 26px 32px 32px,
+        21px 26px 48px 46px,21px 42px 48px 28px,37px 34px 32px 43px,37px 40px 32px 33px,36px 26px 32px 32px</padding>
+    <div id='backimage' style='width:auto;height:auto;' syncload='true'>
+        <div style='display: flex; flex-direction: row; align-items: flex-start; position: relative'>
+          <div style='display: flex; flex-direction: column; align-items: flex-start; position: relative'>
+              <div style='display: flex; margin-right: 0px; flex-direction: column; align-items: flex-start'>
+                  
+                <div style='display: flex; flex-direction: row; align-items: flex-start; position: relative'>
+                  <img style='width: 32px; height: 32px; align-self: flex-start; margin-right: 6px; margin-top: 1px' src="{gistResId}" syncload='true'></img>
+                  <label style='align-self: flex-start; font-weight: bold; font-size: 28px; color: {mainLabel_color}; line-height: 33px; text-overflow: ellipsis; overflow: hidden; position: relative' text= "{mainLabel}" stroke='false' strokewidth='1'></label>
+                </div>
+                
+                <div style='display: {subLabelDisplay}; line-height: 24px; margin-top: 2px; flex-direction: row; align-items: center; position: relative'>
+                  <label style='align-self: center; font-weight: normal; font-size: 24px; color: {subLabel_color}; margin-right: 8px' text= "{subLabel}" stroke='false' strokewidth='1'></label>
+                </div>
+                
+                <div style='display: flex; line-height: 24px; padding-left: 8px; padding-right: 8px; display:{etatimeDisplay};background-color: {etatime_bgcolor}; border-radius: 17.5px; margin-top: 4px; flex-direction: row; align-items: center; position: relative'>
+                  <label style='align-self: center; margin: 3px 8px; font-weight: normal; font-size: 24px; color: {etatime_color}' text="{etaTime}" stroke='false' strokewidth='1'></label>
+                </div>
+                
+              </div>
+            </div>
+          <img style='width: 24px; height: 24px; display: {narrowDisplay}; align-self: flex-start; margin-top: {narrow_topPadding}' src='30025' syncload='true'></img>
+        </div>
+    </div>
+</res>
+
+<!--旧版星巴克订单气泡-->
+<res useCommonParser='true' resId='30032,30032,30032,30032,30032' direction='rightTop,leftTop,rightBottom,leftBottom,bottomCenter' anchorOffset='(0,0),(0,0),(0,0),(0,0),(0,0)'>
+    
+    <background-image id='backimage'>205014,205013,205016,205015,30031</background-image>
+    <backgroundstretch id='backimage'>38% 41% 61% 57%,38% 57% 61% 41%,54% 36% 45% 50%,54% 50% 45% 36%,59% 59% 40% 31% 60% 31% 39% 59%</backgroundstretch>
+    <padding id='backimage'>21px 26px 48px 46px,21px 42px 48px 28px,37px 34px 32px 43px,37px 40px 32px 33px,36px 26px 32px 32px</padding>
+    <div id='backimage' style='width:auto;height:auto;' syncload='true'>
+        <div style='display: flex; flex-direction: row; align-items: flex-start; position: relative'>
+          <div style='display: flex; flex-direction: column; align-items: flex-start; position: relative'>
+            <div style='display: flex; flex-direction: row; align-items: flex-start; position: relative'>
+              <img style='width: 48px; height: 48px; align-self: flex-start; margin-right: 6px; margin-top: 9px' src="{gistResId}" syncload='true'></img>
+
+              <div style='display: flex; margin-right: 0px; flex-direction: column; align-items: flex-start'>
+                <label style='align-self: flex-start; font-weight: bold; font-size: 28px; color: {mainLabel_color}; line-height: 33px; text-overflow: ellipsis; overflow: hidden; position: relative' text="{mainLabel}" stroke='false' strokewidth='1'></label>
+
+                <div style='display: flex; line-height: 24px; margin-top: 2px; flex-direction: row; align-items: center; position: relative'>
+                  <label style='align-self: center; font-weight: normal; font-size: 24px; color: {subLabel_color}; margin-right: 8px' text="{subLabel}" stroke='false' strokewidth='1'></label>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <img style='width: 24px; height: 24px; display: {narrowDisplay}; align-self: flex-start; margin-top: {narrow_topPadding}' src='30025' syncload='true'></img>
+        </div>
+    </div>
+</res>
+
+<!--终点区域面子点-->
+<res useCommonParser='true' resId='30011' direction='rightTop' anchorOffset='(24,0)'>
+    <div style="display:flex;flex-direction:row;">
+      <image style="width:48px;height:52px;" src="{icon}"/>
+      <label style="position:absolute;display:{labelDis};left:49px;bottom:15px;font-size:22px;font-weight:bold;color:black;opacity:0.87;text-stroke:2px white;" text="{label}"/>
+    </div>
+</res>
+
+<!--终点区域面子点 焦点态-->
+<res useCommonParser='true' resId='30010' direction='rightTop' anchorOffset='(56,0)'>
+    <div style="display:flex;flex-direction:row;">
+      <image style="width:112px;height:118px;" src="{icon}"/>
+      <label style="position:absolute;display:{labelDis};left:86px;bottom:5px;font-size:22px;font-weight:bold;color:black;opacity:0.87;text-stroke:2px white;" text="{label}"/>
+    </div>
+</res>
+
+
+<!--终点区域面子点 数字-->
+<res useCommonParser='true' resId='10220' direction='rightTop' anchorOffset='(24,0)'>
+  <div style='justify-content: center;'>
+    <div id='backimage' style='width:48px;height:52px;display:flex;flex-direction:column;background-image:{icon};justify-content: center;flex-direction: column;'>
+          <label text='{index}' style='font-size:26px;font-weight:bold;color:#ffffff;align-self:center;margin-bottom:11px;'></label>
+    </div>
+    <label style="position:absolute;display:{labelDis};left:49px;bottom:15px;font-size:22px;font-weight:bold;color:black;opacity:0.87;text-stroke:2px white;" text="{label}"/>
+  </div>
+</res>
+
+
+<!--终点区域面子点 数字 焦点态-->
+<res useCommonParser='true' resId='10221' direction='rightTop' anchorOffset='(56,0)'>
+  <div style='justify-content: center;'>
+    <div id='backimage' style='width:112px;height:118px;display:flex;flex-direction:column;background-image:{icon};justify-content: center;flex-direction: column;'>
+        <label text='{index}' style='font-size: 39px; font-weight: bold; color: #ffffff; align-self: center; margin-bottom: 25px;'></label>
+      
+    </div>
+      <label style="position:absolute;display:{labelDis};left:86px;bottom:5px;font-size:22px;font-weight:bold;color:black;opacity:0.87;text-stroke:2px white;" text="{label}"/>
+  </div>
+</res>
+
+<!--推荐停车场icon普通态-->
+<res useCommonParser='true' resId='10232' direction='centerCenter' anchorOffset='(0,0)'>
+    <div style="display:flex;flex-direction:row;">
+      <image style="width:49px;height:52px;" src="{icon}"/>
+    </div>
+</res>
+
+<!--推荐停车场icon焦点态-->
+<res useCommonParser='true' resId='10233' direction='topCenter' anchorOffset='(0,0)'>
+    <div style="display:flex;flex-direction:row;">
+      <image style="width:112px;height:118px;" src="{icon}"/>
+    </div>
+</res>
+
+<!--推荐停车场信息bubble普通态左飘向-->
+<res useCommonParser='true' resId='10236' direction='leftCenter' anchorOffset='(-30,0)'>
+<div style='display: flex; flex-direction: row'>
+    <div style='display: flex; flex-direction: column; align-items: flex-end'>
+    <label
+      style='line-clamp: 2;text-layout-amap:Y;text-align:right;max-width: 196px;text-stroke: 2px #ffffff;font-weight: bold; font-size: 24px; color: {namecolor}; line-height: 28px' text='{name}'
+    ></label>
+
+    <div style='display: {info};height: 30px; background-color: #99ffffff; border-radius: 8px; flex-direction: row; align-items: center'>
+      <div style='width: 26px; height: 26px; line-height: 28px; font-weight: medium; background-color: #3377E3; border-radius: 8px; margin-left: 2px;margin-right: 4px;flex-direction: column;align-items:center'>
+        <label
+          style='font-weight: bold; line-height: 28px; font-size: 20px; color: #ffffff' text='{rank}'
+        ></label>
+      </div>
+      <label
+        style='margin-right: 4px; font-weight: normal; font-size: 20px; margin-right: 2px;color: #3377e3; line-height: 20px'
+        text='{percent}'
+      ></label>
+    </div>
+  </div>
+</div>
+</res>
+
+<!--推荐停车场信息bubble普通态右飘向-->
+<res useCommonParser='true' resId='10236' direction='rightCenter' anchorOffset='(-30,0)'>
+<div style='display: flex; flex-direction: row; align-items: center'>
+  <div style='display: flex; margin-top: 1px; flex-direction: column; align-items: flex-start'>
+    <label
+      style='line-clamp: 2;text-layout-amap:Y;max-width: 196px;text-stroke: 2px #ffffff; align-self: flex-start; font-weight: bold; font-size: 24px; color: {namecolor}; line-height: 28px'
+      text='{name}'
+    ></label>
+    <div style='display: {info}; height: 30px; background-color: #99ffffff; border-radius: 8px; margin-top: 2px; flex-direction: row; align-items: center; position: relative'>
+      <div style='display: flex; width: 26px; height: 26px; line-height: 28px; font-weight: medium; background-color: #3377E3; border-radius: 8px; margin-left: 2px; margin-right: 4px; flex-direction: column'>
+        <label
+          style='align-self: center; font-weight: bold; line-height: 28px; font-size: 20px; color: #ffffff'
+          text='{rank}'
+        ></label>
+      </div>
+      <label
+        style='align-self: center; margin-right: 4px; font-weight: normal; font-size: 20px; color: #3377e3; line-height: 20px'
+        text='{percent}'
+      ></label>
+    </div>
+  </div>
+</div>
+</res>
+
+<!--推荐停车场点击态样式-->
+<res useCommonParser='true' resId='10237' direction='bottomCenter' anchorOffset='(0,0)'>
+<div style='display: flex;flex-direction: column; align-items: center'>
+  <label
+    style='line-clamp: 2;text-layout-amap:Y;max-width: 196px;text-align:center;text-stroke: 2px #ffffff; font-weight: bold; font-size: 24px; color: {namecolor}; line-height: 28px'
+    text='{name}'
+  ></label>
+  <div style='display: {info};height: 30px; background-color: #99ffffff; border-radius: 8px; flex-direction: row; align-items: center'>
+    <div style='width: 26px; height: 26px; line-height: 26px; font-weight: medium; background-color: #3377E3; border-radius: 8px; margin-left: 2px; margin-right: 4px; flex-direction: column; align-items:center'>
+      <label
+        style='font-weight: bold; line-height: 28px; font-size: 20px; color: #ffffff'
+        text='{rank}'
+      ></label>
+    </div>
+    <label
+      style='margin-right: 4px; font-weight: normal; font-size: 20px; color: #3377e3; line-height: 20px'
+      text='{percent}'
+     ></label>
+  </div>
+</div>
+</res>
+
+
+<!--自定义路线拖拽路线 上飘-->
+<res useCommonParser='true' resId='204103' direction='topCenter' anchorOffset='(0,0)' >
+    <div
+      style='padding: 27px 47px 39px 45px; background-image:204104; backgroundstretch: 39% 67% 52% 25% 39% 25% 52% 67%; left: 0; top: -10px'
+    >
+      <div style='display: flex; line-height: 40px; flex-direction: row; align-items: flex-start; position: relative'>
+        <label
+          style='align-self: flex-start; margin-right: 0px; margin: 0px 0px; font-weight: normal; font-size: 28px; color: #e6000000'
+          text='拖拽'
+        ></label>
+      </div>
+    </div>
+</res>
+
+<!--自定义路线拖拽路线 下飘-->
+<res useCommonParser='true' resId='204103' direction='bottomCenter' anchorOffset='(0,0)' >
+    <div style='backgroundstretch: 39 78 27 16 39 16 27 78'>
+      <div
+        style='padding: 38px 47px 28px 45px; left: 0; backgroundstretch: 51% 74% 36% 15%; background-image:204105; top: 10px'
+      >
+        <div style='display: flex; line-height: 40px; flex-direction: row; align-items: flex-start; position: relative'>
+          <label
+            style='align-self: flex-start; margin-right: 0px; margin: 0px 0px; font-weight: normal; font-size: 28px; color: #e6000000'
+            text='拖拽'
+          ></label>
+        </div>
+      </div>
+    </div>
+</res>
+
+</root>

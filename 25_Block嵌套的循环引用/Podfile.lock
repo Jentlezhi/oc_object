@@ -1,0 +1,66 @@
+PODS:
+  - libwebp (1.3.2):
+    - libwebp/demux (= 1.3.2)
+    - libwebp/mux (= 1.3.2)
+    - libwebp/sharpyuv (= 1.3.2)
+    - libwebp/webp (= 1.3.2)
+  - libwebp/demux (1.3.2):
+    - libwebp/webp
+  - libwebp/mux (1.3.2):
+    - libwebp/demux
+  - libwebp/sharpyuv (1.3.2)
+  - libwebp/webp (1.3.2):
+    - libwebp/sharpyuv
+  - LookinServer (1.2.8):
+    - LookinServer/Core (= 1.2.8)
+  - LookinServer/Core (1.2.8)
+  - Masonry (1.1.0)
+  - ReactiveObjC (3.1.1)
+  - SDWebImage (5.19.1):
+    - SDWebImage/Core (= 5.19.1)
+  - SDWebImage/Core (5.19.1)
+  - SDWebImageWebPCoder (0.14.5):
+    - libwebp (~> 1.0)
+    - SDWebImage/Core (~> 5.17)
+  - YYCategories (1.0.4):
+    - YYCategories/no-arc (= 1.0.4)
+  - YYCategories/no-arc (1.0.4)
+
+DEPENDENCIES:
+  - LookinServer
+  - Masonry
+  - ReactiveObjC
+  - SDWebImage
+  - SDWebImageWebPCoder
+  - YYCategories (from `https://github.com/Jentlezhi/YYCategories.git`)
+
+SPEC REPOS:
+  trunk:
+    - libwebp
+    - LookinServer
+    - Masonry
+    - ReactiveObjC
+    - SDWebImage
+    - SDWebImageWebPCoder
+
+EXTERNAL SOURCES:
+  YYCategories:
+    :git: https://github.com/Jentlezhi/YYCategories.git
+
+CHECKOUT OPTIONS:
+  YYCategories:
+    :commit: 5e2a7a6288e6eb30bbf2400b31e88d65a24cf0f4
+    :git: https://github.com/Jentlezhi/YYCategories.git
+
+SPEC CHECKSUMS:
+  libwebp: 1786c9f4ff8a279e4dac1e8f385004d5fc253009
+  LookinServer: 1b2b61c6402ae29fa22182d48f5cd067b4e99e80
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
+  SDWebImage: 40b0b4053e36c660a764958bff99eed16610acbb
+  SDWebImageWebPCoder: c94f09adbca681822edad9e532ac752db713eabf
+  YYCategories: 6bcd4314c6661a561410dce4a793379ebd306abd
+
+PODFILE CHECKSUM: 2ac3a00a4fe6fa266c6e7d0085a9b6189bdcb594
+
+COCOAPODS: 1.15.2

@@ -1,0 +1,187 @@
+<root>
+
+<!--
+骑步行动态纹理样式
+-->
+<!--步导用反戳点气泡样式-->
+<res useCommonParser='true' resId='200102' direction='topCenter' anchorOffset='(0,0)'>
+    <div style='width:auto;height:auto;background-color:#00FFFFFF;display:flex;background-image:{resid};flex-direction:row;margin-bottom:80px;align-items:center;backgroundstretch:0% 62% 2% 33% 0% 33% 2% 62%;padding:27px 47px 41px 47px;'>
+        <div style='width:auto;height:auto;display:flex;flex-direction:row;align-items:center;background-color:transparent'>
+            <label style='color:{labelcolor};font-size:30px;background-color:transparent;font-weight:bold;' text='{label}'></label>
+        </div>
+    </div>
+</res>
+
+<!--路线内事件：封路 理由气泡样式-->
+<res useCommonParser='true' resId='200100' direction='leftTop' anchorOffset='(0,0)' >
+  <div style="width:auto;height:auto;background-color:#00FFFFFF;display:flex;background-image:115028;backgroundstretch:37% 54% 56% 33%;padding:20px 32px 30px 19px;  flex-direction:row;align-items:center">
+  <div style="width:auto;height:auto;display:flex;flex-direction:row;align-items:center;background-color:transparent">
+    <label style="color:#ffffff;font-size:30px;margin-top:5px;margin-bottom:5px;margin-right:15px;font-weight:bold;background-color:transparent" text="{label}"/>
+  </div>
+</div>
+</res>
+<!--路线内事件：封路 理由气泡样式-->
+<res useCommonParser='true' resId='200100' direction='rightTop' anchorOffset='(0,0)' >
+  <div style="width:auto;height:auto;background-color:#00FFFFFF;display:flex;background-image:115026;backgroundstretch:37% 36% 56% 51%;padding:20px 19px 30px 32px;flex-direction:row;align-items:center">
+  <div style="width:auto;height:auto;display:flex;flex-direction:row;align-items:center;background-color:transparent">
+    <label style="color:#ffffff;font-size:30px;margin-top:5px;margin-bottom:5px;margin-left:15px;font-weight:bold;background-color:transparent" text="{label}"/>
+  </div>
+ </div>
+</res>
+<!--路线内事件：封路 理由气泡样式-->
+<res useCommonParser='true' resId='200100' direction='rightBottom' anchorOffset='(0,0)' >
+  <div style="width:auto;height:auto;background-color:#00FFFFFF;display:flex;background-image:115025;backgroundstretch:53% 36% 40% 51%;padding:30px 19px 20px 32px;flex-direction:row;align-items:center">
+  <div style="width:auto;height:auto;display:flex;flex-direction:row;align-items:center;background-color:transparent">
+    <label style="color:#ffffff;font-size:30px;margin-left:15px;margin-top:5px;margin-bottom:5px;font-weight:bold;background-color:transparent" text="{label}"/>
+  </div>
+ </div>
+</res>
+<!--路线内事件：封路 理由气泡样式-->
+<res useCommonParser='true' resId='200100' direction='leftBottom' anchorOffset='(0,0)' >
+  <div style="width:auto;height:auto;background-color:#00FFFFFF;display:flex;background-image:115027; backgroundstretch:53% 54% 40% 33%;padding:30px 32px 20px 19px;flex-direction:row;align-items:center">
+  <div style="width:auto;height:auto;display:flex;flex-direction:row;align-items:center;background-color:transparent">
+    <label style="color:#ffffff;font-size:30px;margin-top:5px;margin-bottom:5px;margin-right:15px;font-weight:bold;background-color:transparent" text="{label}"/>
+  </div>
+ </div>
+</res>
+
+
+<!--路线外事件：封路 理由气泡样式-->
+<res useCommonParser='true' resId='200101,200101' direction='leftTop,leftBottom' anchorOffset='(0,0),(0,0)' >
+  <background-image id='backimage'>115032,115031</background-image>
+  <backgroundstretch id='backimage'>37% 54% 56% 33%,53% 54% 40% 33%</backgroundstretch>
+  <padding id='backimage'>20px 32px 30px 19px,30px 32px 20px 19px</padding>
+  <div id='backimage' style="width:auto;height:auto;background-color:#00FFFFFF;display:flex;flex-direction:row;align-items:center">
+  <div style="width:auto;height:auto;display:flex;flex-direction:row;align-items:center;background-color:transparent">
+    <label style="color:#333333;font-size:30px;margin-top:5px;margin-bottom:5px;margin-right:15px;font-weight:bold;background-color:transparent" text="{label}"/>
+  </div>
+ </div>
+</res>
+
+<!--路线外事件：封路 理由气泡样式-->
+<res useCommonParser='true' resId='200101,200101' direction='rightTop,rightBottom' anchorOffset='(0,0),(0,0)' >
+  <background-image id='backimage'>115030,115029</background-image>
+  <backgroundstretch id='backimage'>37% 36% 56% 51%,53% 36% 40% 51%</backgroundstretch>
+  <padding id='backimage'>20px 19px 30px 32px,30px 19px 20px 32px</padding>
+  <div id='backimage' style="width:auto;height:auto;background-color:#00FFFFFF;display:flex;flex-direction:row;align-items:center">
+  <div style="width:auto;height:auto;display:flex;flex-direction:row;align-items:center;background-color:transparent">
+    <label style="color:#333333;font-size:30px;margin-top:5px;margin-bottom:5px;margin-left:15px;font-weight:bold;background-color:transparent" text="{label}"/>
+  </div>
+ </div>
+</res>
+
+
+<!-- 骑步行终点POI名称样式-->
+<res useCommonParser='true' resId='40003' direction='bottomCenter' anchorOffset='(0,0),(0,0)' >
+  <div style='width:auto;height:auto;background-color:#00FFFFFF;display:flex;opacity:0.87;padding:10dp;flex-direction:column;margin:10dp;align-items:center'>
+      <label style='color:#222222;font-size:26px; font-weight:bold; text-stroke:2px white' text='{label}'></label>
+  </div>
+</res>
+
+<!--公交详情页跳转步行导航-实时公交tip样式-->
+<res useCommonParser='true' resId='200020' direction='topCenter' anchorOffset='(0,0)' >
+    <div><div style='width:auto;height:auto;display:flex;flex-direction:column;justify_content:space-around;background-image:200021;backgroundstretch:38% 66% 58% 31% 38% 32% 58% 64%;padding:21px 30px 37px 30px;'>
+        <label style='color:#212121;font-size:22px;font-weight:normal' text='{label}' />
+        <label style='color:#00BD9D;font-size:22px;font-weight:normal' text='{subLabel}' /></div>
+    <div style='with:auto;height:50px;background-color:transparent;visibility:hidden;'></div></div>
+</res>
+
+<!--骑行规划页逆行路段气泡样式-->
+<res useCommonParser='true' resId='118102,118102,118102,118102' direction='leftTop,leftBottom,rightTop,rightBottom' anchorOffset='(5,15),(5,5),(5,15),(5,5)' >
+  <background-image id='backimage'>110516,110517,110518,110519</background-image>
+  <backgroundstretch id='backimage'>34% 52% 61% 36%,52% 46% 43% 42%,34% 41% 61% 48%,52% 41% 43% 48%</backgroundstretch>
+  <padding id='backimage'>21px 47px 45px 32px,39px 47px 30px 32px,21px 32px 45px 47px,39px 32px 30px 47px</padding>
+  <div id='backimage' style="width:auto;height:auto;background-color:#00FFFFFF;display:flex;flex-direction:row;align-items:center">
+  <div style="width:auto;height:auto;display:flex;flex-direction:row;align-items:center;background-color:transparent">
+    <label style="color:#000000;font-size:30px;margin-top:5px;margin-bottom:5px;margin-right:5px;font-weight:bold;background-color:transparent" text="逆行路段"/>
+  </div>
+ </div>
+</res>
+
+<!--导航中途径点可删除(200117)-不可删除(200116)样式-->
+<res useCommonParser='true' resId='200117,200116' direction='topCenter,topCenter' anchorOffset='(0,0),(0,0)' >
+    <div style='display:flex;'>
+        <image src='{iconId}' style='width:80px;height:80px'/>
+        <div style='position:absolute;left:25px;top:22px;width:30px;height:42px;align-items:center;justify-content:center'>
+            <label style='color:#FFFFFF;font-size:30px;font-weight:bold;text-align:center' text='{label}' />
+        </div>
+    </div>
+</res>
+
+<!--行前途经点焦点态样式-->
+<res useCommonParser='true' resId='200125' direction='topCenter' anchorOffset='(0,0)'>
+    <div style='display:flex;'>
+        <image src='150260' style='width:132px;height:132px'/>
+        <div style='position:absolute;left:42px;top:39px;width:48px;height:65px;align-items:center;justify-content:center'>
+            <label style='color:#FFFFFF;font-size:45px;font-weight:bold;text-align:center' text='{label}'/>
+        </div>
+    </div>
+</res>
+
+<!--终点区域面子点-->
+<res useCommonParser='true' resId='30011' direction='rightTop' anchorOffset='(24,0)'>
+    <div style="display:flex;flex-direction:row;">
+      <image style="width:48px;height:52px;" src="{icon}"/>
+      <label style="position:absolute;display:{labelDis};left:53px;bottom:15px;font-size:22px;font-weight:bold;color:black;opacity:0.87;" text="{label}"/>
+    </div>
+</res>
+
+<!--终点区域面子点 焦点态-->
+<res useCommonParser='true' resId='30010' direction='rightTop' anchorOffset='(56,0)'>
+    <div style="display:flex;flex-direction:row;">
+      <image style="width:112px;height:118px;" src="{icon}"/>
+      <label style="position:absolute;display:{labelDis};left:85px;bottom:15px;font-size:22px;font-weight:bold;color:black;opacity:0.87;" text="{label}"/>
+    </div>
+</res>
+
+
+<!--终点区域面子点 数字-->
+<res useCommonParser='true' resId='10220' direction='rightTop' anchorOffset='(24,0)'>
+  <div style='justify-content: center;'>
+    <div id='backimage' style='position: absolute;width:48px;height:52px;display:flex;flex-direction:column;background-image:{icon};justify-content: center;flex-direction: column;'>
+          <label text='{index}' style='font-size:26px;font-weight:bold;color:#ffffff;align-self:center;margin-bottom:11px;'></label>
+    </div>
+    <label style="position:absolute;display:{labelDis};left:49px;bottom:-7px;font-size:22px;font-weight:bold;color:black;opacity:0.87;text-stroke:1px white;" text="{label}"/>
+  </div>
+</res>
+
+
+<!--终点区域面子点 数字 焦点态-->
+<res useCommonParser='true' resId='10221' direction='rightTop' anchorOffset='(56,0)'>
+  <div style='justify-content: center;'>
+    <div id='backimage' style='position: absolute;width:112px;height:118px;display:flex;flex-direction:column;background-image:{icon};justify-content: center;flex-direction: column;'>
+        <label text='{index}' style='font-size: 39px; font-weight: bold; color: #ffffff; align-self: center; margin-bottom: 25px;'></label>
+      
+    </div>
+      <label style="position:absolute;display:{labelDis};left:86px;bottom:-40px;font-size:22px;font-weight:bold;color:black;opacity:0.87;text-stroke:2px white;" text="{label}"/>
+  </div>
+</res>
+
+<!-- 地铁起点引导出口气泡样式-->
+<res useCommonParser='true' resId='40004,40004,40004,40004' direction='leftTop,leftBottom,rightTop,rightBottom' anchorOffset='(0,0),(0,0),(0,0),(0,0)' >
+    <div style='height: 68px;padding: 15px 7px 15px 10px; left: 0; top: 0px'>
+        <div style='height: 40px; padding: 2px 5px 5px 10px;background:#5A78F4; border-radius: 15px; border-width: 5px; border-color: #5A78F4;background-color:#FFFFFF; left: 0; top: 0px'>
+          <label
+            style='align-self: center; font-weight: bold; font-size: 22px; color: #5a78f4; line-height: 22px; text-overflow: ellipsis; overflow: hidden; position: relative'
+            text='{label}'
+          ></label>
+        </div>
+    </div>
+</res>
+
+<!-- 步导结束页终点POI信息扎点，隐私图层 带向右箭头或不带向右箭头-->
+<res useCommonParser='true' resId='200001' direction='topCenter' anchorOffset='(0,-72)' >
+    <background-image id='backimage'>140550</background-image>
+    <backgroundstretch id='backimage'>0% 63% 1% 32% 0% 33% 1% 62%</backgroundstretch>
+    <padding id='backimage'>20px 20px 40px 20px</padding>
+    <div id='backimage' style="display:flex;flex-direction:row;align-items:center;justify-content:center;">
+       <label style='color:#9E9E9E;font-size:28px;margin-left:36px;margin-right:10px;display:{isNameDisplay}' text="{name}"/>
+       <label style='color:#212121;font-size:28px;margin-right:{marginRight};display:{isFloorDisplay}' text="{floor}"/>
+       <label style='color:#212121;font-size:28px;margin-left:36px;margin-right:{marginRight};display:{isOnlyFloorDisplay}' text="{floor}"/>
+       <div style='flex-direction:row;display:{isArrowDisplay}'>
+           <image id='rightArrowImage' style='width:40px;height:40px;' src='140551'/>
+       </div>
+   </div>
+</res>
+
+</root>

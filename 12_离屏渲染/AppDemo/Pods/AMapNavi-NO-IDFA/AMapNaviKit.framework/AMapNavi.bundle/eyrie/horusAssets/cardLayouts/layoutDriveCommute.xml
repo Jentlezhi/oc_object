@@ -1,0 +1,31 @@
+<root>
+
+<!--
+驾车通勤样式
+-->
+
+
+<!--偏航抑制区域面门子点样式-->
+<res useCommonParser='true' resId='10212' direction='rightTop' anchorOffset='(0,0)' >
+  <div style='display:flex;flex-direction:row;align-items:center'>
+      <image style='width:{door_width};height:{door_height};' src='{door_res}' />
+      <label style='padding-left:4px;color:{door_name_color};font-size:22px;font-weight:bold;' text='{door_name}' />
+  </div>
+</res>
+
+
+<!--偏航抑制区域面子点-常走样式-->
+<res useCommonParser='true' resId='10213' direction='rightTop' anchorOffset='(0,0)' >
+  <div style='width:110px;height:90px'>
+      <div style='position:absolute;'>
+          <image style='padding-left:12px;width:110px;height:60px' src='{label_bg_res}' />
+          <label style='left:48px;top:10px;position:absolute;color:{common_label_color};font-size:22px;font-weight:bold' text='常走'/>
+      </div>
+      <div>
+          <image style='width:48px;height:60px;' src='{door_res}' />
+      </div>
+      <label style='position:absolute;top:64px;left:0px;color:{door_name_color};font-size:22px;font-weight:bold;max-width:160px;line-clamp:2;' text='{door_name}'/>
+  </div>
+</res>
+
+</root>

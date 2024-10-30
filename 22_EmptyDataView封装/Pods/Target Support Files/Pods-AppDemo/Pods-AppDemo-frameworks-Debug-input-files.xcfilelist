@@ -1,0 +1,6 @@
+${PODS_ROOT}/Target Support Files/Pods-AppDemo/Pods-AppDemo-frameworks.sh
+${BUILT_PRODUCTS_DIR}/JZScrollViewDataSet/JZScrollViewDataSet.framework
+${BUILT_PRODUCTS_DIR}/LookinServer/LookinServer.framework
+${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework
+${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework
+${BUILT_PRODUCTS_DIR}/YYCategories/YYCategories.framework

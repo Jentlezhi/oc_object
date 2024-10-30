@@ -1,26 +1,34 @@
 PODS:
+  - AMapFoundation-NO-IDFA (1.8.2)
+  - AMapNavi-NO-IDFA (9.8.1):
+    - AMapFoundation-NO-IDFA (>= 1.8.2)
   - CTMediator (48)
-  - LookinServer (1.1.7):
-    - LookinServer/Core (= 1.1.7)
-  - LookinServer/Core (1.1.7)
+  - LookinServer (1.2.5):
+    - LookinServer/Core (= 1.2.5)
+  - LookinServer/Core (1.2.5)
   - Masonry (1.1.0)
 
 DEPENDENCIES:
+  - AMapNavi-NO-IDFA
   - CTMediator
   - LookinServer
   - Masonry
 
 SPEC REPOS:
   trunk:
+    - AMapFoundation-NO-IDFA
+    - AMapNavi-NO-IDFA
     - CTMediator
     - LookinServer
     - Masonry
 
 SPEC CHECKSUMS:
+  AMapFoundation-NO-IDFA: 6ce0ef596d4eb8d934ff498e56747b6de1247b05
+  AMapNavi-NO-IDFA: 76df64c91de56c4887d792dcd8eda23e2395fc25
   CTMediator: 3f3578b525b3a46a7a2f92a99922ec40363f4269
-  LookinServer: 4ce0469b066871525611d009d8d16a7a50c23491
+  LookinServer: 6805292e8d2ff9ddfcfaa9357fc5c1f277c90afd
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
 
-PODFILE CHECKSUM: 108d0fece1bca33f2b054f36788a8378e371df9a
+PODFILE CHECKSUM: 27600384dada3f05b19dca074852fdefe898955e
 
 COCOAPODS: 1.12.1

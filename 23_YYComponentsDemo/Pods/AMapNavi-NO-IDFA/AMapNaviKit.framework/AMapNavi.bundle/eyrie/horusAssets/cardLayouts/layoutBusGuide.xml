@@ -1,0 +1,231 @@
+<root>
+
+<!--
+公交详情页动态纹理样式
+-->
+
+
+<!--公交详情页公交站点缩略图气泡样式-->
+<res useCommonParser='true'  resId='200023' direction='topCenter' anchorRatio='(0.5,1.0)' >
+  <div style='position:relative;'>
+      <image style='width:110px;height:123px;' src='200024' />
+      <div style='position:absolute;top:17px;left:21px'>
+          <image style='width:68px;height:68px;border-radius:18px;' src='{label}' />
+      </div>
+  </div>
+</res>
+<!--公交详情页公交站点缩略图气泡样式-->
+<res useCommonParser='true'  resId='200023' direction='rightTop' anchorRatio='(0.0,1.0)' >
+  <div style='position:relative;'>
+      <image style='width:124px;height:127px;' src='200025' />
+      <div style='position:absolute;bottom:42px;left:35px'>
+          <image style='width:68px;height:68px;border-radius:18px;' src='{label}' />
+      </div>
+  </div>
+</res>
+<!--公交详情页公交站点缩略图气泡样式-->
+<res useCommonParser='true'  resId='200023' direction='rightBottom' anchorRatio='(0.0,0.0)' >
+  <div style='position:relative;'>
+      <image style='width:124px;height:127px;' src='200027' />
+      <div style='position:absolute;top:33px;left:35px'>
+          <image style='width:68px;height:68px;border-radius:18px;' src='{label}' />
+      </div>
+  </div>
+</res>
+<!--公交详情页公交站点缩略图气泡样式-->
+<res useCommonParser='true'  resId='200023' direction='bottomCenter' anchorRatio='(0.5,0.0)' >
+  <div style='position:relative;'>
+      <image style='width:110px;height:129px;' src='200028' />
+      <div style='position:absolute;top:35px;left:21px'>
+          <image style='width:68px;height:68px;border-radius:18px;' src='{label}' />
+      </div>
+  </div>
+</res>
+<!--公交详情页公交站点缩略图气泡样式-->
+<res useCommonParser='true'  resId='200023' direction='leftBottom' anchorRatio='(1.0,0.0)' >
+  <div style='position:relative;'>
+      <image style='width:124px;height:127px;' src='200029' />
+      <div style='position:absolute;top:33px;right:35px'>
+          <image style='width:68px;height:68px;border-radius:18px;' src='{label}' />
+      </div>
+  </div>
+</res>
+<!--公交详情页公交站点缩略图气泡样式-->
+<res useCommonParser='true'  resId='200023' direction='leftTop' anchorRatio='(1.0,1.0)' >
+  <div style='position:relative;'>
+      <image style='width:124px;height:127px;' src='200031' />
+      <div style='position:absolute;bottom:41px;right:35px'>
+          <image style='width:68px;height:68px;border-radius:18px;' src='{label}' />
+      </div>
+  </div>
+</res>
+
+
+
+<!--公交详情页公交车站名样式-->
+<res useCommonParser='true' resId='200005,200005,200005,200005' direction='bottomCenter,topCenter,rightCenter,leftCenter' anchorRatio='(0.5,0.0),(0.5,1.0),(0.0,0.5),(1.0,0.5)' >
+  <div style='width:auto;height:auto;background-color:#00FFFFFF;display:flex;border-radius:8px;padding:12px;flex-direction:column;margin:6px;align-items:center'>
+      <label style='color:#222222;font-size:24px;font-weight:bold; text-stroke:2px white' text='{label}'></label>
+  </div>
+</res>
+
+
+
+<!--公交详情页换乘tip样式-->
+<res useCommonParser='true' resId='200006,200006' direction='bottomCenter,topCenter' anchorOffset='(0,0),(0,0)' >
+  <div style="width:auto;height:auto;background-color:#00FFFFFF;display:flex;padding-top:12px;padding-left:12px;padding-bottom:12px;padding-right:12px;flex-direction:column;margin-top:16;margin-bottom:16;margin-left:16;margin-right:16;align-items:center">
+  <label style="color:#222222; font-size:28px; font-weight:bold; text-stroke:2px white" text="{label}"/>
+  <div style="width:auto;height:34; background-color:{color2}; display:flex; border-radius:88px;padding-left:10px;padding-right:10px;flex-direction:row;margin-bottom:2;margin-top:8px;align-items:center">
+    <label style="color:#ffffff;font-size:22px" text="{label3}"/>
+  </div>
+ </div>
+</res>
+<!--公交详情页换乘tip样式-->
+<res useCommonParser='true' resId='200006' direction='rightCenter' anchorOffset='(0,0)' >
+  <div style="width:auto;height:auto;background-color:#00FFFFFF;display:flex;padding-top:12px;padding-left:12px;padding-bottom:12px;padding-right:12px;flex-direction:column;margin-top:16;margin-bottom:16;margin-left:16;margin-right:16;align-items:flex-start">
+  <label style="color:#222222; font-size:28px; font-weight:bold; text-stroke:2px white" text="{label}"/>
+  <div style="width:auto;height:34; background-color:{color2}; display:flex; border-radius:88px;padding-left:10px;padding-right:10px;flex-direction:row;margin-bottom:2;margin-top:8px;align-items:center">
+    <label style="color:#ffffff;font-size:22px" text="{label3}"/>
+  </div>
+</div>
+</res>
+<!--公交详情页换乘tip样式-->
+<res useCommonParser='true' resId='200006' direction='leftCenter' anchorOffset='(0,0)' >
+  <div style="width:auto;height:auto;background-color:#00FFFFFF;display:flex;padding-top:12px;padding-left:12px;padding-bottom:12px;padding-right:12px;flex-direction:column;margin-top:16;margin-bottom:16;margin-left:16;margin-right:16;align-items:flex-end">
+  <label style="color:#222222; font-size:28px; font-weight:bold; text-stroke:2px white" text="{label}"/>
+  <div style="width:auto;height:34; background-color:{color2}; display:flex; border-radius:88px;padding-left:10px;padding-right:10px;flex-direction:row;margin-bottom:2;margin-top:8px;align-items:center">
+    <label style="color:#ffffff;font-size:22px" text="{label3}"/>
+  </div>
+ </div>
+</res>
+
+
+
+<!--公交详情页公交上车站样式-->
+<res useCommonParser='true' resId='200007,200007' direction='bottomCenter,topCenter' anchorRatio='(0.5,0.0),(0.5,1.0)' >
+  <div style="width:auto;height:auto;background-color:#00FFFFFF;display:flex;padding-top:12px;padding-left:12px;padding-bottom:12px;padding-right:12px;flex-direction:column;margin-top:16;margin-bottom:16;margin-left:16;margin-right:16;align-items:center">
+  <label style="color:#222222; font-size:28px; font-weight:bold; text-stroke:2px white" text="{label}"/>
+  <div style="width:auto;height:34; background-color:{color1}; display:flex; border-radius:88px;padding-left:10px;padding-right:10px;flex-direction:row;margin-bottom:2;margin-top:8px;align-items:center">
+    <label style="color:#ffffff;font-size:22px" text="{subLabel}"/>
+  </div>
+ </div>
+</res>
+<!--公交详情页公交上车站样式-->
+<res useCommonParser='true' resId='200007' direction='rightCenter' anchorRatio='(0.0,0.5)' >
+  <div style="width:auto;height:auto;background-color:#00FFFFFF;display:flex;padding-top:12px;padding-left:12px;padding-bottom:12px;padding-right:12px;flex-direction:column;margin-top:16;margin-bottom:16;margin-left:16;margin-right:16;align-items:flex-start">
+  <label style="color:#222222; font-size:28px; font-weight:bold; text-stroke:2px white" text="{label}"/>
+  <div style="width:auto;height:34; background-color:{color1}; display:flex; border-radius:88px;padding-left:10px;padding-right:10px;flex-direction:row;margin-bottom:2;margin-top:8px;align-items:center">
+    <label style="color:#ffffff;font-size:22px" text="{subLabel}"/>
+  </div>
+ </div>
+</res>
+<!--公交详情页公交上车站样式-->
+<res useCommonParser='true' resId='200007' direction='leftCenter' anchorRatio='(1.0,0.5)' >
+  <div style="width:auto;height:auto;background-color:#00FFFFFF;display:flex;padding-top:12px;padding-left:12px;padding-bottom:12px;padding-right:12px;flex-direction:column;margin-top:16;margin-bottom:16;margin-left:16;margin-right:16;align-items:flex-end">
+  <label style="color:#222222; font-size:28px; font-weight:bold; text-stroke:2px white" text="{label}"/>
+  <div style="width:auto;height:34; background-color:{color1}; display:flex; border-radius:88px;padding-left:10px;padding-right:10px;flex-direction:row;margin-bottom:2;margin-top:8px;align-items:center">
+    <label style="color:#ffffff;font-size:22px" text="{subLabel}"/>
+  </div>
+ </div>
+</res>
+
+
+
+<!--公交详情页公交下车站名样式-->
+<res useCommonParser='true' resId='200008,200008,200008,200008' direction='bottomCenter,topCenter,rightCenter,leftCenter' anchorRatio='(0.5,0.0),(0.5,1.0),(0.0,0.5),(1.0,0.5)' >
+  <div style="width:auto;height:auto;background-color:#00FFFFFF;display:flex;padding-top:12px;padding-left:12px;padding-bottom:12px;padding-right:12px;flex-direction:column;margin-top:16;margin-bottom:16;margin-left:16;margin-right:16;align-items:center">
+  <label style="color:#222222;font-size:28px; font-weight:bold; text-stroke:2px white" text="{label}"/>
+ </div>
+</res>
+
+
+<!--公交详情页实时公交tip样式-->
+<res useCommonParser='true' resId='200004,200004,200004,200004' direction='rightTop,rightBottom,leftBottom,leftTop' anchorOffset='(0,0),(0,0),(0,0),(0,0)' >
+  <background-image id='backimage'>150011,150013,150012,150010</background-image>
+  <backgroundstretch id='backimage'>38% 44% 58% 53%,49% 44% 47% 53%,49% 54% 47% 43%,38% 54% 58% 43%</backgroundstretch>
+  <padding id='backimage'>31px 20px 37px 43px,31px 20px 27px 43px,31px 33px 27px 30px,21px 33px 37px 30px</padding>
+  <div id='backimage' style="width:auto;height:auto;display:flex;flex-direction:row;align-items:center;justify_content:center;">
+  <div style="display:flex;flex-direction:column;">
+    <label style="color:#212121;font-size:22px;padding-top:4px;font-weight:normal" text="{label}"/>
+    <label style="color:#00BD9D;font-size:22px;padding-top:4px;font-weight:normal" text="{subLabel}"/>
+  </div>
+  <image src="200022" style="width:24px;height:24px;padding-left:4px"/>
+ </div>
+</res>
+
+
+<!--公交详情页步行导航引导tip样式-->
+<res useCommonParser='true' resId='200011,200011,200011,200011' direction='rightTop,rightBottom,leftBottom,leftTop' anchorOffset='(0,0),(0,0),(0,0),(0,0)' >
+  <background-image id='backimage'>150011,150013,150012,150010</background-image>
+  <backgroundstretch id='backimage'>38% 44% 58% 53%,49% 44% 47% 53%,49% 54% 47% 43%,38% 54% 58% 43%</backgroundstretch>
+  <padding id='backimage'>13px 35px 29px 48px,23px 35px 19px 48px,23px 48px 19px 35px,13px 48px 29px 35px</padding>
+  <div id='backimage' style="width:auto;height:auto;display:flex;flex-direction:row;align-items:center; justify-content:center">
+  <label style="color:#3377FF;font-size:26px;justify-content: center;align-self: center;margin-top:25px;margin-bottom:25px" text="导航去"/>
+  <label style="color:#3377FF;font-size:32px;margin-left:10px;font-weight:bold;justify-content:center;align-self:center;" text="{label}"/>
+  <image src="{iconRes}" style="width:48px;height:48px;margin-left:4px;justify-content: center;align-items:center;"/>
+ </div>
+</res>
+
+
+
+
+<!--公交详情页地铁出入口Icon（由背景和对一个的地铁出入口组成）样式-->
+<res useCommonParser='true' resId='200012,200012,200012,200012,200012' direction='centerCenter,bottomCenter,topCenter,rightCenter,leftCenter' anchorOffset='(0,0),(0,0),(0,0),(0,0),(0,0)' >
+  <div style="width:auto;height:auto;background-color:white;display:flex;align-items:center;justify-content:space-around;padding:4px;margin:3px;border-radius:10px;border-width:3px;border-color:#3377FF;border-style:solid;">
+  <label style="color:#3377FF;font-size:26px;font-weight:bold" text="{label}"/>
+ </div>
+</res>
+
+
+
+<!--公交详情页途径站圆圈，动态纹理样式-->
+<res useCommonParser='true' resId='200016' direction='centerCenter' anchorOffset='(0,0)' >
+  <div style='width:28px;height:28px;margin:4px;background-color:white;display:flex;justify-content:space-around;border-radius:28px;border-width:4px;border-color:{color1};border-style:solid;'>
+  </div>
+</res>
+
+
+<!--打车公交混拼 打车提示气泡样式-->
+<res useCommonParser='true' resId='200019,200019,200019,200019' direction='rightTop,rightBottom,leftBottom,leftTop' anchorOffset='(0,0),(0,0),(0,0),(0,0)' >
+  <background-image id='backimage'>150011,150013,150012,150010</background-image>
+  <backgroundstretch id='backimage'>38% 44% 58% 53%,49% 44% 47% 53%,49% 54% 47% 43%,38% 54% 58% 43%</backgroundstretch>
+  <padding id='backimage'>13px 35px 29px 48px,23px 35px 19px 48px,23px 48px 19px 35px,13px 48px 29px 35px</padding>
+  <div id='backimage' style="width:auto;height:auto;display:flex;flex-direction:row;align-items:center;justify-content:center">
+  <label style="color:#000;font-size:28px;font-weight:bold;justify-content:center;align-self:center; margin-top:15px;margin-bottom:15px" text="约{label}元"/>
+  <label style="color:#3377FF;font-size:28px;margin-left:10px; font-weight:bold;justify-content:center;align-self:center;" text="去打车"/>
+  <image src="200018" style="width:48px;height:48px;margin-left:4px;justify-content: center;align-items:center;margin-top:15px;margin-bottom:15px"/>
+ </div>
+</res>
+
+
+
+<!--打车公交混拼 打车提示气泡样式-->
+<res useCommonParser='true' resId='116006,116006,116006,116006' direction='leftTop,leftBottom,rightTop,rightBottom' anchorOffset='(0,0),(0,0),(0,0),(0,0)' >
+  <background-image id='backimage'>116007,116008,116010,116011</background-image>
+  <backgroundstretch id='backimage'>35% 53% 61% 38%,53% 52% 44% 39%,35% 40% 61% 51%,53% 40% 44% 51%</backgroundstretch>
+  <padding id='backimage'>20px 47px 44px 32px,36px 46px 28px 33px,20px 32px 44px 47px,36px 32px 28px 47px</padding>
+  <div id='backimage' style="display:flex;flex-direction:row;align-items:center;justify-content:center;">
+  <image src="116004" style="width:50px;height:48px;margin-right:6px;margin-top:6px;margin-bottom:6px;"/>
+  <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;margin-top:-4px">
+    <label style="display:{isVisible};height:6px" text=""/>
+    <label style="display:{isVisible};align-items:center;color:#212121;font-size:28px;font-weight:normal;height:28px" text="换乘火车"/>
+    <label style="display:{isVisible};height:6px" text=""/>
+    <label style="display:flex;align-items:center;color:#1a66ff;font-size:28px;font-weight:bold;height:28px" text="立即购票"/>
+    <label style="display:{isVisible};height:8px" text=""/>
+  </div>
+ </div>
+</res>
+<!--打车公交混拼 打车提示气泡样式-->
+<res useCommonParser='true' resId='116006' direction='topCenter' anchorOffset='(0,0)' >
+  <div style="display:flex;flex-direction:row;align-items:center;justify-content:center;margin-top:2px;margin-bottom:2px;background-image:116013">
+  <image src="116004" style="width:50px;height:48px;margin-right:6px;margin-top:6px;margin-bottom:6px;"/>
+  <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;margin-top:-4px">
+    <label style="display:{isVisible};height:7px" text=""/>
+    <label style="display:{isVisible};align-items:center;color:#212121;font-size:28px;font-weight:normal;height:28px" text="换乘火车"/>
+    <label style="display:{isVisible};height:6px" text=""/>
+    <label style="display:flex;align-items:center;color:#1a66ff;font-size:28px;font-weight:bold;height:28px" text="立即购票"/>
+    <label style="display:{isVisible};height:9px" text=""/>
+  </div>
+ </div>
+</res>
+</root>

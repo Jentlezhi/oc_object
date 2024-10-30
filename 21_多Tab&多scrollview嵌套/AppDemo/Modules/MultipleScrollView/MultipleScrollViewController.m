@@ -64,6 +64,7 @@
         _categoryView.contentScrollViewClickTransitionAnimationEnabled = NO;
         _categoryView.listContainer = (id<JXCategoryViewListContainer>)self.pagerView.listContainerView;
         JXCategoryIndicatorLineView *lineView = [[JXCategoryIndicatorLineView alloc] init];
+        lineView.lineStyle = JXCategoryIndicatorLineStyle_Lengthen;
 //        lineView.indicatorColor = [UIColor colorWithRed:105/255.0 green:144/255.0 blue:239/255.0 alpha:1];
         lineView.indicatorWidth = 30;
         _categoryView.indicators = @[lineView];
@@ -78,17 +79,19 @@
 }
 - (NSArray<NSString *> *)titles {
     if (!_titles) {
-        _titles = @[@"螃蟹", @"麻辣小龙虾", @"苹果"];
+        _titles = @[@"螃蟹", @"麻辣小龙虾", @"苹果",@"螃蟹", @"麻辣小龙虾", @"苹果",@"螃蟹", @"麻辣小龙虾", @"苹果",@"螃蟹", @"麻辣小龙虾", @"苹果"];
     }
     return _titles;
 }
 
 #pragma mark - JXPagerViewDelegate
 - (UIView *)tableHeaderViewInPagerView:(JXPagerView *)pagerView {
-    return self.headerView;
+//    return self.headerView;
+    return UIView.new;
 }
 - (NSUInteger)tableHeaderViewHeightInPagerView:(JXPagerView *)pagerView {
-    return self.headerView.height;
+//    return self.headerView.height;
+    return CGFLOAT_MIN;
 }
 - (UIView *)viewForPinSectionHeaderInPagerView:(JXPagerView *)pagerView {
     return self.categoryView;
